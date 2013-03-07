@@ -1,0 +1,5 @@
+<onEvent>
+	<sequence>
+		<invoke />
+	</sequence>
+</onEvent>

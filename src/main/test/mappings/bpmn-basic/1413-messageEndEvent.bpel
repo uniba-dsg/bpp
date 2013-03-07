@@ -1,0 +1,3 @@
+<invoke name="[e-name]" partnerLink="[Q, e-operation-interface]"
+	portType="[e-operation-interface]" operation="[e-operation]">
+</invoke>

@@ -1,0 +1,45 @@
+<flow>
+	<links>
+		<link name="[l1]" />
+		<link name="[l4]" />
+	</links>
+	<scope>
+		<sources>
+			<source linkName="[l1]" />
+		</sources>
+		<faultHandlers>
+			<catch faultName="[e-error]">
+				<empty>
+					<sources>
+						<source linkName="[l3]" />
+					</sources>
+				</empty>
+			</catch>
+		</faultHandlers>
+		[Activi ty]
+	</scope>
+	<flow>
+		<targets>
+			<target linkName="[l1]" />
+		</targets>
+		<sources>
+			<source linkName="[l2]" />
+		</sources>
+		[G1]
+	</flow>
+	<flow>
+		<targets>
+			<target linkName="[l3]" />
+		</targets>
+		<sources>
+			<source linkName="[l4]" />
+		</sources>
+		[G2]
+	</flow>
+	<empty>
+		<sources>
+			<source linkName="[l2]" />
+			<source linkName="[l4]" />
+		</sources>
+	</empty>
+</flow>

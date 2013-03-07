@@ -1,0 +1,59 @@
+<flow>
+	<links>
+		<link name="[link1]" />
+		<link name="[link6]" />
+	</links>
+	<empty>
+		<sources>
+			<source linkName="[link1]">
+				<transitionCondition>
+					[p1])
+				</transitionCondition>
+			</source>
+			<source linkName="[link2]">
+				<transitionCondition>
+					[p2])
+				</transitionCondition>
+			</source>
+			<source linkName="[link3]">
+				<transitionCondition>
+					[p3])
+				</transitionCondition>
+			</source>
+		</sources>
+	</empty>
+	<flow>
+		<targets>
+			<target linkName="[link1]" />
+		</targets>
+		<sources>
+			<source linkName="[l ink4]" />
+		</sources>
+		[G1]
+	</flow>
+	<flow>
+		<targets>
+			<target linkName="[link2]" />
+		</targets>
+		<sources>
+			<source linkName="[l ink5]" />
+		</sources>
+		[G2]
+	</flow>
+	<flow>
+		<targets>
+			<target linkName="[link3]" />
+		</targets>
+		<sources>
+			<source linkName="[l ink6]" />
+		</sources>
+		[G3]
+	</flow>
+	<empty>
+		<targets>
+			<target linkName="[l ink4]" />
+			<target linkName="[l ink5]" />
+			<target linkName="[l ink6]" />
+		</targets>
+	</empty>
+</flow>

@@ -1,0 +1,12 @@
+<pick createInstance="[instantiate? ' yes':'no']">
+	<onMessage partnerLink="[e1-operation-interface]" operation="[e1-operation]">
+		[G1]
+	</onMessage>
+	<onMessage partnerLink="[e2-operation-interface]" operation="[e2-operation]">
+		[G2]
+	</onMessage>
+	<onAlarm>
+		[timer-spec]
+		[G3]
+	</onAlarm>
+</pick>

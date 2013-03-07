@@ -1,0 +1,13 @@
+<onEvent>
+	<pick>
+		<onMessage>
+			<invoke />
+		</onMessage>
+		<onAlarm>
+			<invoke />
+		</onAlarm>
+		<onMessage>
+			<invoke />
+		</onMessage>
+	</pick>
+</onEvent>

@@ -1,0 +1,4 @@
+<receive name="[e-name]" createInstance="yes"
+	partnerLink="[e-operation-interfac e]" portType="[e-operation-interface]"
+	operation="[e -operation]">
+</receive>

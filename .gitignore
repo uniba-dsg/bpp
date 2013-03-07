@@ -1,0 +1,11 @@
+.classpath
+.project
+.idea/
+bin/
+.gradle/
+.settings/
+build/
+results.csv
+assertions.tex
+r-results.csv
+*-report.xml

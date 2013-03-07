@@ -1,0 +1,75 @@
+<process name="complaint handling">
+	<sequence name="t6c ">
+		<invoke name="register" />
+		<flow name="t5c ">
+			<sequence name="t3c ">
+				<invoke name="send questionnaire" />
+				<pick name="t2c ">
+					<onMessage operation="returned-questionnaire" >
+						<invoke name="process questionnaire" />
+					</onMessage>
+					<onAlarm for="P14DT">
+						<empty />
+					</onAlarm>
+				</pick>
+			</sequence>
+			<scope name="t4c ">
+				<scope name="t4c ">
+					<!-- mapping of g4 -->
+					<onEvent>
+						<invoke  />
+					</onEvent>
+					<onEvent>
+						<invoke />
+					</onEvent>
+					<!-- mapping of t1 c -->
+					<onEvent>
+						<sequence>
+							<sequence name="t1c "> ... </sequence>
+							<invoke />
+						</sequence>
+					</onEvent>
+					<!-- mapping of g5 -->
+					<onEvent>
+						<if>
+							<case condition="branchVar=‘DONE’">
+								<invoke />
+							</case>
+							<case condition="branchVar=‘CONT’">
+								<invoke />
+							</case>
+						</if>
+					</onEvent>
+					<!-- mapping of a8 -->
+					<onEvent>
+						<sequence>
+							<invoke name="check processing"  />
+							<invoke />
+						</sequence>
+					</onEvent>
+					<!-- mapping of g6 -->
+					<onEvent>
+						<if>
+							<case condition="branchVar=‘OK’">
+								<invoke />
+							</case>
+							<case condition="branchVar=‘NOK’">
+								<invoke />
+							</case>
+						</if>
+					</onEvent>
+					<!-- mapping of g7 -->
+					<onEvent>
+						<invoke />
+					</onEvent>
+					<onEvent>
+						<invoke />
+					</onEvent>
+					<!-- to trigger source object g4 -->
+					<invoke />
+				</scope>
+			</scope>
+		</flow>
+		<invoke name="archive" />
+	</sequence>
+</process>

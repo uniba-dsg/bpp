@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Mark Nottingham (Web Services Architecture WG) -->
+<xs:schema targetNamespace="http://www.ws-i.org/2002/08/12/ProfileMarkup-2.0.xsd" xmlns:w="http://www.ws-i.org/2002/08/12/ProfileMarkup-2.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.w3.org/TR/html4" xmlns="" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="htmlType" mixed="1">
+		<xs:complexContent mixed="1">
+			<xs:restriction base="xs:anyType">
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="w:p"/>
+					<xs:element ref="w:ol"/>
+					<xs:element ref="w:ul"/>
+					<xs:element ref="w:dl"/>
+					<xs:element ref="w:pre"/>
+				</xs:choice>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="htmlInlineType" mixed="1">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="w:em"/>
+			<xs:element ref="w:strong"/>
+			<xs:element ref="w:a"/>
+			<xs:element ref="w:code"/>
+			<xs:element ref="w:span"/>
+			<xs:element ref="w:p"/>
+			<xs:element ref="w:img" />
+			<xs:element ref="w:pre" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="htmlMixedType" mixed="1">
+		<xs:choice>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="w:span"/>
+				<xs:element ref="w:code"/>
+				<xs:element ref="w:a"/>
+				<xs:element ref="w:strong"/>
+				<xs:element ref="w:em"/>
+				<xs:element ref="w:p"/>
+				<xs:element ref="w:ol"/>
+				<xs:element ref="w:ul"/>
+				<xs:element ref="w:dl"/>
+				<xs:element ref="w:pre"/>
+			</xs:choice>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="span">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="class" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="code" type="xs:string"/>
+	<xs:element name="a">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="href" type="xs:anyURI" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="strong" type="xs:string"/>
+	<xs:element name="em" type="xs:string"/>
+	<xs:element name="pre">
+		<xs:complexType mixed="1">
+			<xs:complexContent mixed="1">
+				<xs:extension base="w:htmlInlineType">
+					<xs:attribute name="class" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dl">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="dt" type="w:htmlInlineType" minOccurs="0"/>
+				<xs:element name="dd" type="w:htmlInlineType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ul">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="li" type="w:htmlMixedType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ol">
+		<xs:complexType mixed="1">
+			<xs:sequence>
+				<xs:element name="li" type="w:htmlMixedType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="p">
+		<xs:complexType mixed="1">
+			<xs:complexContent mixed="1">
+				<xs:extension base="w:htmlInlineType">
+					<xs:attribute name="class" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="img">
+	  <xs:complexType>
+		<xs:attribute name="src" type="xs:anyURI" use="required" />
+	  </xs:complexType>
+	</xs:element>
+</xs:schema>

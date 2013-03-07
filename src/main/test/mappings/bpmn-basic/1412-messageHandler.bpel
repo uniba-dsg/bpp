@@ -1,0 +1,5 @@
+<eventHandlers>
+	<onEvent partnerLink="[e-operation-interface]" operation="[e-operation]">
+		<scope>[G]</scope>
+	</onEvent>
+</eventHandlers>

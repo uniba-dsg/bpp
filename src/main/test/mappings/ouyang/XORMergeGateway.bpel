@@ -1,0 +1,8 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<onEvent>
+		<invoke />
+	</onEvent>
+	<onEvent>
+		<invoke />
+	</onEvent>
+</process>

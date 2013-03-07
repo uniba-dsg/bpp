@@ -1,0 +1,29 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<variable name="[counter]" type="xsd:integer" />
+	<sequence>
+		<assign>
+			<copy>
+				<from>
+					<literal>
+						0
+					</literal>
+				</from>
+				<to variable="[counter]" />
+			</copy>
+		</assign>
+		<while>
+			<condition>
+				<!-- [p] and $[counter] &l t; [LoopMaximum] -->
+			</condition>
+			<sequence>
+				[G]
+				<assign>
+					<copy>
+						<from expression="$[counter]+1" />
+						<to variable="[counter]" />
+					</copy>
+				</assign>
+			</sequence>
+		</while>
+	</sequence>
+</process>

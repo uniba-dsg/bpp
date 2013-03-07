@@ -1,0 +1,6 @@
+<receive name="[Task-name]"
+createInstance="[instantiate? 'yes':'no']"
+partnerLink="[Task-operation-interface]"
+portType="[Task-operation-interface]"
+operation="[Task-operation]">
+</receive>

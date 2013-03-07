@@ -1,0 +1,4 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<wait name="[e-name]" for="[e -TimeCycle]" />
+	<wait name="[e-name]" until="[e-TimeDate]" />
+</process>

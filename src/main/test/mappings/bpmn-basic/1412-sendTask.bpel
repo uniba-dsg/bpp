@@ -1,0 +1,3 @@
+<invoke name="[Task-name]" partnerLink="[Q, Task-operatio n- interface ]"
+	portType="[Task-operation-interface]" operation="[Task-operation]">
+</invoke>

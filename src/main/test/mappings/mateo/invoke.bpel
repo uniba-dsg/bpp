@@ -1,0 +1,2 @@
+<invoke partnerLink="pl" operation="op" inputVariable="v1 "
+outputVariable="v2"> </invoke>

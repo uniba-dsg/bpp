@@ -1,0 +1,11 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<while>
+		<condition>[p ]
+		</condition>
+		[T as k]
+	</while>
+	<repeatUntil>
+		[Task]
+		<condition>[n ot p ]</condition>
+	</repeatUntil>
+</process>

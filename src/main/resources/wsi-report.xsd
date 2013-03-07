@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ws-i.org/testing/2009/03/report/"
+	xmlns:tns="http://www.ws-i.org/testing/2009/03/report/"
+	xmlns:analyzerConfig="http://www.ws-i.org/testing/2003/03/analyzerConfig/"
+	elementFormDefault="qualified">
+	<import namespace="http://www.w3.org/XML/1998/namespace"
+		schemaLocation="xml.xsd" />
+
+	<element name="report" type="tns:ReportType"></element>
+
+	<complexType name="ReportType">
+		<sequence>
+			<element name="analyzer" type="tns:AnalyzerType" maxOccurs="1"
+				minOccurs="1"></element>
+			<sequence>
+				<element name="artifact" type="tns:ArtifactType" maxOccurs="unbounded"
+					minOccurs="0"></element>
+			</sequence>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="timestamp" type="dateTime"></attribute>
+	</complexType>
+
+	<complexType name="AnalyzerType">
+		<sequence>
+			<element name="profile" type="tns:ProfileType" maxOccurs="unbounded"
+				minOccurs="1"></element>
+			<element name="environment" type="tns:EnvironmentType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="analyzerEngine" type="tns:AnalyzerEngineType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="runConfig" type="tns:RunConfigType" maxOccurs="1"
+				minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+
+
+
+
+	<complexType name="ImplementerType">
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="location" type="anyURI" use="optional"></attribute>
+	</complexType>
+
+	<complexType name="EnvironmentType">
+		<sequence>
+			<element name="operatingSystem" type="tns:EnvironmentItemType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="xmlParser" type="tns:EnvironmentItemType"
+				maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EnvironmentItemType">
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="version" type="string" use="required"></attribute>
+	</complexType>
+
+	<complexType name="AnalyzerEngineType">
+		<sequence>
+			<element name="analyzerVersion" type="string" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="releaseDate" type="date" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="implementer" type="tns:ImplementerType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="xpathVersion" type="string" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="xsltEngine" type="tns:XsltEngineType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="generationTimestamp" type="dateTime"
+				maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+
+
+	</complexType>
+
+	<complexType name="ArtifactType">
+		<sequence>
+			<element name="entry" type="tns:EntryType" maxOccurs="unbounded"
+				minOccurs="0"></element>
+		</sequence>
+		<attribute name="type" type="tns:ArtifactTypeType" use="required">
+		</attribute>
+	</complexType>
+
+	<simpleType name="ArtifactTypeType">
+		<restriction base="string">
+			<enumeration value="message"></enumeration>
+			<enumeration value="description"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="EntryType">
+		<sequence>
+			<element name="assertionResult" type="tns:AssertionResultType"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+		</sequence>
+		<attribute name="referenceID" type="string" use="required"></attribute>
+	</complexType>
+
+	<complexType name="AssertionResultType">
+		<sequence>
+			<element name="failureMessage" type="tns:FailureMessageType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="failureDetail" type="tns:FailureDetailType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="prereqFailedList" type="tns:PrereqFailedListType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="reporting" type="tns:ReportingType" maxOccurs="1"
+				minOccurs="0">
+			</element>
+		</sequence>
+		<attribute name="id" type="string" use="required"></attribute>
+		<attribute name="prescription" type="tns:PrescriptionType"
+			use="required">
+		</attribute>
+		<attribute name="result" type="tns:ResultType" use="required"></attribute>
+	</complexType>
+
+	<simpleType name="ResultType">
+		<restriction base="string">
+			<enumeration value="passed"></enumeration>
+			<enumeration value="failed"></enumeration>
+			<enumeration value="warning"></enumeration>
+			<enumeration value="missingInput"></enumeration>
+			<enumeration value="notRelevant"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PrescriptionType">
+		<restriction base="string">
+			<enumeration value="mandatory"></enumeration>
+			<enumeration value="preferred"></enumeration>
+			<enumeration value="permitted"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="FailureMessageType">
+		<simpleContent>
+			<extension base="string">
+				<attribute ref="xml:lang"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="FailureDetailType">
+		<simpleContent>
+			<extension base="string">
+				<attribute ref="xml:lang"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="PrereqFailedListType">
+		<sequence>
+			<element name="testAssertionID" type="string" maxOccurs="unbounded"
+				minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ReportingType">
+
+		<attribute name="truePredicateAs" type="tns:PredicateReportingType"></attribute>
+		<attribute name="falsePredicateAs" type="tns:PredicateReportingType"></attribute>
+	</complexType>
+
+	<complexType name="ConfigurationType">
+		<sequence>
+			<element name="verbose" type="boolean"></element>
+			<element name="assertionResults" type="tns:ConfigAssertionResultsType">
+			</element>
+			<element name="reportFile" type="tns:ConfigReportFileType">
+			</element>
+			<element name="testAssertionsFile" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ConfigAssertionResultsType"></complexType>
+
+	<complexType name="ConfigReportFileType"></complexType>
+
+	<simpleType name="PredicateReportingType">
+		<restriction base="string">
+			<enumeration value="warning"></enumeration>
+			<enumeration value="undetermined"></enumeration>
+			<enumeration value="passed"></enumeration>
+			<enumeration value="failed"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="ProfileType">
+		<sequence>
+			<element name="name" type="string" maxOccurs="1" minOccurs="1">
+				<annotation>
+					<documentation>
+						The following profiles should use the known names
+						provided: WS-I
+						Basic Profile 1.2 WS-I Basic Profile 2.0
+					</documentation>
+				</annotation>
+			</element>
+			<element name="revision" type="string" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="implementer" type="tns:ImplementerType"
+				maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+
+	</complexType>
+
+	<complexType name="XsltEngineType">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="version" type="string"></attribute>
+	</complexType>
+
+	<complexType name="RunConfigType">
+		<sequence>
+			<element name="timestamp" type="dateTime" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="xsltEngine" type="tns:XsltEngineType"
+				maxOccurs="1" minOccurs="0"></element>
+			<element name="docSource" type="tns:DocSourceType" maxOccurs="1"
+				minOccurs="0"></element>
+			<element name="comments" type="string" maxOccurs="1"
+				minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="DocSourceType">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="timestamp" type="dateTime"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+</schema>

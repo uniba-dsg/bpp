@@ -1,0 +1,55 @@
+<process name="order fulfillment">
+	<sequence name="t2c ">
+		<flow name="t1c ">
+			<links>
+				<link name="l(ah,a1)" condition="UBL" />
+				<link name="l(ah,a2)" condition="UBL" />
+				<link name="l(ah,a3)" condition="¬UBL∧EDI" />
+				<link name="l(ah,a4)" condition="¬UBL∧EDI" />
+				<link name="l(a2,a5)" condition="TRUE" />
+				<link name="l(a4,a5)" condition="TRUE" />
+				<link name="l(a1,at )" condition="TRUE" />
+				<link name="l(a3,at )" condition="TRUE" />
+				<link name="l(a5,at )" condition="TRUE" />
+			</links>
+			<empty name="ah">
+				<source linkName="l(ah,a1)" />
+				<source linkName="l(ah,a2)" />
+				<source linkName="l(ah,a3)" />
+				<source linkName="l(ah,a4)" />
+			</empty>
+			<invoke name="receive despatch-advice" joinCondition="bpws:getLinkStatus(l(ah,a1))">
+				<target linkName="l(ah,a1)" />
+				<source linkName="l(a1,at )" />
+			</invoke>
+			<invoke name="receive invoice" joinCondition="bpws:getLinkStatus(l(ah,a2))">
+				<target linkName="l(ah,a2)" />
+				<source linkName="l(a2,a5)" />
+			</invoke>
+			<invoke name="receive EDI 856" joinCondition="bpws:getLinkStatus(l(ah,a3))">
+				<target linkName="l(ah,a3)" />
+				<source linkName="l(a3,at )" />
+			</invoke>
+			<invoke name="receive EDI 810" joinCondition="bpws:getLinkStatus(l(ah,a4))">
+				<target linkName="l(ah,a4)" />
+				<source linkName="l(a4,a5)" />
+			</invoke>
+			<invoke name="send payment-request"
+				joinCondition="bpws:getLinkStatus(l(a2,a5)) or bpws:getLinkStatus(l(a4,a5))">
+				<target linkName="l(a2,a5)" />
+				<target linkName="l(a4,a5)" />
+				<source linkName="l(a5,at )" />
+			</invoke>
+			<empty name="at"
+				joinCondition="(bpws:getLinkStatus(l(a1,at )) and
+bpws:getLinkStatus(l(a5,at ))) or
+(bpws:getLinkStatus(l(a3,at )) and
+bpws:getLinkStatus(l(a5,at )))">
+				<target linkName="l(a1,at )" />
+				<target linkName="l(a3,at )" />
+				<target linkName="l(a5,at )" />
+			</empty>
+		</flow>
+		<invoke name="send fulfillment-notice" />
+	</sequence>
+</process>

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Gilbert Pilz (W3C) -->
+<!-- $Revision: 1.9 $ $Date: 2009/11/18 01:24:12 $ -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Mark Nottingham (Web Services Architecture WG) -->
+<xs:schema xmlns="http://www.ws-i.org/2002/08/12/ProfileDoc-2.0.xsd"
+           xmlns:h="http://www.ws-i.org/2002/08/12/ProfileMarkup-2.0.xsd"
+           xmlns:tns="http://www.ws-i.org/2002/08/12/ProfileDoc-2.0.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ws-i.org/2002/08/12/ProfileDoc-2.0.xsd"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.ws-i.org/2002/08/12/ProfileMarkup-2.0.xsd" schemaLocation="ProfileMarkup-2.0.xsd"/>
+  <xs:element name="profile">
+    <xs:annotation>
+      <xs:documentation>A WS-I Profile</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="head">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="wgName" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    name of the WG e.g. Basic Profiles, or Basic
+                    Security Profiles
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="title" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    short title (without version) for the spec
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="shortTitle" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    short title for the document (to be used in the
+                    filename)
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="version" type="xs:float">
+                <xs:annotation>
+                  <xs:documentation>version number</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="webRevision" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>revision number</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="cvsDate" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>publication date</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="status">
+                <xs:annotation>
+                  <xs:documentation>document status</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="ED"/>
+                    <xs:enumeration value="WGD"/>
+                    <xs:enumeration value="WGAD"/>
+                    <xs:enumeration value="BdAD"/>
+                    <xs:enumeration value="AD"/>
+                    <xs:enumeration value="Final"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="public" type="xs:boolean" default="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    indicates a publicly available draft
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="extraStatus" type="h:htmlMixedType" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    Status information beyond that related to the draft
+                    status.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="memberLocationBase" type="xs:anyURI">
+                <xs:annotation>
+                  <xs:documentation>
+                    base URI for members-only drafts
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="publicLocationBase" type="xs:anyURI">
+                <xs:annotation>
+                  <xs:documentation>
+                    base URI for public documents
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="errataLocation" type="xs:anyURI" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    uri for public errata list for this doc
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="commentListLocation" type="xs:anyURI" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    part to the right of mailto: uri for comments list
+                    for this doc
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="discussionListLocation" type="xs:anyURI" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    part to the right of mailto: uri for discussion list
+                    for this doc
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="abstract" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    Concise text describing the purpose of the
+                    specification.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="editors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="person" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="contributorText">
+                <xs:annotation>
+                  <xs:documentation>
+                    text for acknowledgements section
+                  </xs:documentation>
+                </xs:annotation>
+                <!-- href attribute -->
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="href" type="xs:anyURI" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targets" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="target" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="desc" type="xs:string" use="required"/>
+                            <xs:attribute name="src" type="xs:string"/>
+                            <xs:attribute name="href" type="xs:anyURI"/>
+                            <xs:attribute name="claims" type="xs:string" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="claimAttach" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    A list of targets which are valid with this
+                    attachment mechanism.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="attach" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="name" type="xs:string" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="defaultConformanceURI" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    The conformance claim URI for the whole profile.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:anyURI">
+                      <xs:attribute name="useTitle" type="xs:boolean" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="conformanceNote" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    Document-specific conformance notes.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:complexContent mixed="1">
+                    <xs:extension base="h:htmlMixedType"/>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="namespaces" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    A namespace URI used in the profile.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="namespace" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="prefix" type="xs:string" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="front">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element ref="section" maxOccurs="unbounded"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element ref="section" maxOccurs="unbounded"/>
+            </xs:choice>
+          </xs:complexType>
+          <xs:unique name="TitleAttr">
+            <xs:selector xpath="tns:section/tns:refinement | tns:section/tns:subsection/tns:refinement"/>
+            <xs:field xpath="@title"/>
+          </xs:unique>
+        </xs:element>
+        <xs:element ref="testAssertions"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="targetKey">
+      <xs:selector xpath="tns:head/tns:targets/tns:target"/>
+      <xs:field xpath="."/>
+    </xs:key>
+    <!-- moved key to be scoped by profile element so we can refer to it from refinements -->
+    <xs:keyref name="targetRef" refer="tns:targetKey">
+      <xs:selector xpath=".//statement"/>
+      <xs:field xpath="@target"/>
+    </xs:keyref>
+    <!-- CBF relocated keyref so that it is correctly scoped -->
+  </xs:element>
+
+  <xs:element name="text" type="h:htmlType">
+    <xs:annotation>
+      <xs:documentation>
+        Explanatory or introductory text
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="person">
+    <xs:annotation>
+      <xs:documentation>
+        A participant in the process; contains their full name. May
+        contain a URI (e.g., mailto:) in the href attribute and the name
+        of their employer, etc. in the affiliation attribute.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="affiliation" type="xs:string"/>
+          <xs:attribute name="href" type="xs:anyURI"/>
+          <xs:attribute name="note" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="definedTerm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="term" type="xs:string"/>
+        <xs:element name="definition">
+          <xs:complexType mixed="1">
+            <xs:complexContent mixed="1">
+              <xs:extension base="h:htmlMixedType"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="section">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="text" minOccurs="0"/>
+        <xs:element ref="ednote" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="references" minOccurs="0"/>
+        <xs:element ref="refinement" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="subsection" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" use="required"/>
+      <xs:attribute name="title" type="xs:string" use="required"/>
+      <xs:attribute name="conformanceURI" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="subsection">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="text" minOccurs="0"/>
+        <xs:element ref="ednote" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="references" minOccurs="0"/>
+        <xs:element ref="definedTerm" minOccurs="0"/>
+        <xs:element ref="refinement" minOccurs="0"/>
+        <xs:element ref="subsection" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" use="required"/>
+      <xs:attribute name="title" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="refinement">
+    <xs:annotation>
+      <xs:documentation>
+        A refinement to the spec, expressed as one or more requirements
+        and/or practices.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="definedTerm" minOccurs="0"/>
+        <xs:element name="statement" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              A normative statement by the profile (e.g., a requirement
+              or a best practice).
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="true">
+            <xs:complexContent mixed="true">
+              <xs:extension base="h:htmlInlineType">
+                <xs:attribute name="id" type="xs:ID" use="required"/>
+                <xs:attribute name="level" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="full"/>
+                      <xs:enumeration value="conditional"/>
+                      <xs:enumeration value="optional"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="target" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:whiteSpace value="collapse"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="issue" type="xs:string" use="optional"/>
+                <xs:attribute name="type" default="requirement">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="requirement"/>
+                      <xs:enumeration value="clarification"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="test" use="optional">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="artifact"/>
+                      <xs:enumeration value="behaviour"/>
+                      <xs:enumeration value="code"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="origin" use="optional">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="SOAP12"/>
+                      <xs:enumeration value="WSDL20"/>
+                      <xs:enumeration value="WSS10"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="compat" use="optional">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="forward"/>
+                      <xs:enumeration value="bacwards"/>
+                      <xs:enumeration value="breaking"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="testRef" type="xs:IDREFS" use="optional"/>
+                <xs:attribute name="testable" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="TESTABLE"/>
+                      <xs:enumeration value="TESTABLE_SCENARIO_DEPENDENT"/>
+                      <xs:enumeration value="NOT_TESTABLE"/>
+                      <xs:enumeration value="NOT_TESTABLE_XPATH"/>
+                      <xs:enumeration value="NOT_TESTED"/>
+                      <xs:enumeration value="TBD"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="claims" type="xs:string" use="optional"/>
+              </xs:extension>
+              <!-- added for testing -->
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rationale" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Rationale that expands on the statement(s).</xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="1">
+            <xs:complexContent mixed="1">
+              <xs:extension base="h:htmlMixedType"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="explanation" minOccurs="0">
+          <xs:complexType mixed="1">
+            <xs:complexContent mixed="1">
+              <xs:extension base="h:htmlMixedType"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="example">
+          <xs:annotation>
+            <xs:documentation>An example of the statements' application. The 'correct' attribute is used to indicate whether the example shows correct usage.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="true">
+            <xs:complexContent mixed="true">
+              <xs:extension base="h:htmlMixedType">
+                <xs:attribute name="correct" type="xs:boolean" use="required"/>
+                <xs:attribute name="block" type="xs:boolean" use="optional"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="href" type="xs:anyURI" use="optional"/>
+      <xs:attribute name="title" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="references">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="reference">
+          <xs:annotation>
+            <xs:documentation>Normative references to be incorporated</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="point">
+                <xs:annotation>
+                  <xs:documentation>An extensibility point in the referenced specification.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:attribute name="title" type="xs:string" use="required"/>
+                  <xs:attribute name="href" type="xs:anyURI" use="optional"/>
+                  <xs:attribute name="description" type="xs:string" use="optional"/>
+                  <xs:attribute name="id" type="xs:ID" use="required"/>
+                  <xs:attribute name="testRef" type="xs:IDREFS" use="optional"/>
+                  <xs:attribute name="testable" use="optional">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="TESTABLE"/>
+                        <xs:enumeration value="NOT_TESTABLE"/>
+                        <xs:enumeration value="NOT_TESTABLE_XPATH"/>
+                        <xs:enumeration value="TBD"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="claims" type="xs:string" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="title" type="xs:string" use="required"/>
+            <xs:attribute name="href" type="xs:anyURI" use="required"/>
+            <xs:attribute name="description" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ednote" type="h:htmlInlineType">
+    <xs:annotation>
+      <xs:documentation>Editors' note</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="testAssertions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="testAssertion" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="analysis" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Currently a catch-all to encompass the as-yet-undefined analysis element. GP 2008-08-29</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="description" type="h:htmlMixedType"/>
+              <xs:element name="target">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cotarget" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prerequisite" minOccurs="0">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="predicate">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+                  </xs:sequence>
+                  <xs:attribute name="compat" use="optional">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="xpath"/>
+                        <xs:enumeration value="javaScript"/>
+                        <xs:enumeration value="prose"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prescription">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="level" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="reporting" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="true" type="xs:string" use="optional"/>
+                      <xs:attribute name="false" type="xs:string" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="errorMessage" type="h:htmlMixedType">
+                <xs:annotation>
+                  <xs:documentation>error message</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="diagnostic" type="h:htmlMixedType" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    diagnostic information about the error
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="enable" type="xs:boolean" use="optional" default="true"/>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute name="preReq" type="xs:IDREFS" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="releaseNotes" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="guide" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="docItemType" mixed="true">
+    <xs:annotation>
+      <xs:documentation>
+        elements of "docItemType" have a "name" attribute and contain unconstrained HTML that documents a particular item
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:any processContents="lax" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:element name="releaseNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item" type="docItemType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="releasedate" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="guide">
+    <xs:annotation>
+      <xs:documentation>
+        "guide" elements contain general documentation about a particular topic in the profile. They can be used by the HTML
+        rendering stylesheet (e.g. ProfileDocToHtml-new.xsl) to generate things like glossaries, etc.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item" type="docItemType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="topic" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

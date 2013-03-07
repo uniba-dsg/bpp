@@ -1,0 +1,9 @@
+<pick createInstance="no">
+	<onMessage partnerLink="pl" operation="op" variable="v">
+		activity1
+	</onMessage>
+	<onAlarm>
+		<for>timeout</for>
+		activity1
+	</onAlarm>
+</pick>

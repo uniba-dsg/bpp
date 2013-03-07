@@ -1,0 +1,8 @@
+<repeatUntil>
+	<sequence>
+		<while>
+			<condition>b1</condition>
+		</while>
+	</sequence>
+	<condition></condition>
+</repeatUntil>

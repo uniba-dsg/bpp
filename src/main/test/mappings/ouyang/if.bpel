@@ -1,0 +1,7 @@
+<if>
+	<condition>b1</condition>
+	<elseif>
+		<condition>b2</condition>
+		<receive name="e1" />
+	</elseif>
+</if>

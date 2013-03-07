@@ -1,0 +1,24 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<invoke>
+		<toParts>
+			<toPart part="[dataInput1-name]" fromVariable="[D1-name]" />
+			<toPart part="[dataInput2-name]" fromVariable="[D2-name]" />
+		</toParts>
+		<fromParts>
+			<fromPart part="[dataOutput1-name]" fromVariable="[D3-name]" />
+			<formPart part="[dataOutput2-name]" fromVariable="[D4-name]" />
+		</fromParts>
+	</invoke>
+	<receive>
+		<fromParts>
+			<fromPart part="[dataOutput1-name]" fromVariable="[D3-name]" />
+			<formPart part="[dataOutput2-name]" fromVariable="[D4-name]" />
+		</fromParts>
+	</receive>
+	<invoke>
+		<toParts>
+			<toPart part="[dataInput1-name]" fromVariable="[D1-name]" />
+			<toPart part="[dataInput2-name]" fromVariable="[D2-name]" />
+		</toParts>
+	</invoke>
+</process>

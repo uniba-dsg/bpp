@@ -1,0 +1,6 @@
+<eventHandlers>
+	<onAlarm>
+		[timer-spec]
+		<scope>[G]</scope>
+	</onAlarm>
+</eventHandlers>

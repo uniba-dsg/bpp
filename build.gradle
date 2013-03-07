@@ -1,0 +1,46 @@
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: "application"
+
+mainClassName = "bpp.BPP"
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/main/java'
+			srcDir 'src/main/generated'
+		}
+	}
+}
+
+dependencies {
+	compile 'net.sf.saxon:Saxon-HE:9.4.0.6'
+	compile group: 'junit', name: 'junit', version: '4.+'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.4'
+}
+
+run {
+	if(project.hasProperty('args')){
+		args project.args.split('\\s+')
+	}
+}
+
+task profile (type: JavaExec, dependsOn: build){
+    description = 'Builds the test assertion document'
+    classpath = sourceSets.main.runtimeClasspath
+    main = "bpp.util.WSIProfileDocSerializer"
+}
+
+task latex (type: JavaExec, dependsOn: build){
+    description = 'Builds LaTeX tables for all test assertions'
+    classpath = sourceSets.main.runtimeClasspath
+    main = "bpp.util.LatexSerializer"
+}

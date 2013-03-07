@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.ws-i.org/2002/08/12/ProfileDoc-2.0.xsd" xmlns:ns2="http://www.ws-i.org/2002/08/12/ProfileMarkup-2.0.xsd">
+    <testAssertions>
+        <testAssertion enable="true" id="bpp-r1">
+            <description>A process definition should not use the doXslTransform() extension function</description>
+            <target>//*[local-name() = 'from' and contains(. , 'doXslTransform')] | //*[local-name() = 'to' and contains(. , 'doXslTransform')]</target>
+            <predicate>empty(//*[local-name() = 'from' and contains(. , 'doXslTransform')] | //*[local-name() = 'to' and contains(. , 'doXslTransform')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the doXslTransform() XPath function</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r2">
+            <description>A process definition should not rely on the semantics of keepSrcElementName in a &lt;copy&gt; construct</description>
+            <target>//*[@keepSrcElementName='yes']</target>
+            <predicate>empty(//*[@keepSrcElementName='yes'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition sets the keepSrcElementName attribute in a &lt;copy&gt; construct to yes</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r3-1">
+            <description>A process definition must not use the empty variant in a from-spec in an assignment</description>
+            <target>//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)]</target>
+            <predicate>empty(//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the empty variant for a from-spec in a &lt;copy&gt; construct</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r3-2">
+            <description>A process definition must not use the empty variant in a to-spec in an assignment</description>
+            <target>//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)]</target>
+            <predicate>empty(//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the empty variant for a to-spec in a &lt;copy&gt; construct.</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r4">
+            <description>A process definition should not use dynamic invocation based on the re-assignment of a partnerLink</description>
+            <target>//*[local-name() = 'to' and not(empty(@partnerLink))]</target>
+            <predicate>empty(//*[local-name() = 'to' and not(empty(@partnerLink))])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition dynamically assigns a partnerLink in a &lt;copy&gt; construct</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r5">
+            <description>A process definition may use a query in a copy operation</description>
+            <target>//*[local-name() = 'from' or local-name() = 'to']/*[local-name() = 'query']</target>
+            <predicate>empty(//*[local-name() = 'from' or local-name() = 'to']/*[local-name() = 'query'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses a query in a copy operation</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r6">
+            <description>A process definition should not use validation during an assignment</description>
+            <target>//*[@validate='yes']</target>
+            <predicate>empty(//*[@validate='yes'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition sets the validate attribute of an &lt;assign&gt; activity to 'yes'</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r7">
+            <description>A process definition should not use the shortcut syntax for catching a fault during a service invocation.</description>
+            <target>//*[local-name() = 'invoke']/*[local-name() = 'catch']</target>
+            <predicate>empty(//*[local-name() = 'invoke']/*[local-name() = 'catch'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;catch&gt; construct inside an &lt;invoke&gt; activity</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r8">
+            <description>A process definition should not the shortcut syntax for catching any fault during a service invocation</description>
+            <target>//*[local-name() = 'invoke']/*[local-name() = 'catchAll']</target>
+            <predicate>empty(//*[local-name() = 'invoke']/*[local-name() = 'catchAll'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;catchAll&gt; construct inside an &lt;invoke&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r9">
+            <description>A process definition should not the shortcut syntax for using compensation during a service invocation</description>
+            <target>//*[local-name() = 'invoke']/*[local-name() = 'compensationHandler']</target>
+            <predicate>empty(//*[local-name() = 'invoke']/*[local-name() = 'compensationHandler'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;compensationHandler&gt; construct inside an &lt;invoke&gt; activity.</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r10">
+            <description>A process definition should not use correlations in a service invocation</description>
+            <target>//*[local-name() = 'invoke' and exists(@outputVariable)]/*[local-name() = 'correlations']/*[local-name() = 'correlation' and exists(@pattern)]</target>
+            <predicate>empty(//*[local-name() = 'invoke' and exists(@outputVariable)]/*[local-name() = 'correlations']/*[local-name() = 'correlation' and exists(@pattern)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses correlations inside an &lt;invoke&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r11">
+            <description>A process definition should not omit the variable when invoking a web service operation that does not expect an input message</description>
+            <target>//*[local-name() = 'invoke' and empty(@inputVariable) and empty(@outputVariable) and not(child::fromParts) and not (child::toParts)]</target>
+            <predicate>empty(//*[local-name() = 'invoke' and empty(@inputVariable) and empty(@outputVariable) and not(child::fromParts) and not (child::toParts)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process omits variables when invoking a web service operation that does not expect an input message</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r12-1">
+            <description>A process definition should not use the fromParts shortcut syntax during a service invocation</description>
+            <target>//*[local-name() = 'invoke']/*[local-name() = 'fromParts']</target>
+            <predicate>empty(//*[local-name() = 'invoke']/*[local-name() = 'fromParts'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process invokes uses the &lt;fromParts&gt; construct in an &lt;invoke&gt; activity.</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r12-2">
+            <description>A process definition should not use the toParts shortcut syntax during a service invocation</description>
+            <target>//*[local-name() = 'invoke']/*[local-name() = 'toParts']</target>
+            <predicate>empty(//*[local-name() = 'invoke']/*[local-name() = 'toParts'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process invokes uses the &lt;toParts&gt; construct in an &lt;invoke&gt; activity.</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r13">
+            <description>A process definition should not use correlations during the receipt of a message</description>
+            <target>//*[local-name() = 'receive']/*[local-name() = 'correlations']</target>
+            <predicate>empty(//*[local-name() = 'receive']/*[local-name() = 'correlations'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses correlations inside an &lt;receive&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r14-1">
+            <description>A process definition should not use the fromParts shortcut syntax during the receipt of a message</description>
+            <target>//*[local-name() = 'receive']/*[local-name() = 'fromParts']</target>
+            <predicate>empty(//*[local-name() = 'receive']/*[local-name() = 'fromParts'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;fromParts&gt; construct in a &lt;receive&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r14-2">
+            <description>A process definition should not use the toParts shortcut syntax when replying to an invocation</description>
+            <target>//*[local-name() = 'reply']/*[local-name() = 'toParts']</target>
+            <predicate>empty(//*[local-name() = 'reply']/*[local-name() = 'toParts'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;toParts&gt; construct in a &lt;reply&gt; activity.</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r14-3">
+            <description>A process definition may explicitly reply a fault in a &lt;reply&gt; activity</description>
+            <target>//*[local-name() = 'reply' and exists(@faultName)]</target>
+            <predicate>empty(//*[local-name() = 'reply' and exists(@faultName)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition explicitly replies a fault in a &lt;reply&gt; activity</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r14-4">
+            <description>A process definition may use messageExchanges in a &lt;reply&gt; or a &lt;receive&gt; activity</description>
+            <target>//*[(local-name() = 'reply' or local-name() = 'receive') and exists(@messageExchange)]</target>
+            <predicate>empty(//*[(local-name() = 'reply' or local-name() = 'receive') and exists(@messageExchange)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses messageExchanges in a &lt;reply&gt; or a &lt;receive&gt; activity</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r15">
+            <description>A process definition should not use the rethrow activity.</description>
+            <target>//*[local-name() = 'rethrow']</target>
+            <predicate>empty(//*[local-name() = 'rethrow'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;rethrow&gt; activity.</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r16">
+            <description>A process definition should not use a faultVariable when rethrowing a fault</description>
+            <target>//*[local-name() = 'catch' and exists(@faultVariable)]//*[local-name() = 'rethrow']</target>
+            <predicate>empty(//*[local-name() = 'catch' and exists(@faultVariable)]//*[local-name() = 'rethrow'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses a faultVariable in a &lt;rethrow&gt; activity</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r17">
+            <description>A process definition should not use the throw activity to propagate faults out of the scope of the process</description>
+            <target>//*[local-name() = 'throw' and not(ancestor::*[(local-name() = 'scope' or local-name() = 'process') and (child::*[local-name() = 'faultHandlers'])]) ]</target>
+            <predicate>empty(//*[local-name() = 'throw' and not(ancestor::*[(local-name() = 'scope' or local-name() = 'process') and (child::*[local-name() = 'faultHandlers'])]) ])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the throw activity to propagate faults out of the scope of the process</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r18">
+            <description>A process definition should not use the throw activity with a faultVariable to signal faults</description>
+            <target>//*[local-name() = 'throw' and exists(@faultVariable)]</target>
+            <predicate>empty(//*[local-name() = 'throw' and exists(@faultVariable)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;throw&gt; activity in combination with a faultVariable</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r19">
+            <description>A process definition should not use the validate activity</description>
+            <target>//*[local-name() = 'validate']</target>
+            <predicate>empty(//*[local-name() = 'validate'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;validate&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r20">
+            <description>A process definition should not initialize a variable with a default value</description>
+            <target>//*[local-name() = 'variable']/*[local-name() = 'from']</target>
+            <predicate>empty(//*[local-name() = 'variable']/*[local-name() = 'from'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;from&gt; syntax for the default initialization of a variable.</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r21">
+            <description>A process definition may use the &lt;wait&gt; activity</description>
+            <target>//*[local-name() = 'wait']</target>
+            <predicate>empty(//*[local-name() = 'wait'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the &lt;wait&gt; activity</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r22-1">
+            <description>A process definition may use the getVariableProperty() extension function in a &lt;from&gt; statement</description>
+            <target>//*[(local-name() = 'from') and contains(. , 'getVariableProperty')]</target>
+            <predicate>empty(//*[(local-name() = 'from') and contains(. , 'getVariableProperty')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the getVariableProperty() extension function in a &lt;from&gt; statement</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r22-2">
+            <description>A process definition may use the getVariableProperty() extension function in a &lt;condition&gt; statement</description>
+            <target>//*[(local-name() = 'condition') and contains(. , 'getVariableProperty')]</target>
+            <predicate>empty(//*[(local-name() = 'condition') and contains(. , 'getVariableProperty')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the getVariableProperty() extension function in a &lt;condition&gt; statement</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r23">
+            <description>A process definition should not use the &lt;compensateScope&gt; activity to signal compensation</description>
+            <target>//*[local-name() = 'compensateScope']</target>
+            <predicate>empty(//*[local-name() = 'compensateScope'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition calls a compensationHandler using the &lt;compensateScope&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r24">
+            <description>A process definition should not use message-based eventHandlers</description>
+            <target>//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']</target>
+            <predicate>empty(//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses an &lt;onEvent&gt; eventHandler</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r25">
+            <description>A process definition may use timeout-based eventHandlers</description>
+            <target>//*[local-name() = 'eventHandlers']/*[local-name() = 'onAlarm']</target>
+            <predicate>empty(//*[local-name() = 'eventHandlers']/*[local-name() = 'onAlarm'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses an &lt;onAlarm&gt; eventHandler</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r26">
+            <description>A process definition may use isolated scopes</description>
+            <target>//*[local-name() = 'scope' and @isolated='yes']</target>
+            <predicate>empty(//*[local-name() = 'scope' and @isolated='yes'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition sets the isolated attribute of a scope to 'yes'</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r27-1">
+            <description>A process definition should not define correlationSets on scope-level</description>
+            <target>//*[local-name() = 'scope' and child::*[local-name()='correlationSets']]</target>
+            <predicate>empty(//*[local-name() = 'scope' and child::*[local-name()='correlationSets']])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition defines correlationSets on scope-level</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r27-2">
+            <description>A process definition may define messageExchanges on scope-level</description>
+            <target>//*[local-name() = 'scope' and child::*[local-name()='messageExchanges']]</target>
+            <predicate>empty(//*[local-name() = 'scope' and child::*[local-name()='messageExchanges']])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition defines correlationSets on scope-level</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r27-3">
+            <description>A process definition may define partnerLinks on scope-level</description>
+            <target>//*[local-name() = 'scope' and child::*[local-name()='partnerLinks']]</target>
+            <predicate>empty(//*[local-name() = 'scope' and child::*[local-name()='partnerLinks']])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition defines partnerLinks on scope-level</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r27-4">
+            <description>A process definition may define variables on scope-level</description>
+            <target>//*[local-name() = 'scope' and child::*[local-name()='variables']]</target>
+            <predicate>empty(//*[local-name() = 'scope' and child::*[local-name()='variables']])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition defines variables on scope-level</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r28">
+            <description>A process definition should not use the &lt;compensate&gt; activity to signal compensation</description>
+            <target>//*[local-name() = 'compensate']</target>
+            <predicate>empty(//*[local-name() = 'compensate'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition calls a compensationHandler using the &lt;compensate&gt; activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r29">
+            <description>A process definition should not use the fromParts shortcut syntax in a message-based eventHandler</description>
+            <target>//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']/*[local-name() = 'fromParts']</target>
+            <predicate>empty(//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']/*[local-name() = 'fromParts'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses an &lt;onEvent&gt; eventHandler with the fromParts syntax.</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r30">
+            <description>A process definition may rely on the semantics of exitOnStandardFault</description>
+            <target>//*[@exitOnStandardFault='yes']</target>
+            <predicate>empty(//*[@exitOnStandardFault='yes'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition sets the exitOnStandardFault attribute to 'yes'</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-1">
+            <description>A process definition may catch a fault based on the faultVariable. Catching faults by name only is recommended</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and exists(@faultVariable)]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and exists(@faultVariable)])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition catches a fault using a faultVariable</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-1">
+            <description>A process definition must not rely on the correct triggering of xsltInvalidSource fault</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltInvalidSource')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltInvalidSource')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of xsltInvalidSource fault</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-3">
+            <description>A process definition must not rely on the correct triggering of subLanguageExecutionFault</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'subLanguageExecutionFault')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'subLanguageExecutionFault')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of subLanguageExecutionFault</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-4">
+            <description>A process definition should not rely on the correct triggering of xsltStyleSheetNotFound</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltStyleSheetNotFound')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltStyleSheetNotFound')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of xsltStyleSheetNotFound</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-5">
+            <description>A process definition must not rely on the correct triggering of unsupportedReference fault</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'unsupportedReference')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'unsupportedReference')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of unsupportedReference fault</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-6">
+            <description>A process definition should not rely on the correct triggering of selectionFailure</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'selectionFailure')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'selectionFailure')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of selectionFailure</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-7">
+            <description>A process definition should not rely on the correct triggering of ambiguousReceive</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'ambiguousReceive')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'ambiguousReceive')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of ambiguousReceive</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-8">
+            <description>A process definition must not rely on the correct triggering of conflictingReceive</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingReceive')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingReceive')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of conflictingReceive</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-9">
+            <description>A process definition must not rely on the correct triggering of conflictingRequest</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingRequest')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingRequest')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of conflictingRequest</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-10">
+            <description>A process definition should not rely on the correct triggering of correlationViolation</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'correlationViolation')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'correlationViolation')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of correlationViolation</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-11">
+            <description>A process definition should not rely on the correct triggering of uninitializedVariable</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'uninitializedVariable')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'uninitializedVariable')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of uninitializedVariable</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-12">
+            <description>A process definition should not rely on the correct triggering of invalidExpressionValue</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidExpressionValue')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidExpressionValue')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of invalidExpressionValue</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-13">
+            <description>A process definition should not rely on the correct triggering of missingReply</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingReply')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingReply')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of missingReply</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-14">
+            <description>A process definition should not rely on the correct triggering of missingRequest</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingRequest')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingRequest')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of missingReply</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-15">
+            <description>A process definition should not rely on the correct triggering of joinFailure</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'joinFailure')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'joinFailure')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of joinFailure</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-16">
+            <description>A process definition should not rely on the correct triggering of invalidVariables</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidVariables')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidVariables')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of invalidVariables</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-17">
+            <description>A process definition should not rely on the correct triggering of completionConditionFailure</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'completionConditionFailure')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'completionConditionFailure')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of completionConditionFailure</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r31-18">
+            <description>A process definition should not rely on the correct triggering of suppressJoinFailure</description>
+            <target>//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'suppressJoinFailure')]</target>
+            <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'suppressJoinFailure')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition relies on the correct triggering of suppressJoinFailure</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r32">
+            <description>A process definition may use a compensationHandler within a &lt;while&gt;, &lt;forEach&gt; or &lt;repeatUntil&gt; activity</description>
+            <target>//*[local-name() = 'while' or local-name() = 'forEach' or local-name() = 'repeatUntil']//*[local-name() = 'compensationHandler']</target>
+            <predicate>empty(//*[local-name() = 'while' or local-name() = 'forEach' or local-name() = 'repeatUntil']//*[local-name() = 'compensationHandler'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses a compensationHandler within a &lt;while&gt;, &lt;forEach&gt; or &lt;repeatUntil&gt; activity.</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r33">
+            <description>A process definition should not use terminationHandlers</description>
+            <target>//*[local-name() = 'terminationHandler']</target>
+            <predicate>empty(//*[local-name() = 'terminationHandler'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses terminationHandlers</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r34-1">
+            <description>A process definition may use the flow activity</description>
+            <target>//*[local-name() = 'flow']</target>
+            <predicate>empty(//*[local-name() = 'flow'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the flow activity.</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r34-2">
+            <description>A process definition should not use links</description>
+            <target>//*[local-name() = 'links']</target>
+            <predicate>empty(//*[local-name() = 'links'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses links</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r34-3">
+            <description>A process definition should not use a joinCondition to merge links</description>
+            <target>//*[local-name() = 'joinCondition']</target>
+            <predicate>empty(//*[local-name() = 'joinCondition'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses a joinCondition to merge links</errorMessage>
+            <diagnostic>limited portability</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r34-4">
+            <description>A process definition should not use a transitionCondition to merge links</description>
+            <target>//*[local-name() = 'source' and child::*[local-name() = 'transitionCondition']]</target>
+            <predicate>empty(//*[local-name() = 'source' and child::*[local-name() = 'transitionCondition']])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses a transitionCondition to merge links</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r35">
+            <description>A process definition may use the forEach activity</description>
+            <target>//*[local-name() = 'forEach']</target>
+            <predicate>empty(//*[local-name() = 'forEach'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the forEach activity.</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r36">
+            <description>A process definition should not use the forEach activity with a completionCondition</description>
+            <target>//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']</target>
+            <predicate>empty(//*[local-name() = 'forEach']/*[local-name() = 'completionCondition'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses the forEach activity with a completionCondition</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r37">
+            <description>A process definition should not use correlations in a onMessage eventHandler in a pick activity</description>
+            <target>//*[local-name() = 'pick']/*[local-name() = 'onMessage']//*[local-name() = 'correlations']</target>
+            <predicate>empty(//*[local-name() = 'pick']/*[local-name() = 'onMessage']//*[local-name() = 'correlations'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses correlations in an onMessage eventHandler in a pick activity</errorMessage>
+            <diagnostic>partially portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r38">
+            <description>A process definition may use a timeout-based eventHandler in a pick activity</description>
+            <target>//*[local-name() = 'pick']/*[local-name() = 'onAlarm']</target>
+            <predicate>empty(//*[local-name() = 'pick']/*[local-name() = 'onAlarm'])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition uses an onAlarm eventHandler in a pick activity</errorMessage>
+            <diagnostic>widely portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r39">
+            <description>A process definition must not have a namespace different from the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace</description>
+            <target>//*[local-name() = 'process' and not(namespace-uri() = 'http://docs.oasis-open.org/wsbpel/2.0/process/executable')]</target>
+            <predicate>empty(//*[local-name() = 'process' and not(namespace-uri() = 'http://docs.oasis-open.org/wsbpel/2.0/process/executable')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition does not use the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+        <testAssertion enable="true" id="bpp-r40">
+            <description>A process definition must not contain non-BPEL elements</description>
+            <target>//*[not(ancestor::*[local-name() = 'literal']) and not(local-name() ='process') and not(local-name() = 'import') and not(local-name() = 'partnerLinks') and not(local-name() = 'partnerLink') and not(local-name() = 'variables') and not(local-name() = 'variable') and not(local-name() = 'correlationSets') and not(local-name() = 'correlationSet') and not(local-name() = 'sequence') and not(local-name() = 'if') and not(local-name() = 'condition') and not(local-name() = 'elseif') and not(local-name() = 'else') and not(local-name() = 'while') and not(local-name() = 'repeatUntil') and not(local-name() = 'pick') and not(local-name() = 'onMessage') and not(local-name() = 'correlations') and not(local-name() = 'correlation') and not(local-name() = 'fromParts') and not(local-name() = 'fromPart') and not(local-name() = 'toParts') and not(local-name() = 'toPart') and not(local-name() = 'onAlarm') and not(local-name() = 'for') and not(local-name() = 'until') and not(local-name() = 'flow') and not(local-name() = 'links') and not(local-name() = 'link') and not(local-name() = 'targets') and not(local-name() = 'joinCondition') and not(local-name() = 'target') and not(local-name() = 'sources') and not(local-name() = 'source') and not(local-name() = 'transitionCondition') and not(local-name() = 'forEach') and not(local-name() = 'startCounterValue') and not(local-name() = 'finalCounterValue') and not(local-name() = 'completionCondition') and not(local-name() = 'branches') and not(local-name() = 'receive') and not(local-name() = 'assign') and not(local-name() = 'copy') and not(local-name() = 'from') and not(local-name() = 'to') and not(local-name() = 'empty') and not(local-name() = 'reply') and not(local-name() = 'scope') and not(local-name() = 'messageExchanges') and not(local-name() = 'messageExchange') and not(local-name() = 'eventHandlers') and not(local-name() = 'faultHandlers') and not(local-name() = 'compensationHandler') and not(local-name() = 'terminationHandlers') and not(local-name() = 'compensate') and not(local-name() = 'compensateScope') and not(local-name() = 'catch') and not(local-name() = 'catchAll')  and not(local-name() = 'rethrow') and not(local-name() = 'repeatEvery') and not(local-name() = 'throw') and not(local-name() = 'invoke') and not(local-name() = 'wait') and not(local-name() = 'exit') and not(local-name() = 'query') and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')]</target>
+            <predicate>empty(//*[not(ancestor::*[local-name() = 'literal']) and not(local-name() ='process') and not(local-name() = 'import') and not(local-name() = 'partnerLinks') and not(local-name() = 'partnerLink') and not(local-name() = 'variables') and not(local-name() = 'variable') and not(local-name() = 'correlationSets') and not(local-name() = 'correlationSet') and not(local-name() = 'sequence') and not(local-name() = 'if') and not(local-name() = 'condition') and not(local-name() = 'elseif') and not(local-name() = 'else') and not(local-name() = 'while') and not(local-name() = 'repeatUntil') and not(local-name() = 'pick') and not(local-name() = 'onMessage') and not(local-name() = 'correlations') and not(local-name() = 'correlation') and not(local-name() = 'fromParts') and not(local-name() = 'fromPart') and not(local-name() = 'toParts') and not(local-name() = 'toPart') and not(local-name() = 'onAlarm') and not(local-name() = 'for') and not(local-name() = 'until') and not(local-name() = 'flow') and not(local-name() = 'links') and not(local-name() = 'link') and not(local-name() = 'targets') and not(local-name() = 'joinCondition') and not(local-name() = 'target') and not(local-name() = 'sources') and not(local-name() = 'source') and not(local-name() = 'transitionCondition') and not(local-name() = 'forEach') and not(local-name() = 'startCounterValue') and not(local-name() = 'finalCounterValue') and not(local-name() = 'completionCondition') and not(local-name() = 'branches') and not(local-name() = 'receive') and not(local-name() = 'assign') and not(local-name() = 'copy') and not(local-name() = 'from') and not(local-name() = 'to') and not(local-name() = 'empty') and not(local-name() = 'reply') and not(local-name() = 'scope') and not(local-name() = 'messageExchanges') and not(local-name() = 'messageExchange') and not(local-name() = 'eventHandlers') and not(local-name() = 'faultHandlers') and not(local-name() = 'compensationHandler') and not(local-name() = 'terminationHandlers') and not(local-name() = 'compensate') and not(local-name() = 'compensateScope') and not(local-name() = 'catch') and not(local-name() = 'catchAll')  and not(local-name() = 'rethrow') and not(local-name() = 'repeatEvery') and not(local-name() = 'throw') and not(local-name() = 'invoke') and not(local-name() = 'wait') and not(local-name() = 'exit') and not(local-name() = 'query') and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')])</predicate>
+            <reporting true="passed" false="warning"/>
+            <errorMessage>The process definition contains non-BPEL elements</errorMessage>
+            <diagnostic>non-portable</diagnostic>
+        </testAssertion>
+    </testAssertions>
+</profile>

@@ -1,0 +1,4 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<compensate />
+	<compensateScope target="[referencedActivi ty]" />
+</process>

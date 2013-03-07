@@ -1,0 +1,7 @@
+<process>
+	<partnerLinks> ... </partnerLinks>
+	<Variables> ... </Variables>
+	<faultHandlers> ... </faultHandlers>
+	<eventHandlers> ... </eventHandlers>
+	(activities)*
+</process>

@@ -1,0 +1,14 @@
+<process name="[P-name]" targetNamespace="[targetNamespace]"
+	expressionLanguage="[expressionLanguage]" suppressJoinFailure="yes"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<partnerLinks>
+		[ {P-Interface s} UNION {Qi-Inte rfaces } ]
+	</partnerLinks>
+	<variables>
+		[ {dataObjects} UNION {properties} ]
+	</variables>
+	<correlationSets>
+		[ {Ci-CorrelationKeys} ]
+	</correlationSets>
+	[G]
+</process>

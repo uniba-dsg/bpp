@@ -1,0 +1,6 @@
+<onEvent>
+	<flow>
+		<invoke />
+		<invoke />
+	</flow>
+</onEvent>

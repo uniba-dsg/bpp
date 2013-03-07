@@ -1,0 +1,125 @@
+<process     xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" name =" UseCase " xmlns:wsdlDoc="wsdlDoc">
+	<!-- WSDL imports here -->
+ 	<!-- parterLinks here -->
+ 	<!-- variables here -->
+ 	<!-- correlation set here -->
+ 	<scope name =" UseCase ">
+ 	<eventHandlers >
+ 		<onAlarm >
+ 			<!-- collaboration timeout handling -->
+ 		</onAlarm >
+ 	</eventHandlers >
+ 	<sequence >
+ 		<assign >
+ 			<copy >
+ 				<from >
+ 					<literal >
+ 						<wsdlDoc:stateType >{ first state nameID }</wsdlDoc:stateType >
+ 					</literal >
+ 				</from >
+ 				<to >$processState_internal </to >
+ 			</copy >
+ 		</assign >
+ 		<while >
+ 			<condition >'true '</condition >
+ 			<sequence >
+ 				<if >
+ 					<condition >$ processState_internal = '{ state nameID }'</condition >
+ 					<scope name ="{ state nameID } _Timeout_Scope ">
+						<faultHandlers >
+ 							<catch faultName =" StateTimeout ">
+ 								<empty />
+ 							</catch >
+ 						</faultHandlers >
+ 						<scope name ="{ state nameID } _Scope ">
+ 							<eventHandlers >
+ 								<onAlarm >
+ 									<for >'P6D '</for >
+		 							<scope >
+										<sequence >
+		 									<assign >
+		 										<copy >
+		 											<from >
+		 												<literal >
+			 												<wsdlDoc:stateType >{ nameID of statereached in case of state timeout }</wsdlDoc:stateType >
+														</literal >
+													</from >
+													<to >$ processState_internal </to >
+												</copy >
+											</assign >
+											<throw faultName =" StateTimeout " />
+										</sequence >
+									</scope >
+								</onAlarm >
+							</eventHandlers >
+							<sequence >
+								<assign >
+									<copy >
+										<from >
+											<literal >
+												<wsdlDoc:stateType >{ state inner entry nameID }</wsdlDoc:stateType >
+											</literal >
+										</from >
+										<to >$ processState_internal </to >
+									</copy >
+								</assign >
+								<while >
+									<condition >$processState_internal ='{ state inner entry nameID }'</condition >
+									<sequence >
+										<assign >
+											<copy >
+												<from >
+													<literal >
+														<wsdlDoc:stateType >{ state nameID }</wsdlDoc:stateType >
+													</literal >
+												</from >
+												<to >$ processState </to >
+											</copy >
+										</assign >
+										<invoke operation =" dropProcessState " inputVariable =" processState " />
+										<!-- createInstance ="yes ", if second parameter of function is true , createInstance ="no" otherwise -->
+										<pick createInstance ="yes">
+										</pick >
+									</sequence >
+								</while >
+							</sequence >
+						</scope >
+					</scope >
+				</if >
+				<if >
+					<condition >$processState_internal = '{terminal state nameID }'</condition >
+					<sequence >
+						<assign >
+							<copy >
+								<from >
+									<literal >
+										<wsdlDoc:stateType >{ terminal stat nameID }</wsdlDoc:stateType>
+									</literal >
+								</from >
+								<to >$ processState </to >
+							</copy >
+						</assign >
+						<invoke operation =" dropProcessState " inputVariable =" processState " />
+						<exit />
+					</sequence >
+				</if >	
+			</sequence >
+		</while >
+	</sequence >
+</scope >
+</process >						
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 												
+	 											

@@ -1,0 +1,8 @@
+<onEvent>
+	<sequence>
+		<flow>
+			<receive></receive>
+			<invoke></invoke>
+		</flow>
+	</sequence>
+</onEvent>

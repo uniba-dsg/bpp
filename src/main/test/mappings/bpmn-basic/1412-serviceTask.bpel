@@ -1,0 +1,12 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<invoke name="[Task-name]" partnerLink="[Q, Task-operation- interface ]"
+		portType="[Task-operation-interface]" operation="[Task-operation]">
+	</invoke>
+	<invoke name="[Task-name]" partnerLink="[Q, Task-operation-interface]"
+		portType="[Task-operation-interface]" operation="[Task-operation]">
+		<correlations>
+			<correlation set="[Task-messageFlow-conversation-correlationKey]"
+				initiate="[initial InConversation? 'join':'no']" />
+		</correlations>
+	</invoke>
+</process>

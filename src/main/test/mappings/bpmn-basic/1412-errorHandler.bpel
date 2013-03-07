@@ -1,0 +1,5 @@
+<faultHandlers>
+	<catch faultName=" [e-fa ult ] ">
+		[G]
+	</catch>
+</faultHandlers>

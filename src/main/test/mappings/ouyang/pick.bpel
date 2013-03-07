@@ -1,0 +1,7 @@
+<pick>
+	<onMessage name="e1"></onMessage>
+	<onAlarm name="e2">
+		<empty />
+	</onAlarm>
+	<onMessage name="tr"></onMessage>
+</pick>

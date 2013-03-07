@@ -1,0 +1,10 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<variable name="[counter]" type="xsd:integer" />
+	<forEach counterName="[counter]" parallel="[isSequential? 'no':'yes' ]">
+		<startCounterValue>1</startCounterValue>
+		<finalCounterValue>[condition]</finalCounterValue>
+		<scope>
+			[Task]
+		</scope>
+	</forEach>
+</process>

@@ -1,0 +1,22 @@
+<process xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+	<while>
+		<condition>
+			[p ]
+		</condition>
+		[G]
+	</while>
+	<repeatUntil>
+		[G]
+		<condition>[not p]</condition>
+	</repeatUntil>
+	<while>
+		<condition>
+			[p ]
+		</condition>
+		[G]
+	</while>
+	<repeatUntil>
+		[G]
+		<condition>[not p ]</condition>
+	</repeatUntil>
+</process>

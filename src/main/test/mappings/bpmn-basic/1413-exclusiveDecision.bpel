@@ -1,0 +1,13 @@
+<if>
+	<condition>
+		[p1]
+	</condition>
+	[G1]
+	<elseif>
+		<condition>[p2]</condition>
+		[G2]
+	</elseif>
+	<else>
+		[G3]
+	</else>
+</if>

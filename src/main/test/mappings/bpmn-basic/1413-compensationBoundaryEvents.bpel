@@ -1,0 +1,6 @@
+<scope name="[Activity-name]">
+	<compensationHandler>
+		[G]
+	</compensationHandler>
+	[Activity]
+</scope>

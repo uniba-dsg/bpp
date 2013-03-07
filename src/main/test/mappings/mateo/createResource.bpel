@@ -1,0 +1,13 @@
+<process>
+	<invoke partnerLink="Factory" operation="CreateResource"
+		inputVariable="val,timeout" outputVariable="EPR">
+	</invoke>
+	<assign>
+		<copy>
+			<from variable="EPR" part="ref">
+				<query>/test:CreateOut/wsa:endpointreference</query>
+			</from>
+			<to partnerLink="Factory" />
+		</copy>
+	</assign>
+</process>

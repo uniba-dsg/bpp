@@ -1,0 +1,10 @@
+<onEvent>
+	<if>
+		<condition>
+			<invoke />
+			<else><!-- condition -->
+				<invoke />
+			</else>
+		</condition>
+	</if>
+</onEvent>
