@@ -43,10 +43,10 @@ In the root directory, two csv files are written with aggregated results and sev
 
 ## Project Structure
 
-    src/main/tests/ # the bpel files used for checking correctness of the test assertions
     src/main/java # the main source code
-    src/main/resources/ # xsds for WS-I profiles
+    src/main/resources/ # xsds for WS-I profiles and BPEL files for checking the correctness of test assertions
     src/main/generated # Java classes generated from the WS-I xsds
+    src/test/java # JUnit tests for testing assertions 
 
 # Authors 
 
