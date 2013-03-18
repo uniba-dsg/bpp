@@ -3,6 +3,7 @@ The BPEL Portability Profile
 
 A tool for detecting portability issues in BPEL code
 
+[![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
 
 ## Software Requirements
 - JDK 1.7.X
