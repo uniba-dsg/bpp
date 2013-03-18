@@ -17,7 +17,7 @@ public class AnalysisResult {
 
 	private Path bpelFile;
 
-	private double baselineMetric;
+	private double baseMetric;
 
 	private double weightedElementsMetric;
 
@@ -42,8 +42,8 @@ public class AnalysisResult {
 		return activityMetric;
 	}
 
-	public double getBaselineMetric() {
-		return baselineMetric;
+	public double getBaseMetric() {
+		return baseMetric;
 	}
 
 	public Path getBpelFile() {
@@ -97,7 +97,7 @@ public class AnalysisResult {
 	}
 
 	public void setNumberOfElements(int numOfElements) {
-		baselineMetric = new BaselineMetric(numOfElements, warnings).compute();
+		baseMetric = new BaselineMetric(numOfElements, warnings).compute();
 		weightedElementsMetric = new WeightedElementsMetric(numOfElements,
 				warnings).compute();
 		numberOfElements = numOfElements;

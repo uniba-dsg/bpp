@@ -26,7 +26,7 @@ public class AggregatedResultsWriter {
 	private void writeCSV(String path, String separator) {
 		try (PrintWriter writer = new PrintWriter(path)) {
 			writer.println("file" + separator + "class" + separator
-					+ "baseline" + separator + "weightedElements" + separator
+					+ "base" + separator + "weightedElements" + separator
 					+ "activity" + separator + "serviceCommunication"
 					+ separator + "group" + separator + "total" + separator
 					+ "elements");
@@ -42,7 +42,7 @@ public class AggregatedResultsWriter {
 	private void writeLine(PrintWriter writer, String file, String separator) {
 		AnalysisResult result = results.get(file);
 		writer.println(file + separator + result.getClassification()
-				+ separator + result.getBaselineMetric() + separator
+				+ separator + result.getBaseMetric() + separator
 				+ result.getWeightedElementsMetric() + separator
 				+ result.getActivityMetric() + separator
 				+ result.getServiceCommunicationMetric() + separator
