@@ -105,7 +105,7 @@ public class TestAssertions {
 		r4.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink-UnsupportedReference.bpel");
 		r4.setTarget("//*[local-name() = 'to' and not(empty(@partnerLink))]");
 		r4.setDiagnosticMessage("The process definition dynamically assigns a partnerLink in a <copy> construct");
-		r4.setDegree(3);
+		r4.setDegree(4);
 		r4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		return r4;
@@ -1057,7 +1057,7 @@ public class TestAssertions {
 		r32.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-RepeatableConstructCompensation.bpel");
 		r32.setTarget("//*[local-name() = 'while' or local-name() = 'forEach' or local-name() = 'repeatUntil']//*[local-name() = 'compensationHandler']");
 		r32.setDiagnosticMessage("The process definition uses a compensationHandler within a <while>, <forEach> or <repeatUntil> activity.");
-		r32.setDegree(1);
+		r32.setDegree(2);
 		r32.setType(TestAssertionType.ACTIVITY);
 
 		return r32;
@@ -1212,7 +1212,7 @@ public class TestAssertions {
 		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
 		r35.setTarget("//*[local-name() = 'forEach']");
 		r35.setDiagnosticMessage("The process definition uses the forEach activity.");
-		r35.setDegree(1);
+		r35.setDegree(2);
 		r35.setType(TestAssertionType.ACTIVITY);
 
 		return r35;
@@ -1243,7 +1243,7 @@ public class TestAssertions {
 	private TestAssertion createR37() {
 		TestAssertion r37 = new TestAssertion();
 		r37.setId("bpp-r37");
-		r37.setDescription("use correlations in a onMessage eventHandler in a pick activity");
+		r37.setDescription("use correlations in an onMessage eventHandler in a pick activity");
 		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
 		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitSync.bpel");
 		r37.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-CreateInstance.bpel");

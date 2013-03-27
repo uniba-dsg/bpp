@@ -23,7 +23,7 @@
             <predicate>empty(//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition uses the empty variant for a from-spec in a &lt;copy&gt; construct</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r3-2">
             <description>A process definition must not use the empty variant in a to-spec in an assignment</description>
@@ -31,7 +31,7 @@
             <predicate>empty(//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition uses the empty variant for a to-spec in a &lt;copy&gt; construct.</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r4">
             <description>A process definition should not use dynamic invocation based on the re-assignment of a partnerLink</description>
@@ -39,7 +39,7 @@
             <predicate>empty(//*[local-name() = 'to' and not(empty(@partnerLink))])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition dynamically assigns a partnerLink in a &lt;copy&gt; construct</errorMessage>
-            <diagnostic>partially portable</diagnostic>
+            <diagnostic>limited portability</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r5">
             <description>A process definition may use a query in a copy operation</description>
@@ -327,7 +327,7 @@
             <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltInvalidSource')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition relies on the correct triggering of xsltInvalidSource fault</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r31-3">
             <description>A process definition must not rely on the correct triggering of subLanguageExecutionFault</description>
@@ -335,7 +335,7 @@
             <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'subLanguageExecutionFault')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition relies on the correct triggering of subLanguageExecutionFault</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r31-4">
             <description>A process definition should not rely on the correct triggering of xsltStyleSheetNotFound</description>
@@ -351,7 +351,7 @@
             <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'unsupportedReference')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition relies on the correct triggering of unsupportedReference fault</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r31-6">
             <description>A process definition should not rely on the correct triggering of selectionFailure</description>
@@ -375,7 +375,7 @@
             <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingReceive')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition relies on the correct triggering of conflictingReceive</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r31-9">
             <description>A process definition must not rely on the correct triggering of conflictingRequest</description>
@@ -383,7 +383,7 @@
             <predicate>empty(//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingRequest')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition relies on the correct triggering of conflictingRequest</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r31-10">
             <description>A process definition should not rely on the correct triggering of correlationViolation</description>
@@ -543,7 +543,7 @@
             <predicate>empty(//*[local-name() = 'process' and not(namespace-uri() = 'http://docs.oasis-open.org/wsbpel/2.0/process/executable')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition does not use the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
         <testAssertion enable="true" id="bpp-r40">
             <description>A process definition must not contain non-BPEL elements</description>
@@ -551,7 +551,7 @@
             <predicate>empty(//*[not(ancestor::*[local-name() = 'literal']) and not(local-name() ='process') and not(local-name() = 'import') and not(local-name() = 'partnerLinks') and not(local-name() = 'partnerLink') and not(local-name() = 'variables') and not(local-name() = 'variable') and not(local-name() = 'correlationSets') and not(local-name() = 'correlationSet') and not(local-name() = 'sequence') and not(local-name() = 'if') and not(local-name() = 'condition') and not(local-name() = 'elseif') and not(local-name() = 'else') and not(local-name() = 'while') and not(local-name() = 'repeatUntil') and not(local-name() = 'pick') and not(local-name() = 'onMessage') and not(local-name() = 'correlations') and not(local-name() = 'correlation') and not(local-name() = 'fromParts') and not(local-name() = 'fromPart') and not(local-name() = 'toParts') and not(local-name() = 'toPart') and not(local-name() = 'onAlarm') and not(local-name() = 'for') and not(local-name() = 'until') and not(local-name() = 'flow') and not(local-name() = 'links') and not(local-name() = 'link') and not(local-name() = 'targets') and not(local-name() = 'joinCondition') and not(local-name() = 'target') and not(local-name() = 'sources') and not(local-name() = 'source') and not(local-name() = 'transitionCondition') and not(local-name() = 'forEach') and not(local-name() = 'startCounterValue') and not(local-name() = 'finalCounterValue') and not(local-name() = 'completionCondition') and not(local-name() = 'branches') and not(local-name() = 'receive') and not(local-name() = 'assign') and not(local-name() = 'copy') and not(local-name() = 'from') and not(local-name() = 'to') and not(local-name() = 'empty') and not(local-name() = 'reply') and not(local-name() = 'scope') and not(local-name() = 'messageExchanges') and not(local-name() = 'messageExchange') and not(local-name() = 'eventHandlers') and not(local-name() = 'faultHandlers') and not(local-name() = 'compensationHandler') and not(local-name() = 'terminationHandlers') and not(local-name() = 'compensate') and not(local-name() = 'compensateScope') and not(local-name() = 'catch') and not(local-name() = 'catchAll')  and not(local-name() = 'rethrow') and not(local-name() = 'repeatEvery') and not(local-name() = 'throw') and not(local-name() = 'invoke') and not(local-name() = 'wait') and not(local-name() = 'exit') and not(local-name() = 'query') and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')])</predicate>
             <reporting true="passed" false="warning"/>
             <errorMessage>The process definition contains non-BPEL elements</errorMessage>
-            <diagnostic>non-portable</diagnostic>
+            <diagnostic>nonportable</diagnostic>
         </testAssertion>
     </testAssertions>
 </profile>
