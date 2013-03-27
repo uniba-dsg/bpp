@@ -21,8 +21,8 @@ $ gradlew run -Pargs="<ARGS>"
 # usage: <path-to-files>
 
 # Examples
-$ gradlew run -Pargs="src/main/test/language-features/basic-activities/Assign-Empty.bpel" # Checking a process definition from the test directory 
-$ gradlew run -Pargs="src/main/test/language-features/" # Checking all process definitions in the test directory 
+$ gradlew run -Pargs="src/main/resources/language-features/basic-activities/Assign-Empty.bpel" # Checking a process definition from the test directory 
+$ gradlew run -Pargs="src/main/resources/language-features/" # Checking all process definitions in the test directory 
 
 # Utility gradle tasks
 $ gradlew profile # Generates the profile document containing the test assertions
