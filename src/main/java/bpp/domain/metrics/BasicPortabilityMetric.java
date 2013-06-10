@@ -5,12 +5,13 @@ import java.util.Map;
 
 import bpp.domain.Warning;
 
-public class BaselineMetric {
+public class BasicPortabilityMetric {
 
 	private int numOfElements;
+
 	private Map<Integer, List<Warning>> warningsPerLine;
 
-	public BaselineMetric(int numOfElements,
+	public BasicPortabilityMetric(int numOfElements,
 			Map<Integer, List<Warning>> warningsPerLine) {
 		this.numOfElements = numOfElements;
 		this.warningsPerLine = warningsPerLine;

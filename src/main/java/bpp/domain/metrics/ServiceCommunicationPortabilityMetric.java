@@ -7,12 +7,13 @@ import java.util.List;
 import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
 
-public class ServiceCommunicationMetric {
+public class ServiceCommunicationPortabilityMetric {
 
 	private int numOfActivities;
+
 	private HashMap<Integer, List<Warning>> warnings;
 
-	public ServiceCommunicationMetric(int numOfActivities,
+	public ServiceCommunicationPortabilityMetric(int numOfActivities,
 			HashMap<Integer, List<Warning>> warnings) {
 		this.numOfActivities = numOfActivities;
 		this.warnings = warnings;

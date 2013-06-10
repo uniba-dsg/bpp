@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import bpp.domain.metrics.ActivityMetric;
-import bpp.domain.metrics.BaselineMetric;
-import bpp.domain.metrics.ServiceCommunicationMetric;
-import bpp.domain.metrics.WeightedElementsMetric;
+import bpp.domain.metrics.ActivityPortabilityMetric;
+import bpp.domain.metrics.BasicPortabilityMetric;
+import bpp.domain.metrics.ServiceCommunicationPortabilityMetric;
+import bpp.domain.metrics.WeightedElementsPortabilityMetric;
 
 public class AnalysisResult {
 
@@ -97,19 +97,19 @@ public class AnalysisResult {
 	}
 
 	public void setNumberOfElements(int numOfElements) {
-		baseMetric = new BaselineMetric(numOfElements, warnings).compute();
-		weightedElementsMetric = new WeightedElementsMetric(numOfElements,
+		baseMetric = new BasicPortabilityMetric(numOfElements, warnings).compute();
+		weightedElementsMetric = new WeightedElementsPortabilityMetric(numOfElements,
 				warnings).compute();
 		numberOfElements = numOfElements;
 	}
 
 	public void setNumberOfActivities(int numOfActivities) {
-		activityMetric = new ActivityMetric(numOfActivities, warnings)
+		activityMetric = new ActivityPortabilityMetric(numOfActivities, warnings)
 				.compute();
 	}
 
 	public void setNumberOfServiceActivities(int numOfActivities) {
-		serviceCommunicationMetric = new ServiceCommunicationMetric(
+		serviceCommunicationMetric = new ServiceCommunicationPortabilityMetric(
 				numOfActivities, warnings).compute();
 	}
 

@@ -6,12 +6,13 @@ import java.util.Map;
 import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
 
-public class WeightedElementsMetric {
+public class WeightedElementsPortabilityMetric {
 
 	private int numOfElements;
+
 	private Map<Integer, List<Warning>> warningsPerLine;
 
-	public WeightedElementsMetric(int numOfElements,
+	public WeightedElementsPortabilityMetric(int numOfElements,
 			Map<Integer, List<Warning>> warningsPerLine) {
 		this.numOfElements = numOfElements;
 		this.warningsPerLine = warningsPerLine;
