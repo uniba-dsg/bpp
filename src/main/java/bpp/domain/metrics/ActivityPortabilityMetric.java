@@ -89,8 +89,7 @@ public class ActivityPortabilityMetric implements PortabilityMetric {
 		}
 	}
 
-	@Override
-	public String getLabel() {
+	public static String getLabel() {
 		return "Ma";
 	}
 }

@@ -40,8 +40,7 @@ public class WeightedElementsPortabilityMetric implements PortabilityMetric {
 		return max;
 	}
 
-	@Override
-	public String getLabel() {
+	public static String getLabel() {
 		return "Me";
 	}
 }

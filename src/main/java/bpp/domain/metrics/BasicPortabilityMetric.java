@@ -24,8 +24,7 @@ public class BasicPortabilityMetric implements PortabilityMetric {
 		return basicMeasure;
 	}
 
-	@Override
-	public String getLabel() {
+	public static String getLabel() {
 		return "Mb";
 	}
 

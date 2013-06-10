@@ -4,6 +4,4 @@ public interface PortabilityMetric {
 
 	public abstract double compute();
 
-	public abstract String getLabel();
-
 }
