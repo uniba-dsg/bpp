@@ -5,6 +5,10 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 import bpp.domain.AnalysisResult;
+import bpp.domain.metrics.ActivityPortabilityMetric;
+import bpp.domain.metrics.BasicPortabilityMetric;
+import bpp.domain.metrics.ServiceCommunicationPortabilityMetric;
+import bpp.domain.metrics.WeightedElementsPortabilityMetric;
 
 public class AggregatedResultsWriter {
 
@@ -26,8 +30,10 @@ public class AggregatedResultsWriter {
 	private void writeCSV(String path, String separator) {
 		try (PrintWriter writer = new PrintWriter(path)) {
 			writer.println("file" + separator + "class" + separator
-					+ "base" + separator + "weightedElements" + separator
-					+ "activity" + separator + "serviceCommunication"
+					+ BasicPortabilityMetric.getLabel() + separator
+					+ WeightedElementsPortabilityMetric.getLabel() + separator
+					+ ActivityPortabilityMetric.getLabel() + separator
+					+ ServiceCommunicationPortabilityMetric.getLabel()
 					+ separator + "group" + separator + "total" + separator
 					+ "elements");
 			for (String file : results.keySet()) {
