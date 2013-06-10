@@ -7,7 +7,7 @@ import java.util.List;
 import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
 
-public class ServiceCommunicationPortabilityMetric {
+public class ServiceCommunicationPortabilityMetric implements PortabilityMetric {
 
 	private int numOfActivities;
 
@@ -19,6 +19,7 @@ public class ServiceCommunicationPortabilityMetric {
 		this.warnings = warnings;
 	}
 
+	@Override
 	public double compute() {
 		HashMap<Integer, List<Warning>> warningsPerActivity = groupByActivity(warnings);
 		double cNew = numOfActivities * TestAssertion.NUMBER_OF_ENGINES;
@@ -88,6 +89,11 @@ public class ServiceCommunicationPortabilityMetric {
 			list.add(warning);
 			result.put(line, list);
 		}
+	}
+
+	@Override
+	public String getLabel() {
+		return "Ms";
 	}
 
 }

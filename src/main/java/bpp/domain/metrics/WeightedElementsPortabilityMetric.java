@@ -6,7 +6,7 @@ import java.util.Map;
 import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
 
-public class WeightedElementsPortabilityMetric {
+public class WeightedElementsPortabilityMetric implements PortabilityMetric {
 
 	private int numOfElements;
 
@@ -18,6 +18,7 @@ public class WeightedElementsPortabilityMetric {
 		this.warningsPerLine = warningsPerLine;
 	}
 
+	@Override
 	public double compute() {
 		double cNew = numOfElements * TestAssertion.NUMBER_OF_ENGINES;
 		double cPort = 0;
@@ -37,5 +38,10 @@ public class WeightedElementsPortabilityMetric {
 			}
 		}
 		return max;
+	}
+
+	@Override
+	public String getLabel() {
+		return "Me";
 	}
 }

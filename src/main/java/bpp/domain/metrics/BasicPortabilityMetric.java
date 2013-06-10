@@ -5,7 +5,7 @@ import java.util.Map;
 
 import bpp.domain.Warning;
 
-public class BasicPortabilityMetric {
+public class BasicPortabilityMetric implements PortabilityMetric {
 
 	private int numOfElements;
 
@@ -17,10 +17,16 @@ public class BasicPortabilityMetric {
 		this.warningsPerLine = warningsPerLine;
 	}
 
+	@Override
 	public double compute() {
 		double basicMeasure = 1D - (double) warningsPerLine.keySet().size()
 				/ (double) numOfElements;
 		return basicMeasure;
+	}
+
+	@Override
+	public String getLabel() {
+		return "Mb";
 	}
 
 }
