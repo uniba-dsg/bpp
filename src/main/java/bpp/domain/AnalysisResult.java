@@ -17,13 +17,13 @@ public class AnalysisResult {
 
 	private Path bpelFile;
 
-	private double baseMetric;
+	private double basicPortabilityMetric;
 
-	private double weightedElementsMetric;
+	private double weightedElementsPortabilityMetric;
 
-	private double activityMetric;
+	private double activityPortabilityMetric;
 
-	private double serviceCommunicationMetric;
+	private double serviceCommunicationPortabilityMetric;
 
 	private int numberOfElements;
 
@@ -34,16 +34,16 @@ public class AnalysisResult {
 		return numberOfElements;
 	}
 
-	public double getServiceCommunicationMetric() {
-		return serviceCommunicationMetric;
+	public double getServiceCommunicationPortabilityMetric() {
+		return serviceCommunicationPortabilityMetric;
 	}
 
-	public double getActivityMetric() {
-		return activityMetric;
+	public double getActivityPortabilityMetric() {
+		return activityPortabilityMetric;
 	}
 
-	public double getBaseMetric() {
-		return baseMetric;
+	public double getBasicPortabilityMetric() {
+		return basicPortabilityMetric;
 	}
 
 	public Path getBpelFile() {
@@ -93,23 +93,24 @@ public class AnalysisResult {
 	}
 
 	public double getWeightedElementsMetric() {
-		return weightedElementsMetric;
+		return weightedElementsPortabilityMetric;
 	}
 
 	public void setNumberOfElements(int numOfElements) {
-		baseMetric = new BasicPortabilityMetric(numOfElements, warnings).compute();
-		weightedElementsMetric = new WeightedElementsPortabilityMetric(numOfElements,
+		basicPortabilityMetric = new BasicPortabilityMetric(numOfElements,
 				warnings).compute();
+		weightedElementsPortabilityMetric = new WeightedElementsPortabilityMetric(
+				numOfElements, warnings).compute();
 		numberOfElements = numOfElements;
 	}
 
 	public void setNumberOfActivities(int numOfActivities) {
-		activityMetric = new ActivityPortabilityMetric(numOfActivities, warnings)
-				.compute();
+		activityPortabilityMetric = new ActivityPortabilityMetric(
+				numOfActivities, warnings).compute();
 	}
 
 	public void setNumberOfServiceActivities(int numOfActivities) {
-		serviceCommunicationMetric = new ServiceCommunicationPortabilityMetric(
+		serviceCommunicationPortabilityMetric = new ServiceCommunicationPortabilityMetric(
 				numOfActivities, warnings).compute();
 	}
 

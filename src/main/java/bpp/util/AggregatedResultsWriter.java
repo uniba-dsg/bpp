@@ -42,10 +42,10 @@ public class AggregatedResultsWriter {
 	private void writeLine(PrintWriter writer, String file, String separator) {
 		AnalysisResult result = results.get(file);
 		writer.println(file + separator + result.getClassification()
-				+ separator + result.getBaseMetric() + separator
+				+ separator + result.getBasicPortabilityMetric() + separator
 				+ result.getWeightedElementsMetric() + separator
-				+ result.getActivityMetric() + separator
-				+ result.getServiceCommunicationMetric() + separator
+				+ result.getActivityPortabilityMetric() + separator
+				+ result.getServiceCommunicationPortabilityMetric() + separator
 				+ getGroupString(file) + separator
 				+ result.getViolations().size() + separator
 				+ result.getNumberOfElements());
