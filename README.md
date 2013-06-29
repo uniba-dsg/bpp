@@ -1,7 +1,7 @@
 The BPEL Portability Profile 
 ===
 
-A tool for detecting portability issues in BPEL code. The tool has been used in this revision for an analysis of the portability characteristics of the code produced by several model-driven development approaches. The results of this analysis have been published at the [25th International Conference on Software Engineering and Knowledge Engineering](http://www.ksi.edu/seke/seke13.html). The paper is available [here](http://www.uni-bamberg.de/pi/bereich/forschung/publikationen/13-03-lenhard-wirtz/). The code analyzed is available in this repository under `src/main/resources/mappings`. To replicate the results, checkout the tool and run the command `gradlew run -Pargs="src/main/resources/mappings`".
+A tool for detecting portability issues in BPEL code. The tool has been used in this revision for an analysis of the portability characteristics of the code produced by several model-driven development approaches. The results of this analysis have been published at the [25th International Conference on Software Engineering and Knowledge Engineering](http://www.ksi.edu/seke/seke13.html). The paper is available [here](http://www.uni-bamberg.de/pi/bereich/forschung/publikationen/13-03-lenhard-wirtz/). The code analyzed is available in this repository under `src/main/resources/mappings`. To replicate the results, checkout the tool and run the command `gradlew run -Pargs="src/main/resources/mappings"`.
 
 [![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
 
