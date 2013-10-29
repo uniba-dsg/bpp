@@ -105,7 +105,7 @@ public class TestAssertions {
 		r4.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink-UnsupportedReference.bpel");
 		r4.setTarget("//*[local-name() = 'to' and not(empty(@partnerLink))]");
 		r4.setDiagnosticMessage("The process definition dynamically assigns a partnerLink in a <copy> construct");
-		r4.setDegree(5);
+		r4.setDegree(4);
 		r4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		return r4;
@@ -716,7 +716,9 @@ public class TestAssertions {
 		r30.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-EventHandlers-OnAlarm-Until.bpel");
 		r30.setTarget("//*[@exitOnStandardFault='yes']");
 		r30.setDiagnosticMessage("The process definition sets the exitOnStandardFault attribute to 'yes'");
-		r30.setDegree(1);
+		// Since ODE 1.3.6, all engines conform here. We will leave the
+		// assertion in for reference
+		r30.setDegree(0);
 		r30.setType(TestAssertionType.CONSTRUCT);
 
 		return r30;
@@ -1073,7 +1075,7 @@ public class TestAssertions {
 		r33.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers-FaultNotPropagating.bpel");
 		r33.setTarget("//*[local-name() = 'terminationHandler']");
 		r33.setDiagnosticMessage("The process definition uses terminationHandlers");
-		r33.setDegree(4);
+		r33.setDegree(3);
 		r33.setType(TestAssertionType.ACTIVITY);
 
 		return r33;
@@ -1234,7 +1236,7 @@ public class TestAssertions {
 		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
 		r36.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']");
 		r36.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition");
-		r36.setDegree(4);
+		r36.setDegree(3);
 		r36.setType(TestAssertionType.ACTIVITY_CHILD);
 
 		return r36;
