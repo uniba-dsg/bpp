@@ -5,6 +5,9 @@ A tool for detecting portability issues in BPEL code
 
 [![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
 
+Bpp was used in this revision to calculate the data for the paper "*Measuring the Portability of Executable Service-Oriented Processes*" which was presented at [the 17th IEEE International EDOC Conference](http://planet-sl.org/edoc2013/index.php).
+The paper was awarded **Best Student Paper in Service Science**. You can find [a preprint version of the paper here](http://www.uni-bamberg.de/pi/bereich/forschung/publikationen/13-05-lenhard-wirtz/).
+
 ## Software Requirements
 - JDK 1.7.X
   - `JAVA_HOME` should point to the jdk directory
