@@ -49,3 +49,12 @@ task latex (type: JavaExec, dependsOn: build){
     classpath = sourceSets.main.runtimeClasspath
     main = "bpp.util.LatexSerializer"
 }
+
+jar {
+   from ( configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } ) {
+   	    exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+   }
+   manifest { attributes 'Main-Class': mainClassName }
+}
