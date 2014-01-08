@@ -27,6 +27,7 @@ $ gradlew run -Pargs="src/main/resources/language-features/" # Checking all proc
 # Utility gradle tasks
 $ gradlew profile # Generates the profile document containing the test assertions
 $ gradlew latex # Generates a tex file with latex tables for all test assertions
+$ gradlew jar # Builds an executable jar from the source to be found in `/build/libs`
 
 # Generate project files 
 $ gradlew idea # Generates Intellij IDEA project files
