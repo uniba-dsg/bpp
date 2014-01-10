@@ -1401,6 +1401,28 @@ public class TestAssertions {
 		return r45;
 	}
 
+	private TestAssertion createR46() {
+		TestAssertion r46 = new TestAssertion();
+		r46.setId("bpp-r46");
+		r46.setDescription("use the forEach activity with a negative startCounterValue or finalCounterValue");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		r46.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		r46.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		r46.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and starts-with(text(),'-')) or (local-name() = 'finalCounterValue' and starts-with(text(),'-'))]");
+		r46.setDiagnosticMessage("The process definition uses the forEach activity with a negative startCounterValue or finalCounterValue.");
+		r46.setDegree(4);
+		r46.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
+		return r46;
+	}
+
 	public List<TestAssertion> createStructuredActivityAssertions() {
 		List<TestAssertion> result = new LinkedList<>();
 		result.add(createR34_1());
@@ -1416,6 +1438,7 @@ public class TestAssertions {
 		result.add(createR43());
 		result.add(createR44());
 		result.add(createR45());
+		result.add(createR46());
 
 		return result;
 	}
