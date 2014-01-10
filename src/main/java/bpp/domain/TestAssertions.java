@@ -1423,6 +1423,28 @@ public class TestAssertions {
 		return r46;
 	}
 
+	private TestAssertion createR47() {
+		TestAssertion r47 = new TestAssertion();
+		r47.setId("bpp-r47");
+		r47.setDescription("use the forEach activity with a too large startCounterValue");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		r47.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		r47.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and (number(text()) >= 4294967295))]");
+		r47.setDiagnosticMessage("The process definition uses the forEach activity with a too large startCounterValue.");
+		r47.setDegree(4);
+		r47.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
+		return r47;
+	}
+
 	public List<TestAssertion> createStructuredActivityAssertions() {
 		List<TestAssertion> result = new LinkedList<>();
 		result.add(createR34_1());
@@ -1439,6 +1461,7 @@ public class TestAssertions {
 		result.add(createR44());
 		result.add(createR45());
 		result.add(createR46());
+		result.add(createR47());
 
 		return result;
 	}
