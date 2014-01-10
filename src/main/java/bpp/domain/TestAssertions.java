@@ -1295,6 +1295,23 @@ public class TestAssertions {
 		return r41;
 	}
 
+	private TestAssertion createR42() {
+		TestAssertion r42 = new TestAssertion();
+		r42.setId("bpp-r42");
+		r42.setDescription("use the repeatUntil activity with a condition that uses '='");
+		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
+		r42.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
+		r42.setTarget("//*[local-name() = 'repeatUntil']/*[local-name()='condition' and contains(., '=')]");
+		r42.setDiagnosticMessage("The process definition uses the repeatUntil activity with a condition that uses '='.");
+		r42.setDegree(2);
+		r42.setType(TestAssertionType.ACTIVITY);
+
+		return r42;
+	}
+
 	public List<TestAssertion> createStructuredActivityAssertions() {
 		List<TestAssertion> result = new LinkedList<>();
 		result.add(createR34_1());
@@ -1306,6 +1323,7 @@ public class TestAssertions {
 		result.add(createR37());
 		result.add(createR38());
 		result.add(createR41());
+		result.add(createR42());
 
 		return result;
 	}
