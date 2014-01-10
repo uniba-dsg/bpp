@@ -1312,6 +1312,31 @@ public class TestAssertions {
 		return r42;
 	}
 
+	private TestAssertion createR43() {
+		TestAssertion r43 = new TestAssertion();
+		r43.setId("bpp-r43");
+		r43.setDescription("use the forEach activity with the parallel attribute set to 'yes'");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		r43.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		r43.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		r43.setTarget("//*[local-name() = 'forEach' and (@parallel = 'yes')]");
+		r43.setDiagnosticMessage("The process definition uses the forEach activity with the parallel attribute set to 'yes'.");
+		r43.setDegree(1);
+		r43.setType(TestAssertionType.ACTIVITY);
+
+		return r43;
+	}
+
 	public List<TestAssertion> createStructuredActivityAssertions() {
 		List<TestAssertion> result = new LinkedList<>();
 		result.add(createR34_1());
@@ -1324,6 +1349,7 @@ public class TestAssertions {
 		result.add(createR38());
 		result.add(createR41());
 		result.add(createR42());
+		result.add(createR43());
 
 		return result;
 	}
