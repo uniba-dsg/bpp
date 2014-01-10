@@ -1278,6 +1278,23 @@ public class TestAssertions {
 		return r38;
 	}
 
+	private TestAssertion createR41() {
+		TestAssertion r41 = new TestAssertion();
+		r41.setId("bpp-r41");
+		r41.setDescription("use the repeatUntil activity");
+		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		r41.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
+		r41.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
+		r41.setTarget("//*[local-name() = 'repeatUntil']");
+		r41.setDiagnosticMessage("The process definition uses the repeatUntil activity.");
+		r41.setDegree(1);
+		r41.setType(TestAssertionType.ACTIVITY);
+
+		return r41;
+	}
+
 	public List<TestAssertion> createStructuredActivityAssertions() {
 		List<TestAssertion> result = new LinkedList<>();
 		result.add(createR34_1());
@@ -1288,6 +1305,7 @@ public class TestAssertions {
 		result.add(createR36());
 		result.add(createR37());
 		result.add(createR38());
+		result.add(createR41());
 
 		return result;
 	}
