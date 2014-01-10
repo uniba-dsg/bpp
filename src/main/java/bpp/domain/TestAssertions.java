@@ -1050,6 +1050,25 @@ public class TestAssertions {
 		return r31_18;
 	}
 
+	private TestAssertion createR31_19() {
+		TestAssertion r31_19 = new TestAssertion();
+		r31_19.setId("bpp-r31-19");
+		r31_19.setDescription("rely on the correct triggering of mismatchedAssignmentFailure");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchOrder.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-FaultElement.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-FaultMessageType.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-VariableData.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
+		r31_19.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
+		r31_19.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'mismatchedAssignmentFailure')]");
+		r31_19.setDiagnosticMessage("The process definition relies on the correct triggering of mismatchedAssignmentFailure");
+		r31_19.setDegree(6);
+		r31_19.setType(TestAssertionType.ACTIVITY);
+
+		return r31_19;
+	}
+
 	private TestAssertion createR32() {
 		TestAssertion r32 = new TestAssertion();
 		r32.setDescription("use a compensationHandler within a <while>, <forEach> or <repeatUntil> activity");
@@ -1113,6 +1132,7 @@ public class TestAssertions {
 		result.add(createR31_16());
 		result.add(createR31_17());
 		result.add(createR31_18());
+		result.add(createR31_19());
 		result.add(createR32());
 		result.add(createR33());
 		return result;
