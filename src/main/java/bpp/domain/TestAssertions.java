@@ -49,7 +49,7 @@ public class TestAssertions {
 		r2.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-KeepSrcElementName.bpel");
 		r2.setTarget("//*[@keepSrcElementName='yes']");
 		r2.setDiagnosticMessage("The process definition sets the keepSrcElementName attribute in a <copy> construct to yes");
-		r2.setDegree(6);
+		r2.setDegree(7);
 		r2.setType(TestAssertionType.ACTIVITY_CHILD);
 		return r2;
 	}
@@ -69,7 +69,7 @@ public class TestAssertions {
 		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
 		r3.setTarget("//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)]");
 		r3.setDiagnosticMessage("The process definition uses the empty variant for a from-spec in a <copy> construct");
-		r3.setDegree(8);
+		r3.setDegree(9);
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		return r3;
@@ -90,7 +90,7 @@ public class TestAssertions {
 		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
 		r3.setTarget("//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)]");
 		r3.setDiagnosticMessage("The process definition uses the empty variant for a to-spec in a <copy> construct.");
-		r3.setDegree(8);
+		r3.setDegree(9);
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		return r3;
@@ -135,7 +135,7 @@ public class TestAssertions {
 		r6.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Validate.bpel");
 		r6.setTarget("//*[@validate='yes']");
 		r6.setDiagnosticMessage("The process definition sets the validate attribute of an <assign> activity to 'yes'");
-		r6.setDegree(4);
+		r6.setDegree(5);
 		r6.setType(TestAssertionType.ACTIVITY);
 
 		return r6;
@@ -149,7 +149,7 @@ public class TestAssertions {
 		r7.addContainedFileLocations("src/main/resources/language-features/basic-activities/Invoke-Catch.bpel");
 		r7.setTarget("//*[local-name() = 'invoke']/*[local-name() = 'catch']");
 		r7.setDiagnosticMessage("The process definition uses the <catch> construct inside an <invoke> activity");
-		r7.setDegree(5);
+		r7.setDegree(7);
 		r7.setType(TestAssertionType.ACTIVITY_CHILD);
 		r7.setTestsServiceActivity(true);
 
@@ -229,7 +229,7 @@ public class TestAssertions {
 		r12_1.addContainedFileLocations("src/main/resources/language-features/basic-activities/Invoke-FromParts.bpel");
 		r12_1.setTarget("//*[local-name() = 'invoke']/*[local-name() = 'fromParts']");
 		r12_1.setDiagnosticMessage("The process invokes uses the <fromParts> construct in an <invoke> activity.");
-		r12_1.setDegree(3);
+		r12_1.setDegree(4);
 		r12_1.setType(TestAssertionType.ACTIVITY_CHILD);
 		r12_1.setTestsServiceActivity(true);
 
@@ -245,7 +245,7 @@ public class TestAssertions {
 		r12_2.addContainedFileLocations("src/main/resources/language-features/basic-activities/Invoke-ToParts.bpel");
 		r12_2.setTarget("//*[local-name() = 'invoke']/*[local-name() = 'toParts']");
 		r12_2.setDiagnosticMessage("The process invokes uses the <toParts> construct in an <invoke> activity.");
-		r12_2.setDegree(4);
+		r12_2.setDegree(5);
 		r12_2.setType(TestAssertionType.ACTIVITY_CHILD);
 		r12_2.setTestsServiceActivity(true);
 
@@ -282,7 +282,7 @@ public class TestAssertions {
 		r14_1.addContainedFileLocations("src/main/resources/language-features/basic-activities/ReceiveReply-FromParts.bpel");
 		r14_1.setTarget("//*[local-name() = 'receive']/*[local-name() = 'fromParts']");
 		r14_1.setDiagnosticMessage("The process definition uses the <fromParts> construct in a <receive> activity");
-		r14_1.setDegree(3);
+		r14_1.setDegree(4);
 		r14_1.setType(TestAssertionType.ACTIVITY_CHILD);
 		r14_1.setTestsServiceActivity(true);
 
@@ -298,7 +298,7 @@ public class TestAssertions {
 		r14_2.addContainedFileLocations("src/main/resources/language-features/basic-activities/ReceiveReply-ToParts.bpel");
 		r14_2.setTarget("//*[local-name() = 'reply']/*[local-name() = 'toParts']");
 		r14_2.setDiagnosticMessage("The process definition uses the <toParts> construct in a <reply> activity.");
-		r14_2.setDegree(4);
+		r14_2.setDegree(5);
 		r14_2.setType(TestAssertionType.ACTIVITY_CHILD);
 		r14_2.setTestsServiceActivity(true);
 
@@ -366,7 +366,7 @@ public class TestAssertions {
 		r16.setPrerequisite(createR15());
 		r16.setTarget("//*[local-name() = 'catch' and exists(@faultVariable)]//*[local-name() = 'rethrow']");
 		r16.setDiagnosticMessage("The process definition uses a faultVariable in a <rethrow> activity");
-		r16.setDegree(5);
+		r16.setDegree(6);
 		r16.setType(TestAssertionType.ACTIVITY);
 
 		return r16;
@@ -419,7 +419,7 @@ public class TestAssertions {
 		r19.addContainedFileLocations("src/main/resources/language-features/basic-activities/Validate-InvalidVariables.bpel");
 		r19.setTarget("//*[local-name() = 'validate']");
 		r19.setDiagnosticMessage("The process definition uses the <validate> activity");
-		r19.setDegree(4);
+		r19.setDegree(5);
 		r19.setType(TestAssertionType.ACTIVITY);
 
 		return r19;
@@ -435,7 +435,7 @@ public class TestAssertions {
 		r20.addContainedFileLocations("src/main/resources/language-features/basic-activities/Variables-DefaultInitialization.bpel");
 		r20.setTarget("//*[local-name() = 'variable']/*[local-name() = 'from']");
 		r20.setDiagnosticMessage("The process definition uses the <from> syntax for the default initialization of a variable.");
-		r20.setDegree(2);
+		r20.setDegree(3);
 		r20.setType(TestAssertionType.CONSTRUCT);
 
 		return r20;
@@ -550,7 +550,7 @@ public class TestAssertions {
 		r24.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-EventHandlers-OnAlarm-Until.bpel");
 		r24.setTarget("//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']");
 		r24.setDiagnosticMessage("The process definition uses an <onEvent> eventHandler");
-		r24.setDegree(3);
+		r24.setDegree(5);
 		r24.setType(TestAssertionType.ACTIVITY);
 		r24.setTestsServiceActivity(true);
 
@@ -586,7 +586,7 @@ public class TestAssertions {
 		r26.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-Isolated.bpel");
 		r26.setTarget("//*[local-name() = 'scope' and @isolated='yes']");
 		r26.setDiagnosticMessage("The process definition sets the isolated attribute of a scope to 'yes'");
-		r26.setDegree(1);
+		r26.setDegree(3);
 		r26.setType(TestAssertionType.ACTIVITY);
 
 		return r26;
@@ -605,7 +605,7 @@ public class TestAssertions {
 		r27_1.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-CorrelationSets-InitAsync.bpel");
 		r27_1.setTarget("//*[local-name() = 'scope' and child::*[local-name()='correlationSets']]");
 		r27_1.setDiagnosticMessage("The process definition defines correlationSets on scope-level");
-		r27_1.setDegree(3);
+		r27_1.setDegree(4);
 		r27_1.setType(TestAssertionType.ACTIVITY);
 
 		return r27_1;
@@ -697,7 +697,7 @@ public class TestAssertions {
 		r29.setTarget("//*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']/*[local-name() = 'fromParts']");
 		r29.setPrerequisite(createR24());
 		r29.setDiagnosticMessage("The process definition uses an <onEvent> eventHandler with the fromParts syntax.");
-		r29.setDegree(5);
+		r29.setDegree(6);
 		r29.setType(TestAssertionType.ACTIVITY_CHILD);
 		r29.setTestsServiceActivity(true);
 
@@ -716,9 +716,10 @@ public class TestAssertions {
 		r30.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-EventHandlers-OnAlarm-Until.bpel");
 		r30.setTarget("//*[@exitOnStandardFault='yes']");
 		r30.setDiagnosticMessage("The process definition sets the exitOnStandardFault attribute to 'yes'");
-		// Since ODE 1.3.6, all engines conform here. We will leave the
-		// assertion in for reference
-		r30.setDegree(0);
+		// All engines are correct here for most faults with the exception of
+		// joinFailure, where three engines do not implement the construct
+		// correctly
+		r30.setDegree(3);
 		r30.setType(TestAssertionType.CONSTRUCT);
 
 		return r30;
@@ -736,7 +737,7 @@ public class TestAssertions {
 		r31_1.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_1.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and exists(@faultVariable)]");
 		r31_1.setDiagnosticMessage("The process definition catches a fault using a faultVariable");
-		r31_1.setDegree(1);
+		r31_1.setDegree(2);
 		r31_1.setType(TestAssertionType.ACTIVITY);
 
 		return r31_1;
@@ -754,7 +755,7 @@ public class TestAssertions {
 		r31_2.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_2.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltInvalidSource')]");
 		r31_2.setDiagnosticMessage("The process definition relies on the correct triggering of xsltInvalidSource fault");
-		r31_2.setDegree(7);
+		r31_2.setDegree(8);
 		r31_2.setType(TestAssertionType.ACTIVITY);
 
 		return r31_2;
@@ -772,7 +773,7 @@ public class TestAssertions {
 		r31_3.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_3.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'subLanguageExecutionFault')]");
 		r31_3.setDiagnosticMessage("The process definition relies on the correct triggering of subLanguageExecutionFault");
-		r31_3.setDegree(8);
+		r31_3.setDegree(9);
 		r31_3.setType(TestAssertionType.ACTIVITY);
 
 		return r31_3;
@@ -790,7 +791,7 @@ public class TestAssertions {
 		r31_4.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_4.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltStyleSheetNotFound')]");
 		r31_4.setDiagnosticMessage("The process definition relies on the correct triggering of xsltStyleSheetNotFound");
-		r31_4.setDegree(5);
+		r31_4.setDegree(6);
 		r31_4.setType(TestAssertionType.ACTIVITY);
 
 		return r31_4;
@@ -808,7 +809,7 @@ public class TestAssertions {
 		r31_5.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_5.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'unsupportedReference')]");
 		r31_5.setDiagnosticMessage("The process definition relies on the correct triggering of unsupportedReference fault");
-		r31_5.setDegree(7);
+		r31_5.setDegree(8);
 		r31_5.setType(TestAssertionType.ACTIVITY);
 
 		return r31_5;
@@ -844,7 +845,7 @@ public class TestAssertions {
 		r31_7.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_7.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'ambiguousReceive')]");
 		r31_7.setDiagnosticMessage("The process definition relies on the correct triggering of ambiguousReceive");
-		r31_7.setDegree(6);
+		r31_7.setDegree(7);
 		r31_7.setType(TestAssertionType.ACTIVITY);
 
 		return r31_7;
@@ -862,7 +863,7 @@ public class TestAssertions {
 		r31_8.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_8.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingReceive')]");
 		r31_8.setDiagnosticMessage("The process definition relies on the correct triggering of conflictingReceive");
-		r31_8.setDegree(8);
+		r31_8.setDegree(9);
 		r31_8.setType(TestAssertionType.ACTIVITY);
 
 		return r31_8;
@@ -880,7 +881,7 @@ public class TestAssertions {
 		r31_9.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_9.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingRequest')]");
 		r31_9.setDiagnosticMessage("The process definition relies on the correct triggering of conflictingRequest");
-		r31_9.setDegree(8);
+		r31_9.setDegree(9);
 		r31_9.setType(TestAssertionType.ACTIVITY);
 
 		return r31_9;
@@ -898,7 +899,7 @@ public class TestAssertions {
 		r31_10.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_10.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'correlationViolation')]");
 		r31_10.setDiagnosticMessage("The process definition relies on the correct triggering of correlationViolation");
-		r31_10.setDegree(6);
+		r31_10.setDegree(7);
 		r31_10.setType(TestAssertionType.ACTIVITY);
 
 		return r31_10;
@@ -934,7 +935,7 @@ public class TestAssertions {
 		r31_12.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_12.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidExpressionValue')]");
 		r31_12.setDiagnosticMessage("The process definition relies on the correct triggering of invalidExpressionValue");
-		r31_12.setDegree(6);
+		r31_12.setDegree(3);
 		r31_12.setType(TestAssertionType.ACTIVITY);
 
 		return r31_12;
@@ -952,7 +953,7 @@ public class TestAssertions {
 		r31_13.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_13.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingReply')]");
 		r31_13.setDiagnosticMessage("The process definition relies on the correct triggering of missingReply");
-		r31_13.setDegree(6);
+		r31_13.setDegree(7);
 		r31_13.setType(TestAssertionType.ACTIVITY);
 
 		return r31_13;
@@ -970,7 +971,7 @@ public class TestAssertions {
 		r31_14.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_14.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingRequest')]");
 		r31_14.setDiagnosticMessage("The process definition relies on the correct triggering of missingReply");
-		r31_14.setDegree(6);
+		r31_14.setDegree(7);
 		r31_14.setType(TestAssertionType.ACTIVITY);
 
 		return r31_14;
@@ -988,7 +989,7 @@ public class TestAssertions {
 		r31_15.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_15.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'joinFailure')]");
 		r31_15.setDiagnosticMessage("The process definition relies on the correct triggering of joinFailure");
-		r31_15.setDegree(3);
+		r31_15.setDegree(4);
 		r31_15.setType(TestAssertionType.ACTIVITY);
 
 		return r31_15;
@@ -1006,7 +1007,7 @@ public class TestAssertions {
 		r31_16.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_16.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidVariables')]");
 		r31_16.setDiagnosticMessage("The process definition relies on the correct triggering of invalidVariables");
-		r31_16.setDegree(4);
+		r31_16.setDegree(5);
 		r31_16.setType(TestAssertionType.ACTIVITY);
 
 		return r31_16;
@@ -1024,7 +1025,7 @@ public class TestAssertions {
 		r31_17.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		r31_17.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'completionConditionFailure')]");
 		r31_17.setDiagnosticMessage("The process definition relies on the correct triggering of completionConditionFailure");
-		r31_17.setDegree(5);
+		r31_17.setDegree(6);
 		r31_17.setType(TestAssertionType.ACTIVITY);
 
 		return r31_17;
@@ -1059,7 +1060,7 @@ public class TestAssertions {
 		r32.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-RepeatableConstructCompensation.bpel");
 		r32.setTarget("//*[local-name() = 'while' or local-name() = 'forEach' or local-name() = 'repeatUntil']//*[local-name() = 'compensationHandler']");
 		r32.setDiagnosticMessage("The process definition uses a compensationHandler within a <while>, <forEach> or <repeatUntil> activity.");
-		r32.setDegree(2);
+		r32.setDegree(1);
 		r32.setType(TestAssertionType.ACTIVITY);
 
 		return r32;
@@ -1075,7 +1076,7 @@ public class TestAssertions {
 		r33.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers-FaultNotPropagating.bpel");
 		r33.setTarget("//*[local-name() = 'terminationHandler']");
 		r33.setDiagnosticMessage("The process definition uses terminationHandlers");
-		r33.setDegree(3);
+		r33.setDegree(4);
 		r33.setType(TestAssertionType.ACTIVITY);
 
 		return r33;
@@ -1214,7 +1215,7 @@ public class TestAssertions {
 		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
 		r35.setTarget("//*[local-name() = 'forEach']");
 		r35.setDiagnosticMessage("The process definition uses the forEach activity.");
-		r35.setDegree(2);
+		r35.setDegree(1);
 		r35.setType(TestAssertionType.ACTIVITY);
 
 		return r35;
@@ -1236,7 +1237,7 @@ public class TestAssertions {
 		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
 		r36.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']");
 		r36.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition");
-		r36.setDegree(3);
+		r36.setDegree(4);
 		r36.setType(TestAssertionType.ACTIVITY_CHILD);
 
 		return r36;
@@ -1301,7 +1302,7 @@ public class TestAssertions {
 		r39.addContainedFileLocations("src/main/resources/language-features/basic-activities/NonBPELNamespace.bpel");
 		r39.setTarget("//*[local-name() = 'process' and not(namespace-uri() = 'http://docs.oasis-open.org/wsbpel/2.0/process/executable')]");
 		r39.setDiagnosticMessage("The process definition does not use the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace");
-		r39.setDegree(7);
+		r39.setDegree(8);
 		r39.setType(TestAssertionType.CONSTRUCT);
 
 		return r39;
@@ -1358,7 +1359,7 @@ public class TestAssertions {
 				+ "and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') "
 				+ "and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')]");
 		r40.setDiagnosticMessage("The process definition contains non-BPEL elements");
-		r40.setDegree(7);
+		r40.setDegree(8);
 		r40.setType(TestAssertionType.CONSTRUCT);
 
 		return r40;

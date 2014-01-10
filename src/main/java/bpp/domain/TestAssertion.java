@@ -25,7 +25,7 @@ public class TestAssertion {
 
 	private final String DESCRIPTION_OPENING = "A process definition ";
 
-	public final static int NUMBER_OF_ENGINES = 8;
+	public final static int NUMBER_OF_ENGINES = 9;
 
 	private TestAssertionType type;
 
