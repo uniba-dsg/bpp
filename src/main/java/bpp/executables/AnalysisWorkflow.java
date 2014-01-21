@@ -5,8 +5,10 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import bpp.domain.AnalysisResult;
@@ -22,11 +24,11 @@ public class AnalysisWorkflow {
 
 	private Map<String, AnalysisResult> results;
 
-    private boolean isStrict;
+	private boolean isStrict;
 
 	public AnalysisWorkflow(Path root, boolean isStrict) {
 		this.root = root;
-        this.isStrict = isStrict;
+		this.isStrict = isStrict;
 		results = new HashMap<String, AnalysisResult>();
 	}
 
@@ -35,6 +37,10 @@ public class AnalysisWorkflow {
 			parseFile(root.toString());
 		} else {
 			parseDirectory(root);
+		}
+
+		if (isStrict) {
+			removeRowsWithMissingValues();
 		}
 		writeAggregatedResults();
 	}
@@ -82,6 +88,22 @@ public class AnalysisWorkflow {
 	private void writeResult(AnalysisResult result, String filePath) {
 		WSIReportWriter writer = new WSIReportWriter(result);
 		writer.writeResult(filePath);
+	}
+
+	private void removeRowsWithMissingValues() {
+		ResultValidator validator = new ResultValidator();
+		List<String> toRemove = new ArrayList<>();
+
+		for (String key : results.keySet()) {
+			AnalysisResult row = results.get(key);
+			if (validator.hasMissingValues(row)) {
+				toRemove.add(key);
+			}
+		}
+
+		for (String key : toRemove) {
+			results.remove(key);
+		}
 	}
 
 	private void writeAggregatedResults() {
