@@ -22,8 +22,11 @@ public class AnalysisWorkflow {
 
 	private Map<String, AnalysisResult> results;
 
-	public AnalysisWorkflow(Path root) {
+    private boolean isStrict;
+
+	public AnalysisWorkflow(Path root, boolean isStrict) {
 		this.root = root;
+        this.isStrict = isStrict;
 		results = new HashMap<String, AnalysisResult>();
 	}
 
@@ -72,7 +75,7 @@ public class AnalysisWorkflow {
 	}
 
 	private AnalysisResult analyzeProcess(String filePath) {
-		FileAnalyzer analyzer = new FileAnalyzer(filePath);
+		FileAnalyzer analyzer = new FileAnalyzer(filePath, isStrict);
 		return analyzer.analyze();
 	}
 

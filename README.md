@@ -24,6 +24,9 @@ $ gradlew run -Pargs="<ARGS>"
 $ gradlew run -Pargs="src/main/resources/language-features/basic-activities/Assign-Empty.bpel" # Checking a process definition from the test directory 
 $ gradlew run -Pargs="src/main/resources/language-features/" # Checking all process definitions in the test directory 
 
+# If you use the strict (-s) option, the tool will only parse files with the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace
+$ gradlew run -Pargs="src/main/resources/language-features/ -s" # Checking all process definitions with the proper BPEL namespace in the test directory 
+
 # Utility gradle tasks
 $ gradlew profile # Generates the profile document containing the test assertions
 $ gradlew latex # Generates a tex file with latex tables for all test assertions

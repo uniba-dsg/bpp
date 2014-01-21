@@ -32,7 +32,10 @@ public class FileAnalyzer {
 
 	private AnalysisResult result;
 
-	public FileAnalyzer(String filePath) {
+	private boolean isStrict;
+
+	public FileAnalyzer(String filePath, boolean isStrict) {
+		this.isStrict = isStrict;
 		createRawResult(filePath);
 		try {
 			createXPathEvaluator();
@@ -64,6 +67,10 @@ public class FileAnalyzer {
 	}
 
 	public AnalysisResult analyze() {
+		if (isStrict) {
+			checkNamespace();
+		}
+
 		List<TestAssertion> assertions = new TestAssertions().createAll();
 
 		for (TestAssertion assertion : assertions) {
@@ -75,6 +82,24 @@ public class FileAnalyzer {
 		computeServiceActivityNumber();
 
 		return result;
+	}
+
+	private void checkNamespace() {
+		try {
+			XPathExpression expr = xpath
+					.compile("/*[local-name() = 'process' and namespace-uri() = '"
+							+ BpelNamespaceContext.BPEL_NAMESPACE + "']");
+			@SuppressWarnings("unchecked")
+			List<NodeInfo> matchedNodes = (List<NodeInfo>) expr.evaluate(doc,
+					XPathConstants.NODESET);
+			if (matchedNodes.size() != 1) {
+				throw new AnalysisException(
+						"ERROR: Strict evaluation is enabled and there is no single process root element with the namespace "
+								+ BpelNamespaceContext.BPEL_NAMESPACE);
+			}
+		} catch (XPathExpressionException e) {
+			throw new AnalysisException(e);
+		}
 	}
 
 	private void computeElementNumber() {
