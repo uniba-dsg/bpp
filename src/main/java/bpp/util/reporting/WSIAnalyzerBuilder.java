@@ -21,13 +21,12 @@ import bpp.exceptions.ReportGenerationException;
 import bpp.util.Dates;
 
 public class WSIAnalyzerBuilder {
-	
+
 	private ObjectFactory reportFactory;
-	
+
 	private AnalysisResult result;
-	
-	public WSIAnalyzerBuilder(ObjectFactory reportFactory,
-			AnalysisResult result) {
+
+	public WSIAnalyzerBuilder(ObjectFactory reportFactory, AnalysisResult result) {
 		super();
 		this.reportFactory = reportFactory;
 		this.result = result;
@@ -35,15 +34,15 @@ public class WSIAnalyzerBuilder {
 
 	public void addAnalyzerType(ReportType report) {
 		AnalyzerType analyzer = reportFactory.createAnalyzerType();
-		
+
 		addProfile(analyzer);
-		
+
 		addEnvironment(analyzer);
-		
+
 		addEngine(analyzer);
-		
+
 		addRunConfig(analyzer);
-		
+
 		report.setAnalyzer(analyzer);
 	}
 
@@ -53,7 +52,10 @@ public class WSIAnalyzerBuilder {
 		DocSourceType doc = reportFactory.createDocSourceType();
 		doc.setValue(result.getBpelFile().getFileName().toString());
 		try {
-			doc.setTimestamp(Dates.getSpecificDate(Files.readAttributes(result.getBpelFile(), BasicFileAttributes.class).lastModifiedTime().toMillis()));
+			doc.setTimestamp(Dates.getSpecificDate(Files
+					.readAttributes(result.getBpelFile(),
+							BasicFileAttributes.class).lastModifiedTime()
+					.toMillis()));
 		} catch (IOException e) {
 			throw new ReportGenerationException(e);
 		}
@@ -78,17 +80,19 @@ public class WSIAnalyzerBuilder {
 	private XsltEngineType createXsltEngine() {
 		XsltEngineType xsltEngine = reportFactory.createXsltEngineType();
 		xsltEngine.setName("Saxon He");
-		xsltEngine.setVersion("9.4");
+		xsltEngine.setVersion("9.5.1-1");
 		return xsltEngine;
 	}
 
 	private void addEnvironment(AnalyzerType analyzer) {
 		EnvironmentType environment = reportFactory.createEnvironmentType();
-		EnvironmentItemType operatingSystem = reportFactory.createEnvironmentItemType();
+		EnvironmentItemType operatingSystem = reportFactory
+				.createEnvironmentItemType();
 		operatingSystem.setName(System.getProperty("os.name"));
 		operatingSystem.setVersion(System.getProperty("os.version"));
 		environment.setOperatingSystem(operatingSystem);
-		EnvironmentItemType xmlParser = reportFactory.createEnvironmentItemType();
+		EnvironmentItemType xmlParser = reportFactory
+				.createEnvironmentItemType();
 		xmlParser.setName("JAXB");
 		xmlParser.setVersion("2.0");
 		environment.setXmlParser(xmlParser);
