@@ -59,7 +59,9 @@ public class AggregatedResultsWriter {
 
 	private String getGroupString(String file) {
 		String group = "Misc";
-		if (file.contains("ODE")) {
+		if (file.contains("ohloh")) {
+			group = "ohloh";
+		} else if (file.contains("ODE")) {
 			group = "ODE";
 		} else if (file.contains("ActiveBPEL")) {
 			group = "ActiveBPEL";
