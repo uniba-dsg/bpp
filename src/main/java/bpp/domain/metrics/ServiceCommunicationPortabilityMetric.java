@@ -27,7 +27,7 @@ public class ServiceCommunicationPortabilityMetric implements PortabilityMetric 
 		for (List<Warning> activityWarnings : warningsPerActivity.values()) {
 			cPort += getMaxDegree(activityWarnings);
 		}
-		double activityMeasure = 1 - cPort / cNew;
+		double activityMeasure = 1 - (cPort / cNew);
 		return activityMeasure;
 	}
 

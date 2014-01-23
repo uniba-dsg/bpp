@@ -144,7 +144,7 @@ public class FileAnalyzer {
 			XPathExpression expr = xpath
 					.compile("//*[not(ancestor::*[local-name() = 'literal']) and not(ancestor::*[local-name() = 'query']) "
 							+ "and (local-name() = 'invoke' or local-name() = 'receive' or local-name() = 'reply' "
-							+ "or local-name() = 'onMessage')]");
+							+ "or local-name() = 'onMessage' or local-name() = 'onEvent')]");
 			@SuppressWarnings("unchecked")
 			List<NodeInfo> matchedNodes = (List<NodeInfo>) expr.evaluate(doc,
 					XPathConstants.NODESET);
