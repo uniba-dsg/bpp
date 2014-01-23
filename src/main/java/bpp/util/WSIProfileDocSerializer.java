@@ -14,8 +14,8 @@ import org.ws_i._2002._08._12.profiledoc_2_0.TestAssertions.TestAssertion.Report
 import org.ws_i._2002._08._12.profiledoc_2_0.TestAssertions.TestAssertion.Target;
 import org.ws_i._2002._08._12.profilemarkup_2_0.HtmlMixedType;
 
-import bpp.domain.TestAssertion;
-import bpp.domain.TestAssertions;
+import bpp.domain.assertions.TestAssertion;
+import bpp.domain.assertions.TestAssertions;
 
 public class WSIProfileDocSerializer {
 

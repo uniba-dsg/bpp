@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import bpp.domain.assertions.TestAssertion;
 import bpp.domain.metrics.ActivityPortabilityMetric;
 import bpp.domain.metrics.BasicPortabilityMetric;
 import bpp.domain.metrics.ServiceCommunicationPortabilityMetric;

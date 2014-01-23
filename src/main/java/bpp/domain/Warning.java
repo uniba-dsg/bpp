@@ -1,5 +1,7 @@
 package bpp.domain;
 
+import bpp.domain.assertions.TestAssertion;
+
 public class Warning {
 
 	private TestAssertion assertion;

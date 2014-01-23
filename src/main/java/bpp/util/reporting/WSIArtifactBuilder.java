@@ -12,9 +12,9 @@ import org.ws_i.testing._2009._03.report.ReportType;
 import org.ws_i.testing._2009._03.report.ResultType;
 
 import bpp.domain.AnalysisResult;
-import bpp.domain.TestAssertion;
-import bpp.domain.TestAssertions;
 import bpp.domain.Warning;
+import bpp.domain.assertions.TestAssertion;
+import bpp.domain.assertions.TestAssertions;
 
 public class WSIArtifactBuilder {
 

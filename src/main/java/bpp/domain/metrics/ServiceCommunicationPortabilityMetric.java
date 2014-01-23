@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
+import bpp.domain.assertions.TestAssertion;
 
 public class ServiceCommunicationPortabilityMetric implements PortabilityMetric {
 

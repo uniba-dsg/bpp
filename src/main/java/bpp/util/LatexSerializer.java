@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import bpp.domain.TestAssertion;
-import bpp.domain.TestAssertions;
+import bpp.domain.assertions.TestAssertion;
+import bpp.domain.assertions.TestAssertions;
 
 public class LatexSerializer {
 

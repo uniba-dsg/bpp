@@ -1,7 +1,9 @@
-package bpp.domain;
+package bpp.domain.assertions;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import bpp.domain.PortabilityLevel;
 
 public class TestAssertion {
 

@@ -28,8 +28,8 @@ import org.junit.runners.Parameterized.Parameters;
 import org.xml.sax.InputSource;
 
 import bpp.domain.BpelNamespaceContext;
-import bpp.domain.TestAssertion;
-import bpp.domain.TestAssertions;
+import bpp.domain.assertions.TestAssertion;
+import bpp.domain.assertions.TestAssertions;
 
 @RunWith(value = Parameterized.class)
 public class TestRunner {

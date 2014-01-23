@@ -1,4 +1,4 @@
-package bpp.domain;
+package bpp.domain.assertions;
 
 public enum TestAssertionType {
 	ACTIVITY_CHILD, ACTIVITY, ACTIVITY_GRANDCHILD, CONSTRUCT;

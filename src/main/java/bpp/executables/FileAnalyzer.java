@@ -20,8 +20,8 @@ import org.xml.sax.InputSource;
 
 import bpp.domain.AnalysisResult;
 import bpp.domain.BpelNamespaceContext;
-import bpp.domain.TestAssertion;
-import bpp.domain.TestAssertions;
+import bpp.domain.assertions.TestAssertion;
+import bpp.domain.assertions.TestAssertions;
 import bpp.exceptions.AnalysisException;
 
 public class FileAnalyzer {

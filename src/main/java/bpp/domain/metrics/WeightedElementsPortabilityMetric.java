@@ -3,8 +3,8 @@ package bpp.domain.metrics;
 import java.util.List;
 import java.util.Map;
 
-import bpp.domain.TestAssertion;
 import bpp.domain.Warning;
+import bpp.domain.assertions.TestAssertion;
 
 public class WeightedElementsPortabilityMetric implements PortabilityMetric {
 
