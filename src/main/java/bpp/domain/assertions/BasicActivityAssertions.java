@@ -78,6 +78,48 @@ class BasicActivityAssertions {
 		return r3;
 	}
 
+	private TestAssertion createR3_3() {
+		TestAssertion r3 = new TestAssertion();
+		r3.setId("bpp-r3-3");
+		r3.setDescription("directly assign an int-value in a from-spec in an assignment");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
+		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Int.bpel");
+		r3.setTarget("//*[local-name() = 'from' and (string(number(.)) != 'NaN') and not (./*[text()]) ]");
+		r3.setDiagnosticMessage("The process definition directly assigns an int-value in a from-spec in an assignment.");
+		r3.setDegree(1);
+		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
+		return r3;
+	}
+
+	private TestAssertion createR3_4() {
+		TestAssertion r3 = new TestAssertion();
+		r3.setId("bpp-r3-4");
+		r3.setDescription("assign a property in a from-spec in an assignment");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
+		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
+		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Int.bpel");
+		r3.setTarget("//*[local-name() = 'from' and exists(@property) ]");
+		r3.setDiagnosticMessage("The process definition assigns a property in a from-spec in an assignment.");
+		r3.setDegree(1);
+		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
+		return r3;
+	}
+
 	private TestAssertion createR4() {
 		TestAssertion r4 = new TestAssertion();
 		r4.setId("bpp-r4");
@@ -476,6 +518,8 @@ class BasicActivityAssertions {
 		result.add(createR2());
 		result.add(createR3_1());
 		result.add(createR3_2());
+		result.add(createR3_3());
+		result.add(createR3_4());
 		result.add(createR4());
 		result.add(createR5());
 		result.add(createR6());
