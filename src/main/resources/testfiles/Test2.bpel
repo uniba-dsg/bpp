@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="TimeDependentVariability"
+    targetNamespace="http://lspi.wiai.uniba.de/bpel/Time/TimeDependentVariability"
+    xmlns:tns="http://lspi.wiai.uniba.de/bpel/Time/TimeDependentVariability"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace"
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling"
+    xmlns:ns0="http://lspi.wiai.uniba.de/wsdl/Pattern"
+    xmlns:ns1="http://enterprise.netbeans.org/bpel/"
+    xmlns:sxed2="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:log="http://lspi.wiai.uniba.de/bpel/Logging"
+    xmlns:sxxf="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/XPathFunctions" xmlns:ns2="http://lspi.wiai.uniba.de/wsdl/TimePattern" xmlns:ns3="http://lspi.wiai.uniba.de/wsdl/Patterns/Properties">
+
+    <import namespace="http://lspi.wiai.uniba.de/bpel/Logging" location="../../Logging.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+    <import namespace="http://lspi.wiai.uniba.de/wsdl/TimePattern" location="../TimePattern.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://lspi.wiai.uniba.de/wsdl/Patterns/Properties" location="../../Properties.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="TimePatternLink" partnerLinkType="ns2:TimePattern" myRole="TimePatternPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="SendDateTimeIn" messageType="ns2:TimePatternSendDateTimeRequest"/>
+        <variable name="logMessage" type="log:LogMessage"/>
+    </variables>
+    <correlationSets>
+        <correlationSet name="CorrelationSet1" properties="ns3:correlationId"/>
+    </correlationSets>
+    <sequence>
+        <receive name="Receive" createInstance="yes" partnerLink="TimePatternLink" operation="TimePatternSendDateTime" xmlns:tns="http://lspi.wiai.uniba.de/wsdl/Pattern" portType="ns2:TimePatternPortType" variable="SendDateTimeIn">
+            <correlations>
+                <correlation set="CorrelationSet1" initiate="yes"/>
+            </correlations>
+        </receive>
+        <assign name="Assign1">
+            <sxt:trace>
+                <sxt:log level="info" location="onComplete">
+                    <from variable="logMessage"/>
+                </sxt:log>
+            </sxt:trace>
+            <copy>
+                <from>
+                    <literal>TimeDependentVariability</literal>
+                </from>
+                <to>$logMessage/log:pattern</to>
+            </copy>
+            <copy>
+                <from>'Process started. Waiting for message or timeout (5 sec)'</from>
+                <to>$logMessage/log:message</to>
+            </copy>
+            <copy>
+                <from variable="SendDateTimeIn" part="processId"/>
+                <to>$logMessage/log:processId</to>
+            </copy>
+        </assign>
+        <pick name="Pick">
+            <onMessage partnerLink="TimePatternLink" operation="TimePatternSendDateTime2" portType="ns2:TimePatternPortType" variable="SendDateTimeIn">
+                <correlations>
+                    <correlation set="CorrelationSet1" initiate="no"/>
+                </correlations>
+                <assign name="Assign2">
+                    <sxt:trace>
+                            <sxt:log level="info" location="onComplete">
+                                    <from variable="logMessage"/>
+                                </sxt:log>
+                        </sxt:trace>
+                        <copy>
+                            <from>
+                                    <literal>TimeDependentVariability</literal>
+                                </from>
+                                <to>$logMessage/log:pattern</to>
+                        </copy>
+                        <copy>
+                            <from>'Received Message'</from>
+                            <to>$logMessage/log:message</to>
+                        </copy>
+                    <copy>
+                        <from variable="SendDateTimeIn" part="processId"/>
+                        <to>$logMessage/log:processId</to>
+                    </copy>
+                </assign>
+            </onMessage>
+            <onAlarm>
+                <for>'P0Y0M0DT0H0M5.0S'</for>
+                <assign name="Assign3">
+                    <sxt:trace>
+                            <sxt:log level="info" location="onComplete">
+                                    <from variable="logMessage"/>
+                                </sxt:log>
+                        </sxt:trace>
+                        <copy>
+                            <from>
+                                    <literal>TimeDependentVariability</literal>
+                                </from>
+                                <to>$logMessage/log:pattern</to>
+                        </copy>
+                        <copy>
+                            <from>'Timeout occured'</from>
+                            <to>$logMessage/log:message</to>
+                        </copy>
+                        <copy>
+                            <from variable="SendDateTimeIn" part="processId"/>
+                                <to>$logMessage/log:processId</to>
+                        </copy>
+                </assign>
+            </onAlarm>
+        </pick>
+    </sequence>
+</process>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="RequestWithReferralInitiator"
+    targetNamespace="http://lspi.wiai.uniba.de/bpel/ServiceInteraction/RequestWithReferralInitiator"
+    xmlns:tns="http://lspi.wiai.uniba.de/bpel/ServiceInteraction/RequestWithReferralInitiator"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace"
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling"
+    xmlns:ns0="http://lspi.wiai.uniba.de/wsdl/Pattern"
+    xmlns:ns1="http://enterprise.netbeans.org/bpel/"
+    xmlns:sxed2="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:log="http://lspi.wiai.uniba.de/bpel/Logging" xmlns:ns2="http://lspi.wiai.uniba.de/wsdl/PartnerService" xmlns:ns3="http://lspi.wiai.uniba.de/xsd/PartnerMessage" xmlns:ns4="http://lspi.wiai.uniba.de/wsdl/Patterns/Properties">
+    <import namespace="http://lspi.wiai.uniba.de/wsdl/Pattern" location="../../../Pattern.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://lspi.wiai.uniba.de/bpel/Logging" location="../../../Logging.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+    <import namespace="http://lspi.wiai.uniba.de/wsdl/PartnerService" location="../../../Partner.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://lspi.wiai.uniba.de/wsdl/Patterns/Properties" location="../../../Properties.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="Responder" partnerLinkType="ns2:Partner" partnerRole="PartnerPortTypeRole"/>
+        <partnerLink name="PatternLink" partnerLinkType="ns0:PatternPartnerLinkType" myRole="patternRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="AsyncPartnerOperationIn" messageType="ns2:PartnerOperationRequest"/>
+        <variable name="StartProcessInstanceInput" xmlns:tns="http://lspi.wiai.uniba.de/wsdl/Pattern" messageType="tns:startProcessInstanceRequestMessage"/>
+    </variables>
+    <correlationSets>
+        <correlationSet name="CorrelationSet" properties="ns4:correlationId"/>
+    </correlationSets>
+    <sequence>
+        <receive name="Receive" createInstance="yes" partnerLink="PatternLink" operation="startProcessInstanceAsync" xmlns:tns="http://lspi.wiai.uniba.de/wsdl/Pattern" portType="tns:PatternPortType" variable="StartProcessInstanceInput"/>
+        <assign name="Assign">
+            <sxt:trace>
+                <sxt:log level="info" location="onComplete">
+                    <from variable="AsyncPartnerOperationIn" part="input"/>
+                </sxt:log>
+            </sxt:trace>
+            <copy>
+                <from variable="StartProcessInstanceInput" part="inputPart"/>
+                <to>$AsyncPartnerOperationIn.input/ns3:processId</to>
+            </copy>
+            <copy>
+                <from>'Starting conversation with responder'</from>
+                <to>$AsyncPartnerOperationIn.input/ns3:message</to>
+            </copy>
+            <copy>
+                <from>'RequestWithReferralInitiator'</from>
+                <to>$AsyncPartnerOperationIn.input/ns3:pattern</to>
+            </copy>
+            <copy>
+                <from variable="StartProcessInstanceInput" part="inputPart"/>
+                <to variable="AsyncPartnerOperationIn" part="correlationPart"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke" partnerLink="Responder" operation="AsyncPartnerOperation" portType="ns2:PartnerServicePortType" inputVariable="AsyncPartnerOperationIn">
+            <correlations>
+                <correlation set="CorrelationSet" initiate="yes"/>
+            </correlations>
+        </invoke>
+        <receive name="Receive1" partnerLink="PatternLink" operation="sendAsyncMessage" portType="ns0:PatternPortType" createInstance="no" variable="StartProcessInstanceInput">
+            <correlations>
+                <correlation set="CorrelationSet" initiate="no"/>
+            </correlations>
+        </receive>
+        <assign name="Assign2">
+            <sxt:trace>
+                <sxt:log level="info" location="onComplete">
+                    <from variable="AsyncPartnerOperationIn" part="input"/>
+                </sxt:log>
+            </sxt:trace>
+            <copy>
+                <from>'Received response from third party'</from>
+                <to>$AsyncPartnerOperationIn.input/ns3:message</to>
+            </copy>
+            <copy>
+                <from variable="StartProcessInstanceInput" part="inputPart"/>
+                <to variable="AsyncPartnerOperationIn" part="correlationPart"/>
+            </copy>
+        </assign>
+    </sequence>
+</process>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
