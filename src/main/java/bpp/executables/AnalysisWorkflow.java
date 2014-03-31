@@ -47,16 +47,17 @@ public class AnalysisWorkflow {
 
 	private void parseDirectory(Path directory) {
 		try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory)) {
-			for (Path path : stream) {
-				if (Files.isRegularFile(path)
-						&& path.toString().endsWith(".bpel")) {
-					parseFile(path.toString());
-				} else if (Files.isDirectory(path)) {
-					parseDirectory(path);
-				}
-			}
+			stream.forEach(path -> checkPath(path));
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void checkPath(Path path) {
+		if (Files.isRegularFile(path) && path.toString().endsWith(".bpel")) {
+			parseFile(path.toString());
+		} else if (Files.isDirectory(path)) {
+			parseDirectory(path);
 		}
 	}
 
@@ -101,9 +102,7 @@ public class AnalysisWorkflow {
 			}
 		}
 
-		for (String key : toRemove) {
-			results.remove(key);
-		}
+		toRemove.forEach(key -> results.remove(key));
 	}
 
 	private void writeAggregatedResults() {

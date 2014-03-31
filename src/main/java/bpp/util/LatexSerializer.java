@@ -22,6 +22,7 @@ public class LatexSerializer {
 		try (PrintWriter writer = new PrintWriter(FILE_NAME)) {
 
 			int floatsProcessed = 0;
+
 			for (TestAssertion assertion : assertions) {
 				serializeAssertion(assertion, writer);
 				floatsProcessed++;

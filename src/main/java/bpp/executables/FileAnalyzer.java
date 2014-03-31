@@ -73,9 +73,7 @@ public class FileAnalyzer {
 
 		List<TestAssertion> assertions = new TestAssertions().createAll();
 
-		for (TestAssertion assertion : assertions) {
-			check(assertion);
-		}
+		assertions.forEach(assertion -> check(assertion));
 
 		computeElementNumber();
 		computeActivityNumber();
