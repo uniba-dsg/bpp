@@ -6,7 +6,7 @@ A tool for detecting portability issues in BPEL code
 [![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
 
 ## Software Requirements
-- bpp is tested for support on JDK 1.7.X and JDK 1.8
+- bpp is tested for support on JDK 1.8.X
   - `JAVA_HOME` should point to the jdk directory
   - `PATH` should include `JAVA_HOME/bin`
 
