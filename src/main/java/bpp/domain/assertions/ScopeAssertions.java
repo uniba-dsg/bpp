@@ -30,6 +30,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -97,6 +100,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -129,6 +135,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -164,6 +173,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -199,6 +211,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -234,6 +249,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -269,6 +287,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -298,6 +319,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -364,6 +388,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -390,6 +417,9 @@ class ScopeAssertions {
 
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
@@ -398,12 +428,17 @@ class ScopeAssertions {
 		TestAssertion assertion = new TestAssertion();
 		assertion.setId("bpp-r33");
 		assertion.setDescription("use terminationHandlers");
-		assertion.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-CompensateScope.bpel");
-		assertion.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-Compensate.bpel");
-		assertion.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers.bpel");
-		assertion.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers-FaultNotPropagating.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-CompensateScope.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-Compensate.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers-FaultNotPropagating.bpel");
 		assertion.setTarget("//*[local-name() = 'terminationHandler']");
-		assertion.setDiagnosticMessage("The process definition uses terminationHandlers");
+		assertion
+				.setDiagnosticMessage("The process definition uses terminationHandlers");
 		assertion.setDegree(4);
 		assertion.setType(TestAssertionType.ACTIVITY);
 
@@ -411,6 +446,9 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.OPENESB);
+		assertion.addSupportingEngine(Engines.OPENESB23);
+		assertion.addSupportingEngine(Engines.OPENESB231);
 
 		return assertion;
 	}
