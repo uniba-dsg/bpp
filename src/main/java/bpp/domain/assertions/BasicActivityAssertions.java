@@ -22,6 +22,8 @@ class BasicActivityAssertions {
 
 		r1.addSupportingEngine(Engines.ODE136);
 		r1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r1.addSupportingEngine(Engines.ODE);
+		r1.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r1;
 	}
@@ -100,7 +102,6 @@ class BasicActivityAssertions {
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		r3.addSupportingEngine(Engines.ODE136);
-		r3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r3;
 	}
@@ -125,6 +126,8 @@ class BasicActivityAssertions {
 
 		r3.addSupportingEngine(Engines.ODE136);
 		r3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r3.addSupportingEngine(Engines.ODE);
+		r3.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r3;
 	}
@@ -160,6 +163,8 @@ class BasicActivityAssertions {
 
 		r5.addSupportingEngine(Engines.ODE136);
 		r5.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r5.addSupportingEngine(Engines.ODE);
+		r5.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r5;
 	}
@@ -192,6 +197,8 @@ class BasicActivityAssertions {
 		r7.setTestsServiceActivity(true);
 
 		r7.addSupportingEngine(Engines.ODE136);
+		r7.addSupportingEngine(Engines.ODE);
+		r7.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r7;
 	}
@@ -209,6 +216,8 @@ class BasicActivityAssertions {
 		r8.setTestsServiceActivity(true);
 
 		r8.addSupportingEngine(Engines.ODE136);
+		r8.addSupportingEngine(Engines.ODE);
+		r8.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r8;
 	}
@@ -227,6 +236,8 @@ class BasicActivityAssertions {
 		r9.setTestsServiceActivity(true);
 
 		r9.addSupportingEngine(Engines.ODE136);
+		r9.addSupportingEngine(Engines.ODE);
+		r9.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r9;
 	}
@@ -246,6 +257,8 @@ class BasicActivityAssertions {
 		r10.setTestsServiceActivity(true);
 
 		r10.addSupportingEngine(Engines.ODE136);
+		r10.addSupportingEngine(Engines.ODE);
+		r10.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r10;
 	}
@@ -265,6 +278,8 @@ class BasicActivityAssertions {
 
 		r11.addSupportingEngine(Engines.ODE136);
 		r11.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r11.addSupportingEngine(Engines.ODE);
+		r11.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r11;
 	}
@@ -321,6 +336,7 @@ class BasicActivityAssertions {
 
 		r13.addSupportingEngine(Engines.ODE136);
 		r13.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r13.addSupportingEngine(Engines.ODE);
 
 		return r13;
 	}
@@ -372,6 +388,8 @@ class BasicActivityAssertions {
 
 		r14_3.addSupportingEngine(Engines.ODE136);
 		r14_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r14_3.addSupportingEngine(Engines.ODE);
+		r14_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r14_3;
 	}
@@ -391,6 +409,8 @@ class BasicActivityAssertions {
 
 		r14_4.addSupportingEngine(Engines.ODE136);
 		r14_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r14_4.addSupportingEngine(Engines.ODE);
+		r14_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r14_4;
 	}
@@ -411,6 +431,8 @@ class BasicActivityAssertions {
 
 		r15.addSupportingEngine(Engines.ODE136);
 		r15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r15.addSupportingEngine(Engines.ODE);
+		r15.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r15;
 	}
@@ -432,6 +454,8 @@ class BasicActivityAssertions {
 
 		r16.addSupportingEngine(Engines.ODE136);
 		r16.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r16.addSupportingEngine(Engines.ODE);
+		r16.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r16;
 	}
@@ -454,6 +478,8 @@ class BasicActivityAssertions {
 
 		r17.addSupportingEngine(Engines.ODE136);
 		r17.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r17.addSupportingEngine(Engines.ODE);
+		r17.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r17;
 	}
@@ -475,6 +501,8 @@ class BasicActivityAssertions {
 
 		r18.addSupportingEngine(Engines.ODE136);
 		r18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r18.addSupportingEngine(Engines.ODE);
+		r18.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r18;
 	}
@@ -510,6 +538,8 @@ class BasicActivityAssertions {
 
 		r20.addSupportingEngine(Engines.ODE136);
 		r20.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r20.addSupportingEngine(Engines.ODE);
+		r20.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r20;
 	}
@@ -531,6 +561,8 @@ class BasicActivityAssertions {
 
 		r21.addSupportingEngine(Engines.ODE136);
 		r21.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r21.addSupportingEngine(Engines.ODE);
+		r21.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r21;
 	}
@@ -549,6 +581,8 @@ class BasicActivityAssertions {
 
 		r22.addSupportingEngine(Engines.ODE136);
 		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r22.addSupportingEngine(Engines.ODE);
+		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r22;
 	}
@@ -566,6 +600,8 @@ class BasicActivityAssertions {
 
 		r22.addSupportingEngine(Engines.ODE136);
 		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r22.addSupportingEngine(Engines.ODE);
+		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r22;
 	}

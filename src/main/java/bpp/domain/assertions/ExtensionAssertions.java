@@ -22,6 +22,8 @@ class ExtensionAssertions {
 		// extension namespace
 		r39.addSupportingEngine(Engines.ODE136);
 		r39.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r39.addSupportingEngine(Engines.ODE);
+		r39.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r39;
 	}
@@ -84,6 +86,8 @@ class ExtensionAssertions {
 		// extension element
 		r40.addSupportingEngine(Engines.ODE136);
 		r40.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r40.addSupportingEngine(Engines.ODE);
+		r40.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r40;
 	}

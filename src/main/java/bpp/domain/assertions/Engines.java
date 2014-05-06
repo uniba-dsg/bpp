@@ -1,7 +1,7 @@
 package bpp.domain.assertions;
 
 public enum Engines {
-	ODE136, ODE136_IN_MEMORY, OPENESB231, PETALSESB41, BPELG53, ACTIVEBPEL, WSO2_310, ORCHESTRA;
+	ODE136, ODE136_IN_MEMORY, ODE, ODE_IN_MEMORY, OPENESB231, PETALSESB41, BPELG53, ACTIVEBPEL, WSO2_310, ORCHESTRA;
 
 	@Override
 	public String toString() {
@@ -10,6 +10,10 @@ public enum Engines {
 			return "ode136";
 		case ODE136_IN_MEMORY:
 			return "ode136-in-memory";
+		case ODE:
+			return "ode";
+		case ODE_IN_MEMORY:
+			return "ode-in-memory";
 		case OPENESB231:
 			return "openesb231";
 		case PETALSESB41:

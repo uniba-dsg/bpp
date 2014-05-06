@@ -20,6 +20,8 @@ class ScopeAssertions {
 
 		r23.addSupportingEngine(Engines.ODE136);
 		r23.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r23.addSupportingEngine(Engines.ODE);
+		r23.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r23;
 	}
@@ -43,6 +45,8 @@ class ScopeAssertions {
 
 		r24.addSupportingEngine(Engines.ODE136);
 		r24.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r24.addSupportingEngine(Engines.ODE);
+		r24.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r24;
 	}
@@ -63,6 +67,8 @@ class ScopeAssertions {
 
 		r25.addSupportingEngine(Engines.ODE136);
 		r25.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r25.addSupportingEngine(Engines.ODE);
+		r25.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r25;
 	}
@@ -84,6 +90,8 @@ class ScopeAssertions {
 
 		r26.addSupportingEngine(Engines.ODE136);
 		r26.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r26.addSupportingEngine(Engines.ODE);
+		r26.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r26;
 	}
@@ -106,6 +114,8 @@ class ScopeAssertions {
 
 		r27_1.addSupportingEngine(Engines.ODE136);
 		r27_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r27_1.addSupportingEngine(Engines.ODE);
+		r27_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r27_1;
 	}
@@ -128,6 +138,8 @@ class ScopeAssertions {
 
 		r27_2.addSupportingEngine(Engines.ODE136);
 		r27_2.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r27_2.addSupportingEngine(Engines.ODE);
+		r27_2.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r27_2;
 	}
@@ -150,6 +162,8 @@ class ScopeAssertions {
 
 		r27_3.addSupportingEngine(Engines.ODE136);
 		r27_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r27_3.addSupportingEngine(Engines.ODE);
+		r27_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r27_3;
 	}
@@ -172,6 +186,8 @@ class ScopeAssertions {
 
 		r27_4.addSupportingEngine(Engines.ODE136);
 		r27_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r27_4.addSupportingEngine(Engines.ODE);
+		r27_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r27_4;
 	}
@@ -191,6 +207,8 @@ class ScopeAssertions {
 
 		r28.addSupportingEngine(Engines.ODE136);
 		r28.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r28.addSupportingEngine(Engines.ODE);
+		r28.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r28;
 	}
@@ -232,6 +250,8 @@ class ScopeAssertions {
 
 		r31_1.addSupportingEngine(Engines.ODE136);
 		r31_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_1.addSupportingEngine(Engines.ODE);
+		r31_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_1;
 	}

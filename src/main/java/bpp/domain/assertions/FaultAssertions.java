@@ -118,6 +118,8 @@ class FaultAssertions {
 
 		r31_6.addSupportingEngine(Engines.ODE136);
 		r31_6.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_6.addSupportingEngine(Engines.ODE);
+		r31_6.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_6;
 	}
@@ -211,6 +213,8 @@ class FaultAssertions {
 
 		r31_11.addSupportingEngine(Engines.ODE136);
 		r31_11.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_11.addSupportingEngine(Engines.ODE);
+		r31_11.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_11;
 	}
@@ -232,6 +236,8 @@ class FaultAssertions {
 
 		r31_12.addSupportingEngine(Engines.ODE136);
 		r31_12.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_12.addSupportingEngine(Engines.ODE);
+		r31_12.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_12;
 	}
@@ -289,6 +295,8 @@ class FaultAssertions {
 
 		r31_15.addSupportingEngine(Engines.ODE136);
 		r31_15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_15.addSupportingEngine(Engines.ODE);
+		r31_15.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_15;
 	}
@@ -347,6 +355,8 @@ class FaultAssertions {
 
 		r31_18.addSupportingEngine(Engines.ODE136);
 		r31_18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r31_18.addSupportingEngine(Engines.ODE);
+		r31_18.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
 		return r31_18;
 	}
