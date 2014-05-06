@@ -39,6 +39,9 @@ class ExtensionAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -134,6 +137,9 @@ class ExtensionAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}

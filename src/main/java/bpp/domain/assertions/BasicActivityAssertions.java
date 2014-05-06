@@ -35,6 +35,9 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -162,6 +165,9 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
 		assertion.addSupportingEngine(Engines.OPENESB231);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -208,6 +214,9 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -233,6 +242,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE136);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -266,6 +276,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -320,6 +331,8 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
 
 		return assertion;
 	}
@@ -349,6 +362,9 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -380,6 +396,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -442,6 +459,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -467,6 +485,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -492,6 +511,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -558,6 +578,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -583,6 +604,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -618,6 +640,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -653,6 +676,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -858,6 +882,9 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.PETALS);
+		assertion.addSupportingEngine(Engines.PETALSESB41);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -896,6 +923,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -930,6 +958,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
@@ -962,6 +991,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
 		assertion.addSupportingEngine(Engines.WSO2_310);
+		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
 		return assertion;
 	}
