@@ -6,421 +6,593 @@ import java.util.List;
 class StructuredActivityAssertions {
 
 	private TestAssertion createR34_1() {
-		TestAssertion r34_1 = new TestAssertion();
-		r34_1.setId("bpp-r34-1");
-		r34_1.setDescription("use the flow activity");
-		r34_1.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r34_1.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r34_1.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r34_1.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r34_1.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r34_1.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r34_1.setTarget("//*[local-name() = 'flow']");
-		r34_1.setDiagnosticMessage("The process definition uses the flow activity.");
-		r34_1.setDegree(1);
-		r34_1.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r34-1");
+		assertion.setDescription("use the flow activity");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion.setTarget("//*[local-name() = 'flow']");
+		assertion
+				.setDiagnosticMessage("The process definition uses the flow activity.");
+		assertion.setDegree(1);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r34_1.addSupportingEngine(Engines.ODE136);
-		r34_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r34_1.addSupportingEngine(Engines.ODE);
-		r34_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r34_1.addSupportingEngine(Engines.BPELG53);
-		r34_1.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r34_1;
+		return assertion;
 	}
 
 	private TestAssertion createR34_2() {
-		TestAssertion r34_2 = new TestAssertion();
-		r34_2.setId("bpp-r34-2");
-		r34_2.setDescription("use links");
-		r34_2.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
-		r34_2.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
-		r34_2.setTarget("//*[local-name() = 'links']");
-		r34_2.setDiagnosticMessage("The process definition uses links");
-		r34_2.setDegree(2);
-		r34_2.setType(TestAssertionType.ACTIVITY_CHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r34-2");
+		assertion.setDescription("use links");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
+		assertion.setTarget("//*[local-name() = 'links']");
+		assertion.setDiagnosticMessage("The process definition uses links");
+		assertion.setDegree(2);
+		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
 
-		r34_2.addSupportingEngine(Engines.ODE136);
-		r34_2.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r34_2.addSupportingEngine(Engines.ODE);
-		r34_2.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r34_2.addSupportingEngine(Engines.BPELG53);
-		r34_2.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r34_2;
+		return assertion;
 	}
 
 	private TestAssertion createR34_3() {
-		TestAssertion r34_3 = new TestAssertion();
-		r34_3.setId("bpp-r34-3");
-		r34_3.setDescription("use a joinCondition to merge links");
-		r34_3.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r34_3.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r34_3.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r34_3.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
-		r34_3.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
-		r34_3.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
-		r34_3.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
-		r34_3.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
-		r34_3.setTarget("//*[local-name() = 'joinCondition']");
-		r34_3.setDiagnosticMessage("The process definition uses a joinCondition to merge links");
-		r34_3.setDegree(5);
-		r34_3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r34-3");
+		assertion.setDescription("use a joinCondition to merge links");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
+		assertion.setTarget("//*[local-name() = 'joinCondition']");
+		assertion
+				.setDiagnosticMessage("The process definition uses a joinCondition to merge links");
+		assertion.setDegree(5);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r34_3.addSupportingEngine(Engines.ODE136);
-		r34_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r34_3.addSupportingEngine(Engines.ODE);
-		r34_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r34_3.addSupportingEngine(Engines.BPELG53);
-		r34_3.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r34_3;
+		return assertion;
 	}
 
 	private TestAssertion createR34_4() {
-		TestAssertion r34_4 = new TestAssertion();
-		r34_4.setId("bpp-r34-4");
-		r34_4.setDescription("use a transitionCondition to merge links");
-		r34_4.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r34_4.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r34_4.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r34_4.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
-		r34_4.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
-		r34_4.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
-		r34_4.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
-		r34_4.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
-		r34_4.setTarget("//*[local-name() = 'source' and child::*[local-name() = 'transitionCondition']]");
-		r34_4.setDiagnosticMessage("The process definition uses a transitionCondition to merge links");
-		r34_4.setDegree(2);
-		r34_4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r34-4");
+		assertion.setDescription("use a transitionCondition to merge links");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-JoinFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-ReceiveCreatingInstances.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-SuppressJoinFailure.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-Links-TransitionCondition.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'source' and child::*[local-name() = 'transitionCondition']]");
+		assertion
+				.setDiagnosticMessage("The process definition uses a transitionCondition to merge links");
+		assertion.setDegree(2);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r34_4.addSupportingEngine(Engines.ODE136);
-		r34_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r34_4.addSupportingEngine(Engines.ODE);
-		r34_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r34_4.addSupportingEngine(Engines.BPELG53);
-		r34_4.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r34_4;
+		return assertion;
 	}
 
 	private TestAssertion createR35() {
-		TestAssertion r35 = new TestAssertion();
-		r35.setId("bpp-r35");
-		r35.setDescription("use the forEach activity");
-		r35.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r35.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r35.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r35.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r35.setTarget("//*[local-name() = 'forEach']");
-		r35.setDiagnosticMessage("The process definition uses the forEach activity.");
-		r35.setDegree(1);
-		r35.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r35");
+		assertion.setDescription("use the forEach activity");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion.setTarget("//*[local-name() = 'forEach']");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity.");
+		assertion.setDegree(1);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r35.addSupportingEngine(Engines.ODE136);
-		r35.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r35.addSupportingEngine(Engines.ODE);
-		r35.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r35.addSupportingEngine(Engines.BPELG53);
-		r35.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r35;
+		return assertion;
 	}
 
 	private TestAssertion createR36() {
-		TestAssertion r36 = new TestAssertion();
-		r36.setId("bpp-r36");
-		r36.setDescription("use the forEach activity with a completionCondition");
-		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r36.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r36.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r36.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r36.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r36.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r36.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r36.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']");
-		r36.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition");
-		r36.setDegree(4);
-		r36.setType(TestAssertionType.ACTIVITY_CHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r36");
+		assertion
+				.setDescription("use the forEach activity with a completionCondition");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition");
+		assertion.setDegree(4);
+		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
 
-		r36.addSupportingEngine(Engines.ODE136);
-		r36.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r36.addSupportingEngine(Engines.BPELG53);
-		r36.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r36;
+		return assertion;
 	}
 
 	private TestAssertion createR37() {
-		TestAssertion r37 = new TestAssertion();
-		r37.setId("bpp-r37");
-		r37.setDescription("use correlations in an onMessage eventHandler in a pick activity");
-		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
-		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitSync.bpel");
-		r37.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-CreateInstance.bpel");
-		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-For.bpel");
-		r37.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-Until.bpel");
-		r37.setTarget("//*[local-name() = 'pick']/*[local-name() = 'onMessage']//*[local-name() = 'correlations']");
-		r37.setDiagnosticMessage("The process definition uses correlations in an onMessage eventHandler in a pick activity");
-		r37.setDegree(2);
-		r37.setType(TestAssertionType.ACTIVITY_CHILD);
-		r37.setTestsServiceActivity(true);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r37");
+		assertion
+				.setDescription("use correlations in an onMessage eventHandler in a pick activity");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitSync.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-CreateInstance.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-For.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-Until.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'pick']/*[local-name() = 'onMessage']//*[local-name() = 'correlations']");
+		assertion
+				.setDiagnosticMessage("The process definition uses correlations in an onMessage eventHandler in a pick activity");
+		assertion.setDegree(2);
+		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
+		assertion.setTestsServiceActivity(true);
 
-		r37.addSupportingEngine(Engines.ODE136);
-		r37.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r37.addSupportingEngine(Engines.ODE);
-		r37.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r37.addSupportingEngine(Engines.BPELG53);
-		r37.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r37;
+		return assertion;
 	}
 
 	private TestAssertion createR38() {
-		TestAssertion r38 = new TestAssertion();
-		r38.setId("bpp-r38");
-		r38.setDescription("use a timeout-based eventHandler in a pick activity");
-		r38.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
-		r38.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitSync.bpel");
-		r38.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-CreateInstance.bpel");
-		r38.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-For.bpel");
-		r38.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-Until.bpel");
-		r38.setTarget("//*[local-name() = 'pick']/*[local-name() = 'onAlarm']");
-		r38.setDiagnosticMessage("The process definition uses an onAlarm eventHandler in a pick activity");
-		r38.setDegree(1);
-		r38.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r38");
+		assertion
+				.setDescription("use a timeout-based eventHandler in a pick activity");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitSync.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-CreateInstance.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-For.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-OnAlarm-Until.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'pick']/*[local-name() = 'onAlarm']");
+		assertion
+				.setDiagnosticMessage("The process definition uses an onAlarm eventHandler in a pick activity");
+		assertion.setDegree(1);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r38.addSupportingEngine(Engines.ODE136);
-		r38.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r38.addSupportingEngine(Engines.ODE);
-		r38.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r38.addSupportingEngine(Engines.BPELG53);
-		r38.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r38;
+		return assertion;
 	}
 
 	private TestAssertion createR41() {
-		TestAssertion r41 = new TestAssertion();
-		r41.setId("bpp-r41");
-		r41.setDescription("use the repeatUntil activity");
-		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r41.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r41.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
-		r41.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
-		r41.setTarget("//*[local-name() = 'repeatUntil']");
-		r41.setDiagnosticMessage("The process definition uses the repeatUntil activity.");
-		r41.setDegree(1);
-		r41.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r41");
+		assertion.setDescription("use the repeatUntil activity");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
+		assertion.setTarget("//*[local-name() = 'repeatUntil']");
+		assertion
+				.setDiagnosticMessage("The process definition uses the repeatUntil activity.");
+		assertion.setDegree(1);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r41.addSupportingEngine(Engines.ODE136);
-		r41.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r41.addSupportingEngine(Engines.ODE);
-		r41.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r41.addSupportingEngine(Engines.BPELG53);
-		r41.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r41;
+		return assertion;
 	}
 
 	private TestAssertion createR42() {
-		TestAssertion r42 = new TestAssertion();
-		r42.setId("bpp-r42");
-		r42.setDescription("use the repeatUntil activity with a condition that uses '='");
-		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r42.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
-		r42.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
-		r42.setTarget("//*[local-name() = 'repeatUntil']/*[local-name()='condition' and contains(., '=')]");
-		r42.setDiagnosticMessage("The process definition uses the repeatUntil activity with a condition that uses '='.");
-		r42.setDegree(2);
-		r42.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r42");
+		assertion
+				.setDescription("use the repeatUntil activity with a condition that uses '='");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntil.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/RepeatUntilEquality.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'repeatUntil']/*[local-name()='condition' and contains(., '=')]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the repeatUntil activity with a condition that uses '='.");
+		assertion.setDegree(2);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r42.addSupportingEngine(Engines.ODE136);
-		r42.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r42.addSupportingEngine(Engines.BPELG53);
-		r42.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r42;
+		return assertion;
 	}
 
 	private TestAssertion createR43() {
-		TestAssertion r43 = new TestAssertion();
-		r43.setId("bpp-r43");
-		r43.setDescription("use the forEach activity with the parallel attribute set to 'yes'");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r43.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r43.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r43.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r43.setTarget("//*[local-name() = 'forEach' and (@parallel = 'yes')]");
-		r43.setDiagnosticMessage("The process definition uses the forEach activity with the parallel attribute set to 'yes'.");
-		r43.setDegree(1);
-		r43.setType(TestAssertionType.ACTIVITY);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r43");
+		assertion
+				.setDescription("use the forEach activity with the parallel attribute set to 'yes'");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-BoundaryLinks.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Flow-GraphExample.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach' and (@parallel = 'yes')]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with the parallel attribute set to 'yes'.");
+		assertion.setDegree(1);
+		assertion.setType(TestAssertionType.ACTIVITY);
 
-		r43.addSupportingEngine(Engines.ODE136);
-		r43.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r43.addSupportingEngine(Engines.ODE);
-		r43.addSupportingEngine(Engines.ODE_IN_MEMORY);
-		r43.addSupportingEngine(Engines.BPELG53);
-		r43.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r43;
+		return assertion;
 	}
 
 	private TestAssertion createR44() {
-		TestAssertion r44 = new TestAssertion();
-		r44.setId("bpp-r44");
-		r44.setDescription("use the forEach activity with a completionCondition and parallel attribute set to 'yes'");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r44.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r44.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r44.setTarget("//*[local-name() = 'forEach' and (@parallel = 'yes')]/*[local-name() = 'completionCondition']");
-		r44.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and parallel attribute set to 'yes'.");
-		r44.setDegree(6);
-		r44.setType(TestAssertionType.ACTIVITY_CHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r44");
+		assertion
+				.setDescription("use the forEach activity with a completionCondition and parallel attribute set to 'yes'");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach' and (@parallel = 'yes')]/*[local-name() = 'completionCondition']");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and parallel attribute set to 'yes'.");
+		assertion.setDegree(6);
+		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
 
-		r44.addSupportingEngine(Engines.BPELG53);
-		r44.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r44;
+		return assertion;
 	}
 
 	private TestAssertion createR45() {
-		TestAssertion r45 = new TestAssertion();
-		r45.setId("bpp-r45");
-		r45.setDescription("use the forEach activity with a completionCondition and a negative number of branches");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r45.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r45.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r45.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and starts-with(text(),'-')]");
-		r45.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and a negative number of branches.");
-		r45.setDegree(6);
-		r45.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r45");
+		assertion
+				.setDescription("use the forEach activity with a completionCondition and a negative number of branches");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and starts-with(text(),'-')]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and a negative number of branches.");
+		assertion.setDegree(6);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r45.addSupportingEngine(Engines.ODE136);
-		r45.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r45.addSupportingEngine(Engines.ODE);
-		r45.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
-		return r45;
+		return assertion;
 	}
 
 	private TestAssertion createR46() {
-		TestAssertion r46 = new TestAssertion();
-		r46.setId("bpp-r46");
-		r46.setDescription("use the forEach activity with a negative startCounterValue or finalCounterValue");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r46.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r46.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r46.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r46.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and starts-with(text(),'-')) or (local-name() = 'finalCounterValue' and starts-with(text(),'-'))]");
-		r46.setDiagnosticMessage("The process definition uses the forEach activity with a negative startCounterValue or finalCounterValue.");
-		r46.setDegree(4);
-		r46.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r46");
+		assertion
+				.setDescription("use the forEach activity with a negative startCounterValue or finalCounterValue");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and starts-with(text(),'-')) or (local-name() = 'finalCounterValue' and starts-with(text(),'-'))]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a negative startCounterValue or finalCounterValue.");
+		assertion.setDegree(4);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r46.addSupportingEngine(Engines.ODE136);
-		r46.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r46.addSupportingEngine(Engines.BPELG53);
-		r46.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r46;
+		return assertion;
 	}
 
 	private TestAssertion createR47() {
-		TestAssertion r47 = new TestAssertion();
-		r47.setId("bpp-r47");
-		r47.setDescription("use the forEach activity with a too large startCounterValue");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r47.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r47.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r47.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and (number(text()) >= 4294967295))]");
-		r47.setDiagnosticMessage("The process definition uses the forEach activity with a too large startCounterValue.");
-		r47.setDegree(4);
-		r47.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r47");
+		assertion
+				.setDescription("use the forEach activity with a too large startCounterValue");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and (number(text()) >= 4294967295))]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a too large startCounterValue.");
+		assertion.setDegree(4);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		return r47;
+		return assertion;
 	}
 
 	private TestAssertion createR48() {
-		TestAssertion r48 = new TestAssertion();
-		r48.setId("bpp-r48");
-		r48.setDescription("use the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
-		r48.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
-		r48.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
-		r48.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
-		r48.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and (@successfulBranchesOnly = 'yes')]");
-		r48.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'.");
-		r48.setDegree(4);
-		r48.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r48");
+		assertion
+				.setDescription("use the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-NegativeBranches.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-Parallel.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionCondition-SuccessfulBranchesOnly.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-CompletionConditionFailure.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStartCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-NegativeStopCounter.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-Parallel.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/ForEach-TooLargeStartCounter.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and (@successfulBranchesOnly = 'yes')]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'.");
+		assertion.setDegree(4);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r48.addSupportingEngine(Engines.BPELG53);
-		r48.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r48;
+		return assertion;
 	}
 
 	public List<TestAssertion> createStructuredActivityAssertions() {
