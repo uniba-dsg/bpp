@@ -6,85 +6,121 @@ import java.util.List;
 class BasicActivityAssertions {
 
 	private TestAssertion createR1() {
-		TestAssertion r1 = new TestAssertion();
-		r1.setId("bpp-r1");
-		r1.setDescription("use the doXslTransform() extension function");
-		r1.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
-		r1.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-InvalidSourceFault.bpel");
-		r1.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-SubLanguageExecutionFault.bpel");
-		r1.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
-		r1.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-GetVariableProperty.bpel");
-		r1.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers.bpel");
-		r1.setTarget("//*[local-name() = 'from' and contains(. , 'doXslTransform')] | //*[local-name() = 'to' and contains(. , 'doXslTransform')]");
-		r1.setDiagnosticMessage("The process definition uses the doXslTransform() XPath function");
-		r1.setDegree(5);
-		r1.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r1");
+		assertion.setDescription("use the doXslTransform() extension function");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-InvalidSourceFault.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-SubLanguageExecutionFault.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-GetVariableProperty.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-TerminationHandlers.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'from' and contains(. , 'doXslTransform')] | //*[local-name() = 'to' and contains(. , 'doXslTransform')]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the doXslTransform() XPath function");
+		assertion.setDegree(5);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		r1.addSupportingEngine(Engines.ODE136);
-		r1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
-		r1.addSupportingEngine(Engines.ODE);
-		r1.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE136);
+		assertion.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		assertion.addSupportingEngine(Engines.ODE);
+		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 
-		return r1;
+		return assertion;
 	}
 
 	private TestAssertion createR2() {
-		TestAssertion r2 = new TestAssertion();
-		r2.setId("bpp-r2");
-		r2.setDescription("rely on the semantics of keepSrcElementName in a <copy> construct");
-		r2.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
-		r2.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-KeepSrcElementName.bpel");
-		r2.setTarget("//*[@keepSrcElementName='yes']");
-		r2.setDiagnosticMessage("The process definition sets the keepSrcElementName attribute in a <copy> construct to yes");
-		r2.setDegree(7);
-		r2.setType(TestAssertionType.ACTIVITY_CHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r2");
+		assertion
+				.setDescription("rely on the semantics of keepSrcElementName in a <copy> construct");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-KeepSrcElementName.bpel");
+		assertion.setTarget("//*[@keepSrcElementName='yes']");
+		assertion
+				.setDiagnosticMessage("The process definition sets the keepSrcElementName attribute in a <copy> construct to yes");
+		assertion.setDegree(7);
+		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
 
-		r2.addSupportingEngine(Engines.BPELG53);
-		r2.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
-		return r2;
+		return assertion;
 	}
 
 	private TestAssertion createR3_1() {
-		TestAssertion r3 = new TestAssertion();
-		r3.setId("bpp-r3-1");
-		r3.setDescription("use the empty variant in a from-spec in an assignment");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
-		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
-		r3.setTarget("//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)]");
-		r3.setDiagnosticMessage("The process definition uses the empty variant for a from-spec in a <copy> construct");
-		r3.setDegree(9);
-		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r3-1");
+		assertion
+				.setDescription("use the empty variant in a from-spec in an assignment");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the empty variant for a from-spec in a <copy> construct");
+		assertion.setDegree(9);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		return r3;
+		return assertion;
 	}
 
 	private TestAssertion createR3_2() {
-		TestAssertion r3 = new TestAssertion();
-		r3.setId("bpp-r3-2");
-		r3.setDescription("use the empty variant in a to-spec in an assignment");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
-		r3.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
-		r3.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
-		r3.setTarget("//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)]");
-		r3.setDiagnosticMessage("The process definition uses the empty variant for a to-spec in a <copy> construct.");
-		r3.setDegree(9);
-		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		TestAssertion assertion = new TestAssertion();
+		assertion.setId("bpp-r3-2");
+		assertion
+				.setDescription("use the empty variant in a to-spec in an assignment");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform-XsltStylesheetNotFound.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-DoXslTransform.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Copy-Query.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-From.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Expression-To.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
+		assertion
+				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
+		assertion
+				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Empty.bpel");
+		assertion
+				.setTarget("//*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)]");
+		assertion
+				.setDiagnosticMessage("The process definition uses the empty variant for a to-spec in a <copy> construct.");
+		assertion.setDegree(9);
+		assertion.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
-		return r3;
+		return assertion;
 	}
 
 	private TestAssertion createR3_3() {
@@ -108,6 +144,9 @@ class BasicActivityAssertions {
 		r3.addSupportingEngine(Engines.ODE136);
 		r3.addSupportingEngine(Engines.BPELG53);
 		r3.addSupportingEngine(Engines.ACTIVEBPEL);
+		r3.addSupportingEngine(Engines.OPENESB);
+		r3.addSupportingEngine(Engines.OPENESB23);
+		r3.addSupportingEngine(Engines.OPENESB231);
 
 		return r3;
 	}
@@ -136,6 +175,9 @@ class BasicActivityAssertions {
 		r3.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r3.addSupportingEngine(Engines.BPELG53);
 		r3.addSupportingEngine(Engines.ACTIVEBPEL);
+		r3.addSupportingEngine(Engines.OPENESB);
+		r3.addSupportingEngine(Engines.OPENESB23);
+		r3.addSupportingEngine(Engines.OPENESB231);
 
 		return r3;
 	}
@@ -177,6 +219,9 @@ class BasicActivityAssertions {
 		r5.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r5.addSupportingEngine(Engines.BPELG53);
 		r5.addSupportingEngine(Engines.ACTIVEBPEL);
+		r5.addSupportingEngine(Engines.OPENESB);
+		r5.addSupportingEngine(Engines.OPENESB23);
+		r5.addSupportingEngine(Engines.OPENESB231);
 
 		return r5;
 	}
@@ -195,6 +240,9 @@ class BasicActivityAssertions {
 
 		r6.addSupportingEngine(Engines.BPELG53);
 		r6.addSupportingEngine(Engines.ACTIVEBPEL);
+		r6.addSupportingEngine(Engines.OPENESB);
+		r6.addSupportingEngine(Engines.OPENESB23);
+		r6.addSupportingEngine(Engines.OPENESB231);
 
 		return r6;
 	}
@@ -429,6 +477,9 @@ class BasicActivityAssertions {
 		r14_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r14_3.addSupportingEngine(Engines.BPELG53);
 		r14_3.addSupportingEngine(Engines.ACTIVEBPEL);
+		r14_3.addSupportingEngine(Engines.OPENESB);
+		r14_3.addSupportingEngine(Engines.OPENESB23);
+		r14_3.addSupportingEngine(Engines.OPENESB231);
 
 		return r14_3;
 	}
@@ -452,6 +503,9 @@ class BasicActivityAssertions {
 		r14_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r14_4.addSupportingEngine(Engines.BPELG53);
 		r14_4.addSupportingEngine(Engines.ACTIVEBPEL);
+		r14_4.addSupportingEngine(Engines.OPENESB);
+		r14_4.addSupportingEngine(Engines.OPENESB23);
+		r14_4.addSupportingEngine(Engines.OPENESB231);
 
 		return r14_4;
 	}
@@ -476,6 +530,9 @@ class BasicActivityAssertions {
 		r15.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r15.addSupportingEngine(Engines.BPELG53);
 		r15.addSupportingEngine(Engines.ACTIVEBPEL);
+		r15.addSupportingEngine(Engines.OPENESB);
+		r15.addSupportingEngine(Engines.OPENESB23);
+		r15.addSupportingEngine(Engines.OPENESB231);
 
 		return r15;
 	}
@@ -527,6 +584,9 @@ class BasicActivityAssertions {
 		r17.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r17.addSupportingEngine(Engines.BPELG53);
 		r17.addSupportingEngine(Engines.ACTIVEBPEL);
+		r17.addSupportingEngine(Engines.OPENESB);
+		r17.addSupportingEngine(Engines.OPENESB23);
+		r17.addSupportingEngine(Engines.OPENESB231);
 
 		return r17;
 	}
@@ -571,6 +631,9 @@ class BasicActivityAssertions {
 
 		r19.addSupportingEngine(Engines.BPELG53);
 		r19.addSupportingEngine(Engines.ACTIVEBPEL);
+		r19.addSupportingEngine(Engines.OPENESB);
+		r19.addSupportingEngine(Engines.OPENESB23);
+		r19.addSupportingEngine(Engines.OPENESB231);
 
 		return r19;
 	}
@@ -619,6 +682,9 @@ class BasicActivityAssertions {
 		r21.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r21.addSupportingEngine(Engines.BPELG53);
 		r21.addSupportingEngine(Engines.ACTIVEBPEL);
+		r21.addSupportingEngine(Engines.OPENESB);
+		r21.addSupportingEngine(Engines.OPENESB23);
+		r21.addSupportingEngine(Engines.OPENESB231);
 
 		return r21;
 	}
@@ -641,6 +707,9 @@ class BasicActivityAssertions {
 		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r22.addSupportingEngine(Engines.BPELG53);
 		r22.addSupportingEngine(Engines.ACTIVEBPEL);
+		r22.addSupportingEngine(Engines.OPENESB);
+		r22.addSupportingEngine(Engines.OPENESB23);
+		r22.addSupportingEngine(Engines.OPENESB231);
 
 		return r22;
 	}
@@ -662,6 +731,9 @@ class BasicActivityAssertions {
 		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		r22.addSupportingEngine(Engines.BPELG53);
 		r22.addSupportingEngine(Engines.ACTIVEBPEL);
+		r22.addSupportingEngine(Engines.OPENESB);
+		r22.addSupportingEngine(Engines.OPENESB23);
+		r22.addSupportingEngine(Engines.OPENESB231);
 
 		return r22;
 	}
