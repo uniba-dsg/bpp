@@ -19,6 +19,7 @@ class StructuredActivityAssertions {
 		r34_1.setDiagnosticMessage("The process definition uses the flow activity.");
 		r34_1.setDegree(1);
 		r34_1.setType(TestAssertionType.ACTIVITY);
+		r34_1.addSupportingEngine(Engines.ODE136);
 
 		return r34_1;
 	}
@@ -39,6 +40,7 @@ class StructuredActivityAssertions {
 		r34_2.setDiagnosticMessage("The process definition uses links");
 		r34_2.setDegree(2);
 		r34_2.setType(TestAssertionType.ACTIVITY_CHILD);
+		r34_2.addSupportingEngine(Engines.ODE136);
 
 		return r34_2;
 	}
@@ -59,6 +61,7 @@ class StructuredActivityAssertions {
 		r34_3.setDiagnosticMessage("The process definition uses a joinCondition to merge links");
 		r34_3.setDegree(5);
 		r34_3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		r34_3.addSupportingEngine(Engines.ODE136);
 
 		return r34_3;
 	}
@@ -79,6 +82,7 @@ class StructuredActivityAssertions {
 		r34_4.setDiagnosticMessage("The process definition uses a transitionCondition to merge links");
 		r34_4.setDegree(2);
 		r34_4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		r34_4.addSupportingEngine(Engines.ODE136);
 
 		return r34_4;
 	}
@@ -104,6 +108,7 @@ class StructuredActivityAssertions {
 		r35.setDiagnosticMessage("The process definition uses the forEach activity.");
 		r35.setDegree(1);
 		r35.setType(TestAssertionType.ACTIVITY);
+		r35.addSupportingEngine(Engines.ODE136);
 
 		return r35;
 	}
@@ -126,6 +131,7 @@ class StructuredActivityAssertions {
 		r36.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition");
 		r36.setDegree(4);
 		r36.setType(TestAssertionType.ACTIVITY_CHILD);
+		r36.addSupportingEngine(Engines.ODE136);
 
 		return r36;
 	}
@@ -144,6 +150,7 @@ class StructuredActivityAssertions {
 		r37.setDegree(2);
 		r37.setType(TestAssertionType.ACTIVITY_CHILD);
 		r37.setTestsServiceActivity(true);
+		r37.addSupportingEngine(Engines.ODE136);
 
 		return r37;
 	}
@@ -161,6 +168,7 @@ class StructuredActivityAssertions {
 		r38.setDiagnosticMessage("The process definition uses an onAlarm eventHandler in a pick activity");
 		r38.setDegree(1);
 		r38.setType(TestAssertionType.ACTIVITY);
+		r38.addSupportingEngine(Engines.ODE136);
 
 		return r38;
 	}
@@ -178,6 +186,7 @@ class StructuredActivityAssertions {
 		r41.setDiagnosticMessage("The process definition uses the repeatUntil activity.");
 		r41.setDegree(1);
 		r41.setType(TestAssertionType.ACTIVITY);
+		r41.addSupportingEngine(Engines.ODE136);
 
 		return r41;
 	}
@@ -195,6 +204,7 @@ class StructuredActivityAssertions {
 		r42.setDiagnosticMessage("The process definition uses the repeatUntil activity with a condition that uses '='.");
 		r42.setDegree(2);
 		r42.setType(TestAssertionType.ACTIVITY);
+		r42.addSupportingEngine(Engines.ODE136);
 
 		return r42;
 	}
@@ -220,6 +230,7 @@ class StructuredActivityAssertions {
 		r43.setDiagnosticMessage("The process definition uses the forEach activity with the parallel attribute set to 'yes'.");
 		r43.setDegree(1);
 		r43.setType(TestAssertionType.ACTIVITY);
+		r43.addSupportingEngine(Engines.ODE136);
 
 		return r43;
 	}
@@ -264,6 +275,7 @@ class StructuredActivityAssertions {
 		r45.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and a negative number of branches.");
 		r45.setDegree(6);
 		r45.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		r45.addSupportingEngine(Engines.ODE136);
 
 		return r45;
 	}
@@ -286,6 +298,7 @@ class StructuredActivityAssertions {
 		r46.setDiagnosticMessage("The process definition uses the forEach activity with a negative startCounterValue or finalCounterValue.");
 		r46.setDegree(4);
 		r46.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+		r46.addSupportingEngine(Engines.ODE136);
 
 		return r46;
 	}

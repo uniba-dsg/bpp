@@ -1,5 +1,7 @@
 package bpp.domain.assertions;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,6 +37,8 @@ public class TestAssertion {
 
 	private String predicate;
 
+	private List<Engines> supportedBy;
+
 	public TestAssertion() {
 		containedFileLocations = new LinkedList<>();
 		nonContainedFileLocations = new LinkedList<>();
@@ -43,6 +47,43 @@ public class TestAssertion {
 		target = "";
 		diagnosticMessage = "";
 		level = PortabilityLevel.NONPORTABLE;
+		supportedBy = new ArrayList<>();
+	}
+
+	/**
+	 * Returns a list of engines that do support the feature tested by this
+	 * assertion
+	 * 
+	 * @return the list of engines supporting the feature
+	 */
+	public List<Engines> getSupportingEngines() {
+		return Collections.unmodifiableList(supportedBy);
+	}
+
+	/**
+	 * Returns a list of engines that do not support the feature tested by this
+	 * assertion
+	 * 
+	 * @return the list of engines not supporting the feature
+	 */
+	public List<Engines> getNotSupportingEngines() {
+		List<Engines> result = new ArrayList<>(Engines.values().length
+				- supportedBy.size());
+
+		for (Engines engine : Engines.values()) {
+			if (!supportedBy.contains(engine)) {
+				result.add(engine);
+			}
+		}
+
+		return result;
+	}
+
+	public void addSupportingEngine(Engines supportingEngine) {
+		if (supportingEngine == null) {
+			throw new IllegalArgumentException("Input must not be null");
+		}
+		this.supportedBy.add(supportingEngine);
 	}
 
 	public String getPredicate() {

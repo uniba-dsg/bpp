@@ -18,6 +18,10 @@ class ExtensionAssertions {
 		r39.setDegree(8);
 		r39.setType(TestAssertionType.CONSTRUCT);
 
+		// we cannot strictly diagnose that an engine does not support a given
+		// extension namespace
+		r39.addSupportingEngine(Engines.ODE136);
+
 		return r39;
 	}
 
@@ -74,6 +78,10 @@ class ExtensionAssertions {
 		r40.setDiagnosticMessage("The process definition contains non-BPEL elements");
 		r40.setDegree(8);
 		r40.setType(TestAssertionType.CONSTRUCT);
+
+		// we cannot strictly diagnose that an engine does not support a given
+		// extension element
+		r40.addSupportingEngine(Engines.ODE136);
 
 		return r40;
 	}
