@@ -24,6 +24,9 @@ class StructuredActivityAssertions {
 		r34_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r34_1.addSupportingEngine(Engines.ODE);
 		r34_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r34_1.addSupportingEngine(Engines.BPELG53);
+		r34_1.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r34_1;
 	}
 
@@ -48,6 +51,8 @@ class StructuredActivityAssertions {
 		r34_2.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r34_2.addSupportingEngine(Engines.ODE);
 		r34_2.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r34_2.addSupportingEngine(Engines.BPELG53);
+		r34_2.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r34_2;
 	}
@@ -73,6 +78,8 @@ class StructuredActivityAssertions {
 		r34_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r34_3.addSupportingEngine(Engines.ODE);
 		r34_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r34_3.addSupportingEngine(Engines.BPELG53);
+		r34_3.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r34_3;
 	}
@@ -98,6 +105,8 @@ class StructuredActivityAssertions {
 		r34_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r34_4.addSupportingEngine(Engines.ODE);
 		r34_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r34_4.addSupportingEngine(Engines.BPELG53);
+		r34_4.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r34_4;
 	}
@@ -128,6 +137,8 @@ class StructuredActivityAssertions {
 		r35.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r35.addSupportingEngine(Engines.ODE);
 		r35.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r35.addSupportingEngine(Engines.BPELG53);
+		r35.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r35;
 	}
@@ -153,6 +164,8 @@ class StructuredActivityAssertions {
 
 		r36.addSupportingEngine(Engines.ODE136);
 		r36.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r36.addSupportingEngine(Engines.BPELG53);
+		r36.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r36;
 	}
@@ -176,6 +189,8 @@ class StructuredActivityAssertions {
 		r37.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r37.addSupportingEngine(Engines.ODE);
 		r37.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r37.addSupportingEngine(Engines.BPELG53);
+		r37.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r37;
 	}
@@ -198,6 +213,8 @@ class StructuredActivityAssertions {
 		r38.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r38.addSupportingEngine(Engines.ODE);
 		r38.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r38.addSupportingEngine(Engines.BPELG53);
+		r38.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r38;
 	}
@@ -220,6 +237,8 @@ class StructuredActivityAssertions {
 		r41.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r41.addSupportingEngine(Engines.ODE);
 		r41.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r41.addSupportingEngine(Engines.BPELG53);
+		r41.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r41;
 	}
@@ -240,6 +259,8 @@ class StructuredActivityAssertions {
 
 		r42.addSupportingEngine(Engines.ODE136);
 		r42.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r42.addSupportingEngine(Engines.BPELG53);
+		r42.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r42;
 	}
@@ -270,6 +291,8 @@ class StructuredActivityAssertions {
 		r43.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r43.addSupportingEngine(Engines.ODE);
 		r43.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r43.addSupportingEngine(Engines.BPELG53);
+		r43.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r43;
 	}
@@ -292,6 +315,9 @@ class StructuredActivityAssertions {
 		r44.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and parallel attribute set to 'yes'.");
 		r44.setDegree(6);
 		r44.setType(TestAssertionType.ACTIVITY_CHILD);
+
+		r44.addSupportingEngine(Engines.BPELG53);
+		r44.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r44;
 	}
@@ -344,6 +370,8 @@ class StructuredActivityAssertions {
 
 		r46.addSupportingEngine(Engines.ODE136);
 		r46.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r46.addSupportingEngine(Engines.BPELG53);
+		r46.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r46;
 	}
@@ -388,6 +416,9 @@ class StructuredActivityAssertions {
 		r48.setDiagnosticMessage("The process definition uses the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'.");
 		r48.setDegree(4);
 		r48.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
+		r48.addSupportingEngine(Engines.BPELG53);
+		r48.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r48;
 	}

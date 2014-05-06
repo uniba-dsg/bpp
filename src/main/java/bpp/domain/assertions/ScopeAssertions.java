@@ -22,6 +22,8 @@ class ScopeAssertions {
 		r23.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r23.addSupportingEngine(Engines.ODE);
 		r23.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r23.addSupportingEngine(Engines.BPELG53);
+		r23.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r23;
 	}
@@ -47,6 +49,8 @@ class ScopeAssertions {
 		r24.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r24.addSupportingEngine(Engines.ODE);
 		r24.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r24.addSupportingEngine(Engines.BPELG53);
+		r24.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r24;
 	}
@@ -69,6 +73,8 @@ class ScopeAssertions {
 		r25.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r25.addSupportingEngine(Engines.ODE);
 		r25.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r25.addSupportingEngine(Engines.BPELG53);
+		r25.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r25;
 	}
@@ -92,6 +98,8 @@ class ScopeAssertions {
 		r26.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r26.addSupportingEngine(Engines.ODE);
 		r26.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r26.addSupportingEngine(Engines.BPELG53);
+		r26.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r26;
 	}
@@ -116,6 +124,8 @@ class ScopeAssertions {
 		r27_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r27_1.addSupportingEngine(Engines.ODE);
 		r27_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r27_1.addSupportingEngine(Engines.BPELG53);
+		r27_1.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r27_1;
 	}
@@ -140,6 +150,8 @@ class ScopeAssertions {
 		r27_2.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r27_2.addSupportingEngine(Engines.ODE);
 		r27_2.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r27_2.addSupportingEngine(Engines.BPELG53);
+		r27_2.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r27_2;
 	}
@@ -164,6 +176,8 @@ class ScopeAssertions {
 		r27_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r27_3.addSupportingEngine(Engines.ODE);
 		r27_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r27_3.addSupportingEngine(Engines.BPELG53);
+		r27_3.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r27_3;
 	}
@@ -188,6 +202,8 @@ class ScopeAssertions {
 		r27_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r27_4.addSupportingEngine(Engines.ODE);
 		r27_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r27_4.addSupportingEngine(Engines.BPELG53);
+		r27_4.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r27_4;
 	}
@@ -209,6 +225,8 @@ class ScopeAssertions {
 		r28.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r28.addSupportingEngine(Engines.ODE);
 		r28.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r28.addSupportingEngine(Engines.BPELG53);
+		r28.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r28;
 	}
@@ -229,6 +247,9 @@ class ScopeAssertions {
 		r29.setDegree(6);
 		r29.setType(TestAssertionType.ACTIVITY_CHILD);
 		r29.setTestsServiceActivity(true);
+
+		r29.addSupportingEngine(Engines.BPELG53);
+		r29.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r29;
 	}
@@ -252,6 +273,8 @@ class ScopeAssertions {
 		r31_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_1.addSupportingEngine(Engines.ODE);
 		r31_1.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_1.addSupportingEngine(Engines.BPELG53);
+		r31_1.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_1;
 	}
@@ -268,6 +291,9 @@ class ScopeAssertions {
 		r32.setDiagnosticMessage("The process definition uses a compensationHandler within a <while>, <forEach> or <repeatUntil> activity.");
 		r32.setDegree(1);
 		r32.setType(TestAssertionType.ACTIVITY);
+
+		r32.addSupportingEngine(Engines.BPELG53);
+		r32.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r32;
 	}
@@ -287,6 +313,8 @@ class ScopeAssertions {
 
 		r33.addSupportingEngine(Engines.ODE136);
 		r33.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r33.addSupportingEngine(Engines.BPELG53);
+		r33.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r33;
 	}

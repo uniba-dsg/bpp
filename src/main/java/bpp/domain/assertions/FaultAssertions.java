@@ -25,6 +25,8 @@ class FaultAssertions {
 
 		r30.addSupportingEngine(Engines.ODE136);
 		r30.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+		r30.addSupportingEngine(Engines.BPELG53);
+		r30.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r30;
 	}
@@ -80,6 +82,9 @@ class FaultAssertions {
 		r31_4.setDegree(6);
 		r31_4.setType(TestAssertionType.ACTIVITY);
 
+		r31_4.addSupportingEngine(Engines.BPELG53);
+		r31_4.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r31_4;
 	}
 
@@ -120,6 +125,8 @@ class FaultAssertions {
 		r31_6.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_6.addSupportingEngine(Engines.ODE);
 		r31_6.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_6.addSupportingEngine(Engines.BPELG53);
+		r31_6.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_6;
 	}
@@ -138,6 +145,9 @@ class FaultAssertions {
 		r31_7.setDiagnosticMessage("The process definition relies on the correct triggering of ambiguousReceive");
 		r31_7.setDegree(7);
 		r31_7.setType(TestAssertionType.ACTIVITY);
+
+		r31_7.addSupportingEngine(Engines.BPELG53);
+		r31_7.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_7;
 	}
@@ -193,6 +203,9 @@ class FaultAssertions {
 		r31_10.setDegree(7);
 		r31_10.setType(TestAssertionType.ACTIVITY);
 
+		r31_10.addSupportingEngine(Engines.BPELG53);
+		r31_10.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r31_10;
 	}
 
@@ -215,6 +228,8 @@ class FaultAssertions {
 		r31_11.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_11.addSupportingEngine(Engines.ODE);
 		r31_11.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_11.addSupportingEngine(Engines.BPELG53);
+		r31_11.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_11;
 	}
@@ -238,6 +253,8 @@ class FaultAssertions {
 		r31_12.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_12.addSupportingEngine(Engines.ODE);
 		r31_12.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_12.addSupportingEngine(Engines.BPELG53);
+		r31_12.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_12;
 	}
@@ -257,6 +274,9 @@ class FaultAssertions {
 		r31_13.setDegree(7);
 		r31_13.setType(TestAssertionType.ACTIVITY);
 
+		r31_13.addSupportingEngine(Engines.BPELG53);
+		r31_13.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r31_13;
 	}
 
@@ -274,6 +294,9 @@ class FaultAssertions {
 		r31_14.setDiagnosticMessage("The process definition relies on the correct triggering of missingReply");
 		r31_14.setDegree(7);
 		r31_14.setType(TestAssertionType.ACTIVITY);
+
+		r31_14.addSupportingEngine(Engines.BPELG53);
+		r31_14.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_14;
 	}
@@ -297,6 +320,8 @@ class FaultAssertions {
 		r31_15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_15.addSupportingEngine(Engines.ODE);
 		r31_15.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_15.addSupportingEngine(Engines.BPELG53);
+		r31_15.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_15;
 	}
@@ -316,6 +341,9 @@ class FaultAssertions {
 		r31_16.setDegree(5);
 		r31_16.setType(TestAssertionType.ACTIVITY);
 
+		r31_16.addSupportingEngine(Engines.BPELG53);
+		r31_16.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r31_16;
 	}
 
@@ -333,6 +361,9 @@ class FaultAssertions {
 		r31_17.setDiagnosticMessage("The process definition relies on the correct triggering of completionConditionFailure");
 		r31_17.setDegree(6);
 		r31_17.setType(TestAssertionType.ACTIVITY);
+
+		r31_17.addSupportingEngine(Engines.BPELG53);
+		r31_17.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_17;
 	}
@@ -357,6 +388,8 @@ class FaultAssertions {
 		r31_18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r31_18.addSupportingEngine(Engines.ODE);
 		r31_18.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r31_18.addSupportingEngine(Engines.BPELG53);
+		r31_18.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_18;
 	}
@@ -376,6 +409,9 @@ class FaultAssertions {
 		r31_19.setDiagnosticMessage("The process definition relies on the correct triggering of mismatchedAssignmentFailure");
 		r31_19.setDegree(6);
 		r31_19.setType(TestAssertionType.ACTIVITY);
+
+		r31_19.addSupportingEngine(Engines.BPELG53);
+		r31_19.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r31_19;
 	}

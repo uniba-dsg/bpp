@@ -24,6 +24,8 @@ class ExtensionAssertions {
 		r39.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r39.addSupportingEngine(Engines.ODE);
 		r39.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r39.addSupportingEngine(Engines.BPELG53);
+		r39.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r39;
 	}
@@ -88,6 +90,8 @@ class ExtensionAssertions {
 		r40.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r40.addSupportingEngine(Engines.ODE);
 		r40.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r40.addSupportingEngine(Engines.BPELG53);
+		r40.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r40;
 	}

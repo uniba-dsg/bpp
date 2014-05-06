@@ -38,6 +38,10 @@ class BasicActivityAssertions {
 		r2.setDiagnosticMessage("The process definition sets the keepSrcElementName attribute in a <copy> construct to yes");
 		r2.setDegree(7);
 		r2.setType(TestAssertionType.ACTIVITY_CHILD);
+
+		r2.addSupportingEngine(Engines.BPELG53);
+		r2.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r2;
 	}
 
@@ -102,6 +106,8 @@ class BasicActivityAssertions {
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		r3.addSupportingEngine(Engines.ODE136);
+		r3.addSupportingEngine(Engines.BPELG53);
+		r3.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r3;
 	}
@@ -128,6 +134,8 @@ class BasicActivityAssertions {
 		r3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r3.addSupportingEngine(Engines.ODE);
 		r3.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r3.addSupportingEngine(Engines.BPELG53);
+		r3.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r3;
 	}
@@ -145,6 +153,8 @@ class BasicActivityAssertions {
 		r4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
 		r4.addSupportingEngine(Engines.ODE136);
+		r4.addSupportingEngine(Engines.BPELG53);
+		r4.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r4;
 	}
@@ -165,6 +175,8 @@ class BasicActivityAssertions {
 		r5.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r5.addSupportingEngine(Engines.ODE);
 		r5.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r5.addSupportingEngine(Engines.BPELG53);
+		r5.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r5;
 	}
@@ -180,6 +192,9 @@ class BasicActivityAssertions {
 		r6.setDiagnosticMessage("The process definition sets the validate attribute of an <assign> activity to 'yes'");
 		r6.setDegree(5);
 		r6.setType(TestAssertionType.ACTIVITY);
+
+		r6.addSupportingEngine(Engines.BPELG53);
+		r6.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r6;
 	}
@@ -199,6 +214,8 @@ class BasicActivityAssertions {
 		r7.addSupportingEngine(Engines.ODE136);
 		r7.addSupportingEngine(Engines.ODE);
 		r7.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r7.addSupportingEngine(Engines.BPELG53);
+		r7.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r7;
 	}
@@ -218,6 +235,8 @@ class BasicActivityAssertions {
 		r8.addSupportingEngine(Engines.ODE136);
 		r8.addSupportingEngine(Engines.ODE);
 		r8.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r8.addSupportingEngine(Engines.BPELG53);
+		r8.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r8;
 	}
@@ -238,6 +257,8 @@ class BasicActivityAssertions {
 		r9.addSupportingEngine(Engines.ODE136);
 		r9.addSupportingEngine(Engines.ODE);
 		r9.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r9.addSupportingEngine(Engines.BPELG53);
+		r9.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r9;
 	}
@@ -259,6 +280,8 @@ class BasicActivityAssertions {
 		r10.addSupportingEngine(Engines.ODE136);
 		r10.addSupportingEngine(Engines.ODE);
 		r10.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r10.addSupportingEngine(Engines.BPELG53);
+		r10.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r10;
 	}
@@ -297,6 +320,9 @@ class BasicActivityAssertions {
 		r12_1.setType(TestAssertionType.ACTIVITY_CHILD);
 		r12_1.setTestsServiceActivity(true);
 
+		r12_1.addSupportingEngine(Engines.BPELG53);
+		r12_1.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r12_1;
 	}
 
@@ -312,6 +338,9 @@ class BasicActivityAssertions {
 		r12_2.setDegree(5);
 		r12_2.setType(TestAssertionType.ACTIVITY_CHILD);
 		r12_2.setTestsServiceActivity(true);
+
+		r12_2.addSupportingEngine(Engines.BPELG53);
+		r12_2.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r12_2;
 	}
@@ -337,6 +366,8 @@ class BasicActivityAssertions {
 		r13.addSupportingEngine(Engines.ODE136);
 		r13.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r13.addSupportingEngine(Engines.ODE);
+		r13.addSupportingEngine(Engines.BPELG53);
+		r13.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r13;
 	}
@@ -354,6 +385,9 @@ class BasicActivityAssertions {
 		r14_1.setType(TestAssertionType.ACTIVITY_CHILD);
 		r14_1.setTestsServiceActivity(true);
 
+		r14_1.addSupportingEngine(Engines.BPELG53);
+		r14_1.addSupportingEngine(Engines.ACTIVEBPEL);
+
 		return r14_1;
 	}
 
@@ -369,6 +403,9 @@ class BasicActivityAssertions {
 		r14_2.setDegree(5);
 		r14_2.setType(TestAssertionType.ACTIVITY_CHILD);
 		r14_2.setTestsServiceActivity(true);
+
+		r14_2.addSupportingEngine(Engines.BPELG53);
+		r14_2.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r14_2;
 	}
@@ -390,6 +427,8 @@ class BasicActivityAssertions {
 		r14_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r14_3.addSupportingEngine(Engines.ODE);
 		r14_3.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r14_3.addSupportingEngine(Engines.BPELG53);
+		r14_3.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r14_3;
 	}
@@ -411,6 +450,8 @@ class BasicActivityAssertions {
 		r14_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r14_4.addSupportingEngine(Engines.ODE);
 		r14_4.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r14_4.addSupportingEngine(Engines.BPELG53);
+		r14_4.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r14_4;
 	}
@@ -433,6 +474,8 @@ class BasicActivityAssertions {
 		r15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r15.addSupportingEngine(Engines.ODE);
 		r15.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r15.addSupportingEngine(Engines.BPELG53);
+		r15.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r15;
 	}
@@ -456,6 +499,8 @@ class BasicActivityAssertions {
 		r16.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r16.addSupportingEngine(Engines.ODE);
 		r16.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r16.addSupportingEngine(Engines.BPELG53);
+		r16.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r16;
 	}
@@ -480,6 +525,8 @@ class BasicActivityAssertions {
 		r17.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r17.addSupportingEngine(Engines.ODE);
 		r17.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r17.addSupportingEngine(Engines.BPELG53);
+		r17.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r17;
 	}
@@ -503,6 +550,8 @@ class BasicActivityAssertions {
 		r18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r18.addSupportingEngine(Engines.ODE);
 		r18.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r18.addSupportingEngine(Engines.BPELG53);
+		r18.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r18;
 	}
@@ -519,6 +568,9 @@ class BasicActivityAssertions {
 		r19.setDiagnosticMessage("The process definition uses the <validate> activity");
 		r19.setDegree(5);
 		r19.setType(TestAssertionType.ACTIVITY);
+
+		r19.addSupportingEngine(Engines.BPELG53);
+		r19.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r19;
 	}
@@ -540,6 +592,8 @@ class BasicActivityAssertions {
 		r20.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r20.addSupportingEngine(Engines.ODE);
 		r20.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r20.addSupportingEngine(Engines.BPELG53);
+		r20.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r20;
 	}
@@ -563,6 +617,8 @@ class BasicActivityAssertions {
 		r21.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r21.addSupportingEngine(Engines.ODE);
 		r21.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r21.addSupportingEngine(Engines.BPELG53);
+		r21.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r21;
 	}
@@ -583,6 +639,8 @@ class BasicActivityAssertions {
 		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r22.addSupportingEngine(Engines.ODE);
 		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r22.addSupportingEngine(Engines.BPELG53);
+		r22.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r22;
 	}
@@ -602,6 +660,8 @@ class BasicActivityAssertions {
 		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 		r22.addSupportingEngine(Engines.ODE);
 		r22.addSupportingEngine(Engines.ODE_IN_MEMORY);
+		r22.addSupportingEngine(Engines.BPELG53);
+		r22.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return r22;
 	}
