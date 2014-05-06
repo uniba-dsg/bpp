@@ -38,6 +38,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
 		assertion.addSupportingEngine(Engines.OPENESB231);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
@@ -190,6 +193,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
 		assertion.addSupportingEngine(Engines.OPENESB231);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
@@ -341,6 +347,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
 		assertion.addSupportingEngine(Engines.OPENESB231);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
@@ -378,6 +387,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
 		assertion.addSupportingEngine(Engines.OPENESB231);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
@@ -472,6 +484,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
@@ -574,6 +589,9 @@ class FaultAssertions {
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
+		assertion.addSupportingEngine(Engines.WSO2_212);
+		assertion.addSupportingEngine(Engines.WSO2_300);
+		assertion.addSupportingEngine(Engines.WSO2_310);
 
 		return assertion;
 	}
