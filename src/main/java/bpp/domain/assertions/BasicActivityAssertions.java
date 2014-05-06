@@ -19,7 +19,9 @@ class BasicActivityAssertions {
 		r1.setDiagnosticMessage("The process definition uses the doXslTransform() XPath function");
 		r1.setDegree(5);
 		r1.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
 		r1.addSupportingEngine(Engines.ODE136);
+		r1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r1;
 	}
@@ -97,6 +99,9 @@ class BasicActivityAssertions {
 		r3.setDegree(1);
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
+		r3.addSupportingEngine(Engines.ODE136);
+		r3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+
 		return r3;
 	}
 
@@ -118,6 +123,9 @@ class BasicActivityAssertions {
 		r3.setDegree(1);
 		r3.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 
+		r3.addSupportingEngine(Engines.ODE136);
+		r3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
+
 		return r3;
 	}
 
@@ -132,6 +140,7 @@ class BasicActivityAssertions {
 		r4.setDiagnosticMessage("The process definition dynamically assigns a partnerLink in a <copy> construct");
 		r4.setDegree(4);
 		r4.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
 		r4.addSupportingEngine(Engines.ODE136);
 
 		return r4;
@@ -148,7 +157,9 @@ class BasicActivityAssertions {
 		r5.setDiagnosticMessage("The process definition uses a query in a copy operation");
 		r5.setDegree(1);
 		r5.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
 		r5.addSupportingEngine(Engines.ODE136);
+		r5.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r5;
 	}
@@ -179,6 +190,7 @@ class BasicActivityAssertions {
 		r7.setDegree(7);
 		r7.setType(TestAssertionType.ACTIVITY_CHILD);
 		r7.setTestsServiceActivity(true);
+
 		r7.addSupportingEngine(Engines.ODE136);
 
 		return r7;
@@ -195,6 +207,7 @@ class BasicActivityAssertions {
 		r8.setDegree(3);
 		r8.setType(TestAssertionType.ACTIVITY_CHILD);
 		r8.setTestsServiceActivity(true);
+
 		r8.addSupportingEngine(Engines.ODE136);
 
 		return r8;
@@ -212,6 +225,7 @@ class BasicActivityAssertions {
 		r9.setDegree(3);
 		r9.setType(TestAssertionType.ACTIVITY_CHILD);
 		r9.setTestsServiceActivity(true);
+
 		r9.addSupportingEngine(Engines.ODE136);
 
 		return r9;
@@ -230,6 +244,7 @@ class BasicActivityAssertions {
 		r10.setDegree(4);
 		r10.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
 		r10.setTestsServiceActivity(true);
+
 		r10.addSupportingEngine(Engines.ODE136);
 
 		return r10;
@@ -247,7 +262,9 @@ class BasicActivityAssertions {
 		r11.setDegree(5);
 		r11.setType(TestAssertionType.ACTIVITY);
 		r11.setTestsServiceActivity(true);
+
 		r11.addSupportingEngine(Engines.ODE136);
+		r11.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r11;
 	}
@@ -301,7 +318,9 @@ class BasicActivityAssertions {
 		r13.setDegree(3);
 		r13.setType(TestAssertionType.ACTIVITY_CHILD);
 		r13.setTestsServiceActivity(true);
+
 		r13.addSupportingEngine(Engines.ODE136);
+		r13.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r13;
 	}
@@ -350,7 +369,9 @@ class BasicActivityAssertions {
 		r14_3.setDegree(2);
 		r14_3.setType(TestAssertionType.ACTIVITY);
 		r14_3.setTestsServiceActivity(true);
+
 		r14_3.addSupportingEngine(Engines.ODE136);
+		r14_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r14_3;
 	}
@@ -367,7 +388,9 @@ class BasicActivityAssertions {
 		r14_4.setDegree(1);
 		r14_4.setType(TestAssertionType.ACTIVITY);
 		r14_4.setTestsServiceActivity(true);
+
 		r14_4.addSupportingEngine(Engines.ODE136);
+		r14_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r14_4;
 	}
@@ -385,7 +408,9 @@ class BasicActivityAssertions {
 		r15.setDiagnosticMessage("The process definition uses the <rethrow> activity.");
 		r15.setDegree(3);
 		r15.setType(TestAssertionType.ACTIVITY);
+
 		r15.addSupportingEngine(Engines.ODE136);
+		r15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r15;
 	}
@@ -404,7 +429,9 @@ class BasicActivityAssertions {
 		r16.setDiagnosticMessage("The process definition uses a faultVariable in a <rethrow> activity");
 		r16.setDegree(6);
 		r16.setType(TestAssertionType.ACTIVITY);
+
 		r16.addSupportingEngine(Engines.ODE136);
+		r16.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r16;
 	}
@@ -424,7 +451,9 @@ class BasicActivityAssertions {
 		r17.setDiagnosticMessage("The process definition uses the throw activity to propagate faults out of the scope of the process");
 		r17.setDegree(3);
 		r17.setType(TestAssertionType.ACTIVITY);
+
 		r17.addSupportingEngine(Engines.ODE136);
+		r17.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r17;
 	}
@@ -443,7 +472,9 @@ class BasicActivityAssertions {
 		r18.setDiagnosticMessage("The process definition uses the <throw> activity in combination with a faultVariable");
 		r18.setDegree(5);
 		r18.setType(TestAssertionType.ACTIVITY);
+
 		r18.addSupportingEngine(Engines.ODE136);
+		r18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r18;
 	}
@@ -476,7 +507,9 @@ class BasicActivityAssertions {
 		r20.setDiagnosticMessage("The process definition uses the <from> syntax for the default initialization of a variable.");
 		r20.setDegree(3);
 		r20.setType(TestAssertionType.CONSTRUCT);
+
 		r20.addSupportingEngine(Engines.ODE136);
+		r20.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r20;
 	}
@@ -495,7 +528,9 @@ class BasicActivityAssertions {
 		r21.setDiagnosticMessage("The process definition uses the <wait> activity");
 		r21.setDegree(1);
 		r21.setType(TestAssertionType.ACTIVITY_CHILD);
+
 		r21.addSupportingEngine(Engines.ODE136);
+		r21.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r21;
 	}
@@ -511,7 +546,9 @@ class BasicActivityAssertions {
 		r22.setDiagnosticMessage("The process definition uses the getVariableProperty() extension function in a <from> statement");
 		r22.setDegree(2);
 		r22.setType(TestAssertionType.ACTIVITY_GRANDCHILD);
+
 		r22.addSupportingEngine(Engines.ODE136);
+		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r22;
 	}
@@ -526,7 +563,9 @@ class BasicActivityAssertions {
 		r22.setDiagnosticMessage("The process definition uses the getVariableProperty() extension function in a <condition> statement");
 		r22.setDegree(2);
 		r22.setType(TestAssertionType.ACTIVITY_CHILD);
+
 		r22.addSupportingEngine(Engines.ODE136);
+		r22.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r22;
 	}

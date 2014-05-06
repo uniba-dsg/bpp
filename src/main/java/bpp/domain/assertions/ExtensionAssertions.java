@@ -21,6 +21,7 @@ class ExtensionAssertions {
 		// we cannot strictly diagnose that an engine does not support a given
 		// extension namespace
 		r39.addSupportingEngine(Engines.ODE136);
+		r39.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r39;
 	}
@@ -82,6 +83,7 @@ class ExtensionAssertions {
 		// we cannot strictly diagnose that an engine does not support a given
 		// extension element
 		r40.addSupportingEngine(Engines.ODE136);
+		r40.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r40;
 	}

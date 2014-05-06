@@ -22,7 +22,9 @@ class FaultAssertions {
 		// correctly
 		r30.setDegree(3);
 		r30.setType(TestAssertionType.CONSTRUCT);
+
 		r30.addSupportingEngine(Engines.ODE136);
+		r30.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r30;
 	}
@@ -113,7 +115,9 @@ class FaultAssertions {
 		r31_6.setDiagnosticMessage("The process definition relies on the correct triggering of selectionFailure");
 		r31_6.setDegree(3);
 		r31_6.setType(TestAssertionType.ACTIVITY);
+
 		r31_6.addSupportingEngine(Engines.ODE136);
+		r31_6.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_6;
 	}
@@ -204,7 +208,9 @@ class FaultAssertions {
 		r31_11.setDiagnosticMessage("The process definition relies on the correct triggering of uninitializedVariable");
 		r31_11.setDegree(4);
 		r31_11.setType(TestAssertionType.ACTIVITY);
+
 		r31_11.addSupportingEngine(Engines.ODE136);
+		r31_11.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_11;
 	}
@@ -223,7 +229,9 @@ class FaultAssertions {
 		r31_12.setDiagnosticMessage("The process definition relies on the correct triggering of invalidExpressionValue");
 		r31_12.setDegree(3);
 		r31_12.setType(TestAssertionType.ACTIVITY);
+
 		r31_12.addSupportingEngine(Engines.ODE136);
+		r31_12.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_12;
 	}
@@ -278,7 +286,9 @@ class FaultAssertions {
 		r31_15.setDiagnosticMessage("The process definition relies on the correct triggering of joinFailure");
 		r31_15.setDegree(4);
 		r31_15.setType(TestAssertionType.ACTIVITY);
+
 		r31_15.addSupportingEngine(Engines.ODE136);
+		r31_15.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_15;
 	}
@@ -334,7 +344,9 @@ class FaultAssertions {
 		r31_18.setDiagnosticMessage("The process definition relies on the correct triggering of suppressJoinFailure");
 		r31_18.setDegree(2);
 		r31_18.setType(TestAssertionType.ACTIVITY);
+
 		r31_18.addSupportingEngine(Engines.ODE136);
+		r31_18.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_18;
 	}

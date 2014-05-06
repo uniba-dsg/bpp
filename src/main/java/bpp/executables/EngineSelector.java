@@ -1,6 +1,7 @@
 package bpp.executables;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,16 @@ import bpp.domain.Warning;
 import bpp.domain.assertions.Engines;
 
 public class EngineSelector {
+
+	public static void main(String[] args) {
+		EngineSelector selector = new EngineSelector();
+		List<String> engines = selector
+				.getNonSupportingEngines(Paths
+						.get("src/main/resources/language-features/basic-activities/Assign-Int.bpel"));
+		for (String engine : engines) {
+			System.out.println(engine);
+		}
+	}
 
 	public EngineSelector() {
 

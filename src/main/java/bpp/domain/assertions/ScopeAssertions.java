@@ -17,7 +17,9 @@ class ScopeAssertions {
 		r23.setDiagnosticMessage("The process definition calls a compensationHandler using the <compensateScope> activity");
 		r23.setDegree(2);
 		r23.setType(TestAssertionType.ACTIVITY);
+
 		r23.addSupportingEngine(Engines.ODE136);
+		r23.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r23;
 	}
@@ -38,7 +40,9 @@ class ScopeAssertions {
 		r24.setDegree(5);
 		r24.setType(TestAssertionType.ACTIVITY);
 		r24.setTestsServiceActivity(true);
+
 		r24.addSupportingEngine(Engines.ODE136);
+		r24.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r24;
 	}
@@ -56,7 +60,9 @@ class ScopeAssertions {
 		r25.setDiagnosticMessage("The process definition uses an <onAlarm> eventHandler");
 		r25.setDegree(1);
 		r25.setType(TestAssertionType.ACTIVITY);
+
 		r25.addSupportingEngine(Engines.ODE136);
+		r25.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r25;
 	}
@@ -75,7 +81,9 @@ class ScopeAssertions {
 		r26.setDiagnosticMessage("The process definition sets the isolated attribute of a scope to 'yes'");
 		r26.setDegree(3);
 		r26.setType(TestAssertionType.ACTIVITY);
+
 		r26.addSupportingEngine(Engines.ODE136);
+		r26.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r26;
 	}
@@ -95,7 +103,9 @@ class ScopeAssertions {
 		r27_1.setDiagnosticMessage("The process definition defines correlationSets on scope-level");
 		r27_1.setDegree(4);
 		r27_1.setType(TestAssertionType.ACTIVITY);
+
 		r27_1.addSupportingEngine(Engines.ODE136);
+		r27_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r27_1;
 	}
@@ -115,7 +125,9 @@ class ScopeAssertions {
 		r27_2.setDiagnosticMessage("The process definition defines correlationSets on scope-level");
 		r27_2.setDegree(1);
 		r27_2.setType(TestAssertionType.ACTIVITY);
+
 		r27_2.addSupportingEngine(Engines.ODE136);
+		r27_2.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r27_2;
 	}
@@ -135,7 +147,9 @@ class ScopeAssertions {
 		r27_3.setDiagnosticMessage("The process definition defines partnerLinks on scope-level");
 		r27_3.setDegree(2);
 		r27_3.setType(TestAssertionType.ACTIVITY);
+
 		r27_3.addSupportingEngine(Engines.ODE136);
+		r27_3.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r27_3;
 	}
@@ -155,7 +169,9 @@ class ScopeAssertions {
 		r27_4.setDiagnosticMessage("The process definition defines variables on scope-level");
 		r27_4.setDegree(1);
 		r27_4.setType(TestAssertionType.ACTIVITY);
+
 		r27_4.addSupportingEngine(Engines.ODE136);
+		r27_4.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r27_4;
 	}
@@ -172,7 +188,9 @@ class ScopeAssertions {
 		r28.setDiagnosticMessage("The process definition calls a compensationHandler using the <compensate> activity");
 		r28.setDegree(2);
 		r28.setType(TestAssertionType.ACTIVITY);
+
 		r28.addSupportingEngine(Engines.ODE136);
+		r28.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r28;
 	}
@@ -211,7 +229,9 @@ class ScopeAssertions {
 		r31_1.setDiagnosticMessage("The process definition catches a fault using a faultVariable");
 		r31_1.setDegree(2);
 		r31_1.setType(TestAssertionType.ACTIVITY);
+
 		r31_1.addSupportingEngine(Engines.ODE136);
+		r31_1.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r31_1;
 	}
@@ -244,7 +264,9 @@ class ScopeAssertions {
 		r33.setDiagnosticMessage("The process definition uses terminationHandlers");
 		r33.setDegree(4);
 		r33.setType(TestAssertionType.ACTIVITY);
+
 		r33.addSupportingEngine(Engines.ODE136);
+		r33.addSupportingEngine(Engines.ODE136_IN_MEMORY);
 
 		return r33;
 	}
