@@ -32,6 +32,7 @@ class ExtensionAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -130,6 +131,7 @@ class ExtensionAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);

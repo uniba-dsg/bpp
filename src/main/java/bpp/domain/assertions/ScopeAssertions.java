@@ -29,6 +29,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -144,6 +145,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -224,6 +226,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -266,6 +269,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -308,6 +312,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -344,6 +349,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -416,6 +422,7 @@ class ScopeAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -450,6 +457,7 @@ class ScopeAssertions {
 		assertion.setType(TestAssertionType.ACTIVITY);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);

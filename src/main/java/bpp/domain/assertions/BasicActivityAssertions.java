@@ -58,6 +58,7 @@ class BasicActivityAssertions {
 		assertion.setType(TestAssertionType.ACTIVITY_CHILD);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 
 		return assertion;
@@ -161,6 +162,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.ODE136);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -207,6 +209,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -241,6 +244,7 @@ class BasicActivityAssertions {
 
 		assertion.addSupportingEngine(Engines.ODE136);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
@@ -269,6 +273,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -298,6 +303,7 @@ class BasicActivityAssertions {
 		assertion.setType(TestAssertionType.ACTIVITY);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -327,6 +333,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
@@ -358,6 +365,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
@@ -392,6 +400,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
@@ -484,6 +493,7 @@ class BasicActivityAssertions {
 		assertion.setTestsServiceActivity(true);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
@@ -510,6 +520,7 @@ class BasicActivityAssertions {
 		assertion.setTestsServiceActivity(true);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
@@ -577,6 +588,7 @@ class BasicActivityAssertions {
 		assertion.setTestsServiceActivity(true);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
@@ -603,6 +615,7 @@ class BasicActivityAssertions {
 		assertion.setTestsServiceActivity(true);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.ORCHESTRA);
 
@@ -633,6 +646,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -706,6 +720,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -744,6 +759,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
@@ -783,6 +799,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -822,6 +839,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.WSO2_212);
 		assertion.addSupportingEngine(Engines.WSO2_300);
@@ -849,6 +867,7 @@ class BasicActivityAssertions {
 		assertion.setType(TestAssertionType.ACTIVITY);
 
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -881,6 +900,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.PETALS);
 		assertion.addSupportingEngine(Engines.PETALSESB41);
@@ -951,6 +971,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
@@ -984,6 +1005,7 @@ class BasicActivityAssertions {
 		assertion.addSupportingEngine(Engines.ODE);
 		assertion.addSupportingEngine(Engines.ODE_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.BPELG53);
+		assertion.addSupportingEngine(Engines.BPELG_IN_MEMORY);
 		assertion.addSupportingEngine(Engines.ACTIVEBPEL);
 		assertion.addSupportingEngine(Engines.OPENESB);
 		assertion.addSupportingEngine(Engines.OPENESB23);
