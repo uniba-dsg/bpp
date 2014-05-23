@@ -80,7 +80,7 @@ public class WSIAnalyzerBuilder {
 	private XsltEngineType createXsltEngine() {
 		XsltEngineType xsltEngine = reportFactory.createXsltEngineType();
 		xsltEngine.setName("Saxon He");
-		xsltEngine.setVersion("9.5.1-1");
+		xsltEngine.setVersion("9.5.1-5");
 		return xsltEngine;
 	}
 
