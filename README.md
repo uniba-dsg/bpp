@@ -6,15 +6,16 @@ A tool for detecting portability issues in BPEL code
 [![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
 
 ## Software Requirements
-- bpp is tested for support on JDK 1.8.X
-  - `JAVA_HOME` should point to the jdk directory
-  - `PATH` should include `JAVA_HOME/bin`
+bpp is tested for support on JDK 1.8.X
+- `JAVA_HOME` should point to the jdk directory
+- `PATH` should include `JAVA_HOME/bin`
 
 ## Licensing
 LGPL Version 3: http://www.gnu.org/licenses/lgpl-3.0.html
 
 ## Usage
-
+bpp executes in the context of gradle build.
+To perform a portability analysis of a BPEL process or all of the processes located in a certain directory, just point bpp to that path using `gradlew run`.
 ```bash
 $ gradlew run -Pargs="<ARGS>"
 
@@ -26,7 +27,10 @@ $ gradlew run -Pargs="src/main/resources/language-features/" # Checking all proc
 
 # If you use the strict (-s) option, the tool will only parse files with the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace
 $ gradlew run -Pargs="src/main/resources/language-features/ -s" # Checking all process definitions with the proper BPEL namespace in the test directory 
+````
 
+bpp also provides several utility tasks you can execute
+```bash
 # Utility gradle tasks
 $ gradlew profile # Generates the profile document containing the test assertions
 $ gradlew latex # Generates a tex file with latex tables for all test assertions
@@ -39,9 +43,9 @@ $ gradlew eclipse # Generates Eclipse project files
 
 ## Output
 
-For each file that is checked, the tool produces a report named BPEL_FILE_NAME-report.xml in the same directory.
+For each file that is checked, the tool produces a report named `BPEL_FILE_NAME-report.xml` in the same directory.
 This file follows the WS-I report schema.
-In the root directory, two csv files are written with aggregated results and several metrics for all process defintions analysed.
+In the root directory, two `csv` files are written with aggregated results and several metrics for all process definitions analyzed.
 - results.csv (values separated with semicolon, preferred by MS Office)
 - r-results.csv (values separated with comma, preferred by R)
 
@@ -50,7 +54,7 @@ In the root directory, two csv files are written with aggregated results and sev
     src/main/java # the main source code
     src/main/resources/ # xsds for WS-I profiles and BPEL files for checking the correctness of test assertions
     src/main/generated # Java classes generated from the WS-I xsds
-    src/test/java # JUnit tests for testing assertions 
+    src/test/java # JUnit tests 
 
 # Authors 
 
