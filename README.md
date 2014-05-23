@@ -43,9 +43,10 @@ List<String> engines = selector.getNonSupportingEngines(Paths.get("src/main/reso
 // ... or a List of engines that do support a given process
 engines = selector.getSupportingEngines(Paths.get("src/main/resources/language-features/basic-activities/Assign-Int.bpel"));
 		
-/* engine names are Strings that identify a total of 16 open source engines in different versions.
+/* 
+ * engine names are Strings that identify a total of 16 open source engines in different versions.
  * supported engines can be found in bpp.domain.assertions.Engines
-*/
+ */
 ````
 
 ### Utility Tasks
