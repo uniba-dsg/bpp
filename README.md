@@ -51,7 +51,8 @@ In the root directory, two `csv` files are written with aggregated results and s
 
 Example of a report file:
 ```xml
-report xmlns="http://www.ws-i.org/testing/2009/03/report/" name="BPEL Portability Profile Test Report" timestamp="2014-05-23T09:48:57.905+02:00">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report xmlns="http://www.ws-i.org/testing/2009/03/report/" name="BPEL Portability Profile Test Report" timestamp="2014-05-23T09:48:57.905+02:00">
     <analyzer>
         <profile>
             <name>BPEL Portability Profile 1.0</name>
