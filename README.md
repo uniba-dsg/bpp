@@ -30,6 +30,24 @@ $ gradlew run -Pargs="src/main/resources/language-features/" # Checking all proc
 # If you use the strict (-s) option, the tool will only parse files with the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace
 $ gradlew run -Pargs="src/main/resources/language-features/ -s" # Checking all process definitions with the proper BPEL namespace in the test directory 
 ````
+
+### Engine Selection
+In the current development version, bpp can be used to determine which engines (probably) can and which engines (certainly) cannot execute a given process.
+You can hook into the bpp-API by using the `EngineSelector` class.
+```java
+bpp.executables.EngineSelector selector = new bpp.executables.EngineSelector();
+
+// get a List of engines that do not support a given process...
+List<String> engines = selector.getNonSupportingEngines(Paths.get("src/main/resources/language-features/basic-activities/Assign-Int.bpel"));
+
+// ... or a List of engines that do support a given process
+engines = selector.getSupportingEngines(Paths.get("src/main/resources/language-features/basic-activities/Assign-Int.bpel"));
+		
+/* engine names are Strings that identify a total of 16 open source engines in different versions.
+ * supported engines can be found in bpp.domain.assertions.Engines
+*/
+````
+
 ### Utility Tasks
 bpp also provides several utility tasks you can execute
 ```bash
