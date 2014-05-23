@@ -46,8 +46,54 @@ $ gradlew eclipse # Generates Eclipse project files
 For each file that is checked, the tool produces a report named `BPEL_FILE_NAME-report.xml` in the same directory.
 This file follows the WS-I report schema.
 In the root directory, two `csv` files are written with aggregated results and several metrics for all process definitions analyzed.
-- results.csv (values separated with semicolon, preferred by MS Office)
-- r-results.csv (values separated with comma, preferred by R)
+- `results.csv` (values separated with semicolon, preferred by MS Office)
+- `r-results.csv` (values separated with comma, preferred by R)
+
+Example of a report file:
+```xml
+report xmlns="http://www.ws-i.org/testing/2009/03/report/" name="BPEL Portability Profile Test Report" timestamp="2014-05-23T09:48:57.905+02:00">
+    <analyzer>
+        <profile>
+            <name>BPEL Portability Profile 1.0</name>
+            <revision>$Revision: 1.0 $</revision>
+            <implementer name="Distributed Systems Group" location="http://www.uni-bamberg.de/en/pi"/>
+        </profile>
+        <environment>
+            <operatingSystem name="Windows 7" version="6.1"/>
+            <xmlParser name="JAXB" version="2.0"/>
+        </environment>
+        <analyzerEngine>
+            <analyzerVersion>V1.0</analyzerVersion>
+            <releaseDate>2012-11-22+01:00</releaseDate>
+            <implementer name="Distributed Systems Group" location="http://www.uni-bamberg.de/en/pi"/>
+            <xpathVersion>2.0</xpathVersion>
+            <xsltEngine name="Saxon He" version="9.5.1-5"/>
+            <generationTimestamp>2014-05-23T09:48:57.905+02:00</generationTimestamp>
+        </analyzerEngine>
+        <runConfig>
+            <timestamp>2014-05-23T09:48:57.905+02:00</timestamp>
+            <xsltEngine name="Saxon He" version="9.5.1-5"/>
+            <docSource timestamp="2014-01-21T15:51:48.629+01:00">Assign-Empty.bpel</docSource>
+            <comments>no comments</comments>
+        </runConfig>
+    </analyzer>
+    <artifact type="message">
+        <entry referenceID="Assign-Empty.bpel">
+            <assertionResult id="bpp-r3-1" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition uses the empty variant for a from-spec in a &lt;copy&gt; construct</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 9: Warning in line 20</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r3-2" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition uses the empty variant for a to-spec in a &lt;copy&gt; construct.</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 9: Warning in line 21</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r2" prescription="permitted" result="passed"/>
+            ...
+            </entry>
+    </artifact>
+</report>
+```
 
 ## Project Structure
 
