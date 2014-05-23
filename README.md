@@ -14,6 +14,8 @@ bpp is tested for support on JDK 1.8.X
 LGPL Version 3: http://www.gnu.org/licenses/lgpl-3.0.html
 
 ## Usage
+
+### Portability Analysis
 bpp executes in the context of gradle build.
 To perform a portability analysis of a BPEL process or all of the processes located in a certain directory, just point bpp to that path using `gradlew run`.
 ```bash
@@ -28,7 +30,7 @@ $ gradlew run -Pargs="src/main/resources/language-features/" # Checking all proc
 # If you use the strict (-s) option, the tool will only parse files with the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace
 $ gradlew run -Pargs="src/main/resources/language-features/ -s" # Checking all process definitions with the proper BPEL namespace in the test directory 
 ````
-
+### Utility Tasks
 bpp also provides several utility tasks you can execute
 ```bash
 # Utility gradle tasks
