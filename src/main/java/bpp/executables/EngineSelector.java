@@ -7,6 +7,7 @@ import java.util.List;
 
 import bpp.domain.Warning;
 import bpp.domain.assertions.Engines;
+import bpp.domain.assertions.TestAssertions;
 
 public class EngineSelector {
 
@@ -37,6 +38,16 @@ public class EngineSelector {
 				.forEach(engine -> notSupportingEngines.add(engine)));
 
 		return toStringList(notSupportingEngines);
+	}
+
+	public long getNumberOfSupportedAssertions(String engineName) {
+		Engines engine = Engines.getEngineFromString(engineName);
+
+		return new TestAssertions()
+				.createAll()
+				.parallelStream()
+				.filter(assertion -> assertion.getSupportingEngines().contains(
+						engine)).count();
 	}
 
 	private List<Engines> getEnginesAsList() {
