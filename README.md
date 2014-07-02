@@ -4,6 +4,7 @@ The BPEL Portability Profile
 A tool for detecting portability issues in BPEL code
 
 [![Build Status](https://travis-ci.org/uniba-dsg/bpp.png)](https://travis-ci.org/uniba-dsg/bpp)
+[![Dependency Status](https://www.versioneye.com/user/projects/53b3bd860d5bb83d73000003/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53b3bd860d5bb83d73000003)
 
 ## Software Requirements
 bpp is tested for support on JDK 1.8.X
