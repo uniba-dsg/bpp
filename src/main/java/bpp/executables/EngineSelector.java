@@ -2,7 +2,6 @@ package bpp.executables;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import bpp.domain.Warning;
@@ -21,10 +20,11 @@ public class EngineSelector {
 		List<Engines> supportingEngines = getEnginesAsList();
 
 		warnings.forEach(warning -> warning.getAssertion()
-				.getNotSupportingEngines()
+				.getNotSupportingEngines().stream()
+				.filter(engine -> supportingEngines.contains(engine))
 				.forEach(engine -> supportingEngines.remove(engine)));
 
-		return toStringList(supportingEngines);
+		return toStringList(new ArrayList<>(supportingEngines));
 	}
 
 	public List<String> getNonSupportingEngines(Path bpelFile) {
@@ -50,18 +50,21 @@ public class EngineSelector {
 						engine)).count();
 	}
 
-	private List<Engines> getEnginesAsList() {
-		Engines[] arrayOfEngines = Engines.values();
-
-		return Arrays.asList(arrayOfEngines);
-	}
-
 	private List<String> toStringList(List<Engines> engines) {
 		List<String> result = new ArrayList<>(engines.size());
 
-		engines.parallelStream().forEach(
-				engine -> result.add(engine.toString()));
+		engines.stream().forEach(engine -> result.add(engine.toString()));
 
 		return result;
 	}
+
+	private List<Engines> getEnginesAsList() {
+		Engines[] arrayOfEngines = Engines.values();
+		List<Engines> engines = new ArrayList<>(arrayOfEngines.length);
+		for (Engines engine : arrayOfEngines) {
+			engines.add(engine);
+		}
+		return engines;
+	}
+
 }

@@ -2,16 +2,19 @@ package bpp.executables;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import bpp.domain.AnalysisResult;
+import bpp.domain.Warning;
 
 public class FileAnalyzerTests {
 
 	private final double epsilon = 0.001;
 
 	@Test
-	public void Test1() {
+	public void test1() {
 		FileAnalyzer sut = new FileAnalyzer(
 				"src/main/resources/testfiles/Test1.bpel", false);
 		AnalysisResult result = sut.analyze();
@@ -23,7 +26,7 @@ public class FileAnalyzerTests {
 	}
 
 	@Test
-	public void Test2() {
+	public void test2() {
 		FileAnalyzer sut = new FileAnalyzer(
 				"src/main/resources/testfiles/Test2.bpel", false);
 		AnalysisResult result = sut.analyze();
@@ -32,6 +35,15 @@ public class FileAnalyzerTests {
 		assertDoubleEquals(0.904, result.getActivityPortabilityMetric());
 		assertDoubleEquals(0.722,
 				result.getServiceCommunicationPortabilityMetric());
+	}
+
+	@Test
+	public void testNumberOfWarnings() {
+		FileAnalyzer sut = new FileAnalyzer(
+				"src/main/resources/language-features/basic-activities/Validate.bpel",
+				false);
+		List<Warning> warnings = sut.analyze().getViolations();
+		assertEquals(2, warnings.size());
 	}
 
 	private void assertDoubleEquals(double expected, double actual) {
