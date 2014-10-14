@@ -35,6 +35,8 @@ public class FileAnalyzer {
 	private boolean isStrict;
 
 	public FileAnalyzer(String filePath, boolean isStrict) {
+		System.setProperty("javax.xml.xpath.XPathFactory:" + NamespaceConstant.OBJECT_MODEL_SAXON,
+                "net.sf.saxon.xpath.XPathFactoryImpl");
 		this.isStrict = isStrict;
 		createRawResult(filePath);
 		try {
@@ -63,7 +65,7 @@ public class FileAnalyzer {
 	private void createSourceDocument(String filePath) throws XPathException {
 		InputSource inputSource = new InputSource(new File(filePath).toString());
 		SAXSource saxSource = new SAXSource(inputSource);
-		doc = xpath.setSource(saxSource);
+		doc = xpath.getConfiguration().buildDocument(saxSource);
 	}
 
 	public AnalysisResult analyze() {

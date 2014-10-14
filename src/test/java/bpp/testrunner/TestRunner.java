@@ -91,7 +91,7 @@ public class TestRunner {
 		InputSource inputSource = new InputSource(
 				new File(fileLocation).toString());
 		SAXSource saxSource = new SAXSource(inputSource);
-		NodeInfo doc = xpath.setSource(saxSource);
+		NodeInfo doc = xpath.getConfiguration().buildDocument(saxSource);
 
 		@SuppressWarnings("unchecked")
 		List<NodeInfo> matchedLines = (List<NodeInfo>) expr.evaluate(doc,
