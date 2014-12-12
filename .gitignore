@@ -12,3 +12,4 @@ r-results.csv
 *.iml
 *.ipr
 *iws
+*.log
