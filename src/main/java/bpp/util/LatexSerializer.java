@@ -127,9 +127,6 @@ public class LatexSerializer {
 		println("Target & " + assertion.getTarget() + TABLE_NEWLINE);
 		printColor();
 		println("Degree & " + assertion.getDegree() + TABLE_NEWLINE);
-		println("Level & "
-				+ assertion.getLevel().toString().replace("_", "\\_")
-				+ TABLE_NEWLINE);
 	}
 
 	private void writeMultitableFooter(TestAssertion assertion) {
