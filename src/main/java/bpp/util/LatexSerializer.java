@@ -17,6 +17,8 @@ public class LatexSerializer {
 
 	private final boolean useRowColor;
 
+	private final String fontSize = "tiny";
+
 	private PrintWriter writer;
 
 	private int floatsProcessed;
@@ -70,7 +72,7 @@ public class LatexSerializer {
 
 	private void writeLongTableHeader() {
 		println("\\begin{center}");
-		println("\\begin{scriptsize}");
+		println("\\begin{" + fontSize + "}");
 		println("\\begin{longtable}{p{0.1\\textwidth}|p{0.84\\textwidth}}");
 		println("\\caption{Portability Test Assertions}\\\\");
 		println("\\textbf{Property} & \\textbf{Test Assertion}");
@@ -101,7 +103,7 @@ public class LatexSerializer {
 
 	private void writeLongTableFooter() {
 		println("\\end{longtable}");
-		println("\\end{scriptsize}");
+		println("\\end{" + fontSize + "}");
 		println("\\end{center}");
 	}
 
