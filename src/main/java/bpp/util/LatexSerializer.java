@@ -34,6 +34,8 @@ public class LatexSerializer {
 
 	public void serializeAssertions(boolean useLongTable)
 			throws FileNotFoundException {
+		System.out.println("Starting LaTeX serialization to " + fileName);
+
 		try {
 			writer = new PrintWriter(fileName);
 
@@ -48,26 +50,29 @@ public class LatexSerializer {
 				writer.close();
 			}
 		}
+
+		System.out.println("Serialization successful");
 	}
 
 	private void serializeAssertionsToMultipleTables()
 			throws FileNotFoundException {
-		
-			floatsProcessed = 0;
 
-			for (TestAssertion assertion : new TestAssertions().createAll()) {
-				writeMultiTableAssertion(assertion);
-				checkForTooManyFloats();
-			}
+		floatsProcessed = 0;
+
+		for (TestAssertion assertion : new TestAssertions().createAll()) {
+			writeMultiTableAssertion(assertion);
+			checkForTooManyFloats();
+		}
+
 	}
 
 	private void serializeAssertionsToLongTable() throws FileNotFoundException {
 
-			writeLongTableHeader();
+		writeLongTableHeader();
 
-			writeLongTableBody();
+		writeLongTableBody();
 
-			writeLongTableFooter();
+		writeLongTableFooter();
 	}
 
 	private void writeLongTableHeader() {
