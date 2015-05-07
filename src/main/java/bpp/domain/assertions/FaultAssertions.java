@@ -94,7 +94,7 @@ class FaultAssertions {
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		assertion
-				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'subLanguageExecutionFault')]");
+				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'subLanguageExecutionFault')]");
 		assertion
 				.setDiagnosticMessage("The process definition relies on the correct triggering of subLanguageExecutionFault");
 		assertion.setDegree(9);
@@ -552,7 +552,7 @@ class FaultAssertions {
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		assertion
-				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'completionConditionFailure')]");
+				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'completionConditionFailure')]");
 		assertion
 				.setDiagnosticMessage("The process definition relies on the correct triggering of completionConditionFailure");
 		assertion.setDegree(6);
@@ -629,7 +629,7 @@ class FaultAssertions {
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/scopes/Scope-FaultHandlers-CatchAll.bpel");
 		assertion
-				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'mismatchedAssignmentFailure')]");
+				.setTarget("//*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'mismatchedAssignmentFailure')]");
 		assertion
 				.setDiagnosticMessage("The process definition relies on the correct triggering of mismatchedAssignmentFailure");
 		assertion.setDegree(6);
