@@ -80,6 +80,7 @@ public class LatexSerializer {
 		println("\\begin{" + fontSize + "}");
 		println("\\begin{longtable}{p{0.1\\textwidth}|p{0.84\\textwidth}}");
 		println("\\caption{Portability Test Assertions}\\\\");
+		println("\\label{tab:testAssertions}\\\\");
 		println("\\textbf{Property} & \\textbf{Test Assertion}");
 		println("\\vspace{2pt}\\\\");
 		println("\\toprule");
