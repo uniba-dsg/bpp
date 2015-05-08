@@ -9,7 +9,7 @@ class ExtensionAssertions {
 		TestAssertion assertion = new TestAssertion();
 		assertion.setId("bpp-r39");
 		assertion
-				.setDescription("have a namespace different from the http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace");
+				.setDescription("have a namespace different from http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace");
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/structured-activities/Pick-Correlations-InitAsync.bpel");
 		assertion

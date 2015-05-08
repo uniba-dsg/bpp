@@ -348,7 +348,7 @@ class BasicActivityAssertions {
 		TestAssertion assertion = new TestAssertion();
 		assertion.setId("bpp-r8");
 		assertion
-				.setDescription("the shortcut syntax for catching any fault during a service invocation");
+				.setDescription("use the shortcut syntax for catching any fault during a service invocation");
 		assertion
 				.addContainedFileLocations("src/main/resources/language-features/basic-activities/Invoke-CatchAll.bpel");
 		assertion
@@ -381,7 +381,7 @@ class BasicActivityAssertions {
 		TestAssertion assertion = new TestAssertion();
 		assertion.setId("bpp-r9");
 		assertion
-				.setDescription("the shortcut syntax for using compensation during a service invocation");
+				.setDescription("use the shortcut syntax for using compensation during a service invocation");
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Invoke-CatchAll.bpel");
 		assertion
