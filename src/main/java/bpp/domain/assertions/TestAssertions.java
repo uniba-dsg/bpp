@@ -1,5 +1,6 @@
 package bpp.domain.assertions;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,6 +24,14 @@ public class TestAssertions {
 			TestAssertion[] array = { assertion };
 			result.add(array);
 		}
+		return result;
+	}
+	
+	public List<TestAssertion> createAllSorted(){
+		List<TestAssertion> result = createAll();
+		
+		Collections.sort(result);
+		
 		return result;
 	}
 

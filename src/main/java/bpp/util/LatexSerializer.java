@@ -59,7 +59,7 @@ public class LatexSerializer {
 
 		floatsProcessed = 0;
 
-		for (TestAssertion assertion : new TestAssertions().createAll()) {
+		for (TestAssertion assertion : new TestAssertions().createAllSorted()) {
 			writeMultiTableAssertion(assertion);
 			checkForTooManyFloats();
 		}

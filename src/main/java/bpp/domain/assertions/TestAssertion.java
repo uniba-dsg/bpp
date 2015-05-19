@@ -7,7 +7,7 @@ import java.util.List;
 
 import bpp.domain.PortabilityLevel;
 
-public class TestAssertion {
+public class TestAssertion implements Comparable<TestAssertion>{
 
 	private String id;
 
@@ -291,6 +291,15 @@ public class TestAssertion {
 		result = 31 * result + nonContainedFileLocations.hashCode();
 
 		return result;
+	}
+
+	@Override
+	public int compareTo(TestAssertion o) {
+		if(o == null || o.getId() == null){
+			throw new IllegalArgumentException("Comparing TestAssertion must not be null");
+		}
+		
+		return this.getId().compareToIgnoreCase(o.getId());
 	}
 
 }
