@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report xmlns="http://www.ws-i.org/testing/2009/03/report/" name="BPEL Portability Profile Test Report" timestamp="2015-06-22T14:46:36.275+02:00">
+    <analyzer>
+        <profile>
+            <name>BPEL Portability Profile 1.0</name>
+            <revision>$Revision: 1.0 $</revision>
+            <implementer name="Distributed Systems Group" location="http://www.uni-bamberg.de/en/pi"/>
+        </profile>
+        <environment>
+            <operatingSystem name="Windows 7" version="6.1"/>
+            <xmlParser name="JAXB" version="2.0"/>
+        </environment>
+        <analyzerEngine>
+            <analyzerVersion>V1.0</analyzerVersion>
+            <releaseDate>2012-11-22+01:00</releaseDate>
+            <implementer name="Distributed Systems Group" location="http://www.uni-bamberg.de/en/pi"/>
+            <xpathVersion>2.0</xpathVersion>
+            <xsltEngine name="Saxon He" version="9.5.1-5"/>
+            <generationTimestamp>2015-06-22T14:46:36.275+02:00</generationTimestamp>
+        </analyzerEngine>
+        <runConfig>
+            <timestamp>2015-06-22T14:46:36.275+02:00</timestamp>
+            <xsltEngine name="Saxon He" version="9.5.1-5"/>
+            <docSource timestamp="2014-11-19T09:59:04.229+01:00">Test2.bpel</docSource>
+            <comments>no comments</comments>
+        </runConfig>
+    </analyzer>
+    <artifact type="message">
+        <entry referenceID="Test2.bpel">
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 64</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r13" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition uses correlations inside an &lt;receive&gt; activity</failureMessage>
+                <failureDetail xml:lang="en">Portability level partially portable, Degree: 3: Warning in line 33</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 65</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r38" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition uses an onAlarm eventHandler in a pick activity</failureMessage>
+                <failureDetail xml:lang="en">Portability level widely portable, Degree: 1: Warning in line 85</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 38</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 39</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 88</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r40" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition contains non-BPEL elements</failureMessage>
+                <failureDetail xml:lang="en">Portability level nonportable, Degree: 8: Warning in line 89</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r37" prescription="permitted" result="warning">
+                <failureMessage xml:lang="en">The process definition uses correlations in an onMessage eventHandler in a pick activity</failureMessage>
+                <failureDetail xml:lang="en">Portability level partially portable, Degree: 2: Warning in line 60</failureDetail>
+            </assertionResult>
+            <assertionResult id="bpp-r1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r3-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r3-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r3-3" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r3-4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r5" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r6" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r7" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r8" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r9" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r10" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r11" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r12-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r12-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r13" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r14-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r14-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r14-3" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r14-4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r15" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r16" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r17" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r18" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r19" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r20" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r21" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r22-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r22-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r23" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r24" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r25" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r26" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r27-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r27-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r27-3" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r27-4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r28" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r29" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r32" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r33" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r34-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r34-2" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r34-3" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r34-4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r35" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r36" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r37" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r38" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r41" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r42" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r43" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r44" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r45" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r46" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r47" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r48" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r39" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r40" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r30" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-1" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-3" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-4" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-5" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-6" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-7" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-8" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-9" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-10" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-11" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-12" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-13" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-14" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-15" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-16" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-17" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-18" prescription="permitted" result="passed"/>
+            <assertionResult id="bpp-r31-19" prescription="permitted" result="passed"/>
+        </entry>
+    </artifact>
+</report>
