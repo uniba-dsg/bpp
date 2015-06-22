@@ -1,4 +1,4 @@
-package bpp.executables;
+package bpp.util;
 
 import static org.junit.Assert.assertEquals;
 
