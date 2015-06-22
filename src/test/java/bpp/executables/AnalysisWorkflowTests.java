@@ -32,13 +32,15 @@ public class AnalysisWorkflowTests {
 
 	private void assertFileContentEquality(Path expected, Path actual)
 			throws IOException {
-		List<String> expectedLines = purgeTimeStamps(Files
+		List<String> expectedLines = purgeRunSpecificAspects(Files
 				.readAllLines(expected));
-		List<String> actualLines = purgeTimeStamps(Files.readAllLines(actual));
+		List<String> actualLines = purgeRunSpecificAspects(Files
+				.readAllLines(actual));
 
 		assertEquals("Expected lines: " + expectedLines.size()
 				+ "; Actual lines: " + actualLines.size(),
 				expectedLines.size(), actualLines.size());
+
 		for (int i = 0; i < expectedLines.size(); i++) {
 			String expectedLine = expectedLines.get(i);
 			String actualLine = actualLines.get(i);
@@ -47,16 +49,26 @@ public class AnalysisWorkflowTests {
 		}
 	}
 
-	private List<String> purgeTimeStamps(List<String> toPurge) {
+	private List<String> purgeRunSpecificAspects(List<String> toPurge) {
 		List<String> result = new ArrayList<>(toPurge.size());
 
 		for (String line : toPurge) {
-			if (!line.toLowerCase().contains("timestamp")) {
+			String toCheck = line.toLowerCase();
+
+			if (doesNotContainOS(toCheck) && doesNotContainTimestamp(toCheck)) {
 				result.add(line);
 			}
 		}
 
 		return result;
+	}
+
+	private boolean doesNotContainTimestamp(String line) {
+		return !line.contains("timestamp");
+	}
+
+	private boolean doesNotContainOS(String line) {
+		return !line.contains("operatingSystem");
 	}
 
 }
