@@ -57,7 +57,7 @@ public class AnalysisWorkflowTests {
 
 			if (doesNotContainOS(toCheck) && doesNotContainTimestamp(toCheck)) {
 				result.add(line);
-			}
+			} 
 		}
 
 		return result;
@@ -68,7 +68,7 @@ public class AnalysisWorkflowTests {
 	}
 
 	private boolean doesNotContainOS(String line) {
-		return !line.contains("operatingSystem");
+		return !line.contains("operatingsystem");
 	}
 
 }
