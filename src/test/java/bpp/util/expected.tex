@@ -1,0 +1,578 @@
+\begin{center}
+\begin{tiny}
+\begin{longtable}{p{0.09\textwidth}|p{0.85\textwidth}}
+\caption{Portability Test Assertions}\\
+\label{tab:testAssertions}\\
+\textbf{Property} & \textbf{Test Assertion}
+\vspace{2pt}\\
+\toprule
+\endfirsthead
+\multicolumn{2}{c}
+{\tablename\ \thetable\ -- \emph{Continued from previous page}}\\
+\endhead
+\multicolumn{2}{r}{\emph{Continued on next page}}
+\endfoot
+\bottomrule
+\endlastfoot
+ID & bpp-r1\\
+\myrowcolour
+Description &A process definition should not use the doXslTransform() extension function\\
+Target & //*[local-name() = 'from' and contains(. , 'doXslTransform')] | //*[local-name() = 'to' and contains(. , 'doXslTransform')]\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r2\\
+\myrowcolour
+Description &A process definition should not rely on the semantics of keepSrcElementName in a <copy> construct\\
+Target & //*[@keepSrcElementName='yes']\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r3-1\\
+\myrowcolour
+Description &A process definition must not use the empty variant in a from-spec in an assignment\\
+Target & //*[local-name() = 'from' and not(text()) and not(node()) and empty(@variable) and empty(@part) and empty(@partnerLink) and empty(@endpointReference) and empty(@property) and empty(@expressionlanguage) and empty(@expression)]\\
+\myrowcolour
+Degree & 9\\
+\midrule
+ID & bpp-r3-2\\
+\myrowcolour
+Description &A process definition must not use the empty variant in a to-spec in an assignment\\
+Target & //*[local-name() = 'to' and not(text()) and not(node()) and not(@variable) and not(@part) and not(@partnerLink) and not(@endpointReference) and not(@property) and not(@expressionlanguage) and not(@expression)]\\
+\myrowcolour
+Degree & 9\\
+\midrule
+ID & bpp-r3-3\\
+\myrowcolour
+Description &A process definition may directly assign an int-value in a from-spec in an assignment\\
+Target & //*[local-name() = 'from' and (string(number(.)) != 'NaN') and not (./*[text()]) ]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r3-4\\
+\myrowcolour
+Description &A process definition may assign a property in a from-spec in an assignment\\
+Target & //*[local-name() = 'from' and exists(@property) ]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r4\\
+\myrowcolour
+Description &A process definition should not use dynamic invocation based on the re-assignment of a partnerLink\\
+Target & //*[local-name() = 'to' and not(empty(@partnerLink))]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r5\\
+\myrowcolour
+Description &A process definition may use a query in a copy operation\\
+Target & //*[local-name() = 'from' or local-name() = 'to']/*[local-name() = 'query']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r6\\
+\myrowcolour
+Description &A process definition should not use validation during an assignment\\
+Target & //*[@validate='yes']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r7\\
+\myrowcolour
+Description &A process definition should not use the shortcut syntax for catching a fault during a service invocation.\\
+Target & //*[local-name() = 'invoke']/*[local-name() = 'catch']\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r8\\
+\myrowcolour
+Description &A process definition should not use the shortcut syntax for catching any fault during a service invocation\\
+Target & //*[local-name() = 'invoke']/*[local-name() = 'catchAll']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r9\\
+\myrowcolour
+Description &A process definition should not use the shortcut syntax for using compensation during a service invocation\\
+Target & //*[local-name() = 'invoke']/*[local-name() = 'compensationHandler']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r10\\
+\myrowcolour
+Description &A process definition should not use correlations in a service invocation\\
+Target & //*[local-name() = 'invoke' and exists(@outputVariable)]/*[local-name() = 'correlations']/*[local-name() = 'correlation' and exists(@pattern)]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r11\\
+\myrowcolour
+Description &A process definition should not omit the variable when invoking a web service operation that does not expect an input message\\
+Target & //*[local-name() = 'invoke' and empty(@inputVariable) and empty(@outputVariable) and not(child::fromParts) and not (child::toParts)]\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r12-1\\
+\myrowcolour
+Description &A process definition should not use the fromParts shortcut syntax during a service invocation\\
+Target & //*[local-name() = 'invoke']/*[local-name() = 'fromParts']\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r12-2\\
+\myrowcolour
+Description &A process definition should not use the toParts shortcut syntax during a service invocation\\
+Target & //*[local-name() = 'invoke']/*[local-name() = 'toParts']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r13\\
+\myrowcolour
+Description &A process definition should not use correlations during the receipt of a message\\
+Target & //*[local-name() = 'receive']/*[local-name() = 'correlations']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r14-1\\
+\myrowcolour
+Description &A process definition should not use the fromParts shortcut syntax during the receipt of a message\\
+Target & //*[local-name() = 'receive']/*[local-name() = 'fromParts']\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r14-2\\
+\myrowcolour
+Description &A process definition should not use the toParts shortcut syntax when replying to an invocation\\
+Target & //*[local-name() = 'reply']/*[local-name() = 'toParts']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r14-3\\
+\myrowcolour
+Description &A process definition should not explicitly reply a fault in a <reply> activity\\
+Target & //*[local-name() = 'reply' and exists(@faultName)]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r14-4\\
+\myrowcolour
+Description &A process definition may use messageExchanges in a <reply> or a <receive> activity\\
+Target & //*[(local-name() = 'reply' or local-name() = 'receive') and exists(@messageExchange)]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r15\\
+\myrowcolour
+Description &A process definition should not use the rethrow activity.\\
+Target & //*[local-name() = 'rethrow']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r16\\
+\myrowcolour
+Description &A process definition should not use a faultVariable when rethrowing a fault\\
+Target & //*[local-name() = 'catch' and exists(@faultVariable)]//*[local-name() = 'rethrow']\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r17\\
+\myrowcolour
+Description &A process definition should not use the throw activity to propagate faults out of the scope of the process\\
+Target & //*[local-name() = 'throw' and not(ancestor::*[(local-name() = 'scope' or local-name() = 'process') and (child::*[local-name() = 'faultHandlers'])]) ]\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r18\\
+\myrowcolour
+Description &A process definition should not use the throw activity with a faultVariable to signal faults\\
+Target & //*[local-name() = 'throw' and exists(@faultVariable)]\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r19\\
+\myrowcolour
+Description &A process definition should not use the validate activity\\
+Target & //*[local-name() = 'validate']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r20\\
+\myrowcolour
+Description &A process definition should not initialize a variable with a default value\\
+Target & //*[local-name() = 'variable']/*[local-name() = 'from']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r21\\
+\myrowcolour
+Description &A process definition may use the <wait> activity\\
+Target & //*[local-name() = 'wait']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r22-1\\
+\myrowcolour
+Description &A process definition should not use the getVariableProperty() extension function in a <from> statement\\
+Target & //*[(local-name() = 'from') and contains(. , 'getVariableProperty')]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r22-2\\
+\myrowcolour
+Description &A process definition should not use the getVariableProperty() extension function in a <condition> statement\\
+Target & //*[(local-name() = 'condition') and contains(. , 'getVariableProperty')]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r23\\
+\myrowcolour
+Description &A process definition should not use the <compensateScope> activity to signal compensation\\
+Target & //*[local-name() = 'compensateScope']\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r24\\
+\myrowcolour
+Description &A process definition should not use message-based eventHandlers\\
+Target & //*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r25\\
+\myrowcolour
+Description &A process definition may use timeout-based eventHandlers\\
+Target & //*[local-name() = 'eventHandlers']/*[local-name() = 'onAlarm']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r26\\
+\myrowcolour
+Description &A process definition should not use isolated scopes\\
+Target & //*[local-name() = 'scope' and @isolated='yes']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r27-1\\
+\myrowcolour
+Description &A process definition should not define correlationSets on scope-level\\
+Target & //*[local-name() = 'scope' and child::*[local-name()='correlationSets']]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r27-2\\
+\myrowcolour
+Description &A process definition may define messageExchanges on scope-level\\
+Target & //*[local-name() = 'scope' and child::*[local-name()='messageExchanges']]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r27-3\\
+\myrowcolour
+Description &A process definition should not define partnerLinks on scope-level\\
+Target & //*[local-name() = 'scope' and child::*[local-name()='partnerLinks']]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r27-4\\
+\myrowcolour
+Description &A process definition may define variables on scope-level\\
+Target & //*[local-name() = 'scope' and child::*[local-name()='variables']]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r28\\
+\myrowcolour
+Description &A process definition should not use the <compensate> activity to signal compensation\\
+Target & //*[local-name() = 'compensate']\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r29\\
+\myrowcolour
+Description &A process definition should not use the fromParts shortcut syntax in a message-based eventHandler\\
+Target & //*[local-name() = 'eventHandlers']/*[local-name() = 'onEvent']/*[local-name() = 'fromParts']\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r31-1\\
+\myrowcolour
+Description &A process definition should not catch a fault based on the faultVariable. Catching faults by name only is recommended\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and exists(@faultVariable)]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r32\\
+\myrowcolour
+Description &A process definition may use a compensationHandler within a <while>, <forEach> or <repeatUntil> activity\\
+Target & //*[local-name() = 'while' or local-name() = 'forEach' or local-name() = 'repeatUntil']//*[local-name() = 'compensationHandler']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r33\\
+\myrowcolour
+Description &A process definition should not use terminationHandlers\\
+Target & //*[local-name() = 'terminationHandler']\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r34-1\\
+\myrowcolour
+Description &A process definition may use the flow activity\\
+Target & //*[local-name() = 'flow']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r34-2\\
+\myrowcolour
+Description &A process definition should not use links\\
+Target & //*[local-name() = 'links']\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r34-3\\
+\myrowcolour
+Description &A process definition should not use a joinCondition to merge links\\
+Target & //*[local-name() = 'joinCondition']\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r34-4\\
+\myrowcolour
+Description &A process definition should not use a transitionCondition to merge links\\
+Target & //*[local-name() = 'source' and child::*[local-name() = 'transitionCondition']]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r35\\
+\myrowcolour
+Description &A process definition may use the forEach activity\\
+Target & //*[local-name() = 'forEach']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r36\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a completionCondition\\
+Target & //*[local-name() = 'forEach']/*[local-name() = 'completionCondition']\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r37\\
+\myrowcolour
+Description &A process definition should not use correlations in an onMessage eventHandler in a pick activity\\
+Target & //*[local-name() = 'pick']/*[local-name() = 'onMessage']//*[local-name() = 'correlations']\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r38\\
+\myrowcolour
+Description &A process definition may use a timeout-based eventHandler in a pick activity\\
+Target & //*[local-name() = 'pick']/*[local-name() = 'onAlarm']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r41\\
+\myrowcolour
+Description &A process definition may use the repeatUntil activity\\
+Target & //*[local-name() = 'repeatUntil']\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r42\\
+\myrowcolour
+Description &A process definition should not use the repeatUntil activity with a condition that uses '='\\
+Target & //*[local-name() = 'repeatUntil']/*[local-name()='condition' and contains(., '=')]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r43\\
+\myrowcolour
+Description &A process definition may use the forEach activity with the parallel attribute set to 'yes'\\
+Target & //*[local-name() = 'forEach' and (@parallel = 'yes')]\\
+\myrowcolour
+Degree & 1\\
+\midrule
+ID & bpp-r44\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a completionCondition and parallel attribute set to 'yes'\\
+Target & //*[local-name() = 'forEach' and (@parallel = 'yes')]/*[local-name() = 'completionCondition']\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r45\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a completionCondition and a negative number of branches\\
+Target & //*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and starts-with(text(),'-')]\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r46\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a negative startCounterValue or finalCounterValue\\
+Target & //*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and starts-with(text(),'-')) or (local-name() = 'finalCounterValue' and starts-with(text(),'-'))]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r47\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a too large startCounterValue\\
+Target & //*[local-name() = 'forEach']/*[(local-name() = 'startCounterValue' and (number(text()) >= 4294967295))]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r48\\
+\myrowcolour
+Description &A process definition should not use the forEach activity with a completionCondition and the successfulBranchesOnly attribute set to 'yes'\\
+Target & //*[local-name() = 'forEach']/*[local-name() = 'completionCondition']/*[local-name() = 'branches' and (@successfulBranchesOnly = 'yes')]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r39\\
+\myrowcolour
+Description &A process definition must not have a namespace different from http://docs.oasis-open.org/wsbpel/2.0/process/executable namespace\\
+Target & //*[local-name() = 'process' and not(namespace-uri() = 'http://docs.oasis-open.org/wsbpel/2.0/process/executable')]\\
+\myrowcolour
+Degree & 8\\
+\midrule
+ID & bpp-r40\\
+\myrowcolour
+Description &A process definition must not contain non-BPEL elements\\
+Target & //*[not(ancestor::*[local-name() = 'literal']) and not(local-name() ='process') and not(local-name() = 'import') and not(local-name() = 'partnerLinks') and not(local-name() = 'partnerLink') and not(local-name() = 'variables') and not(local-name() = 'variable') and not(local-name() = 'correlationSets') and not(local-name() = 'correlationSet') and not(local-name() = 'sequence') and not(local-name() = 'if') and not(local-name() = 'condition') and not(local-name() = 'elseif') and not(local-name() = 'else') and not(local-name() = 'while') and not(local-name() = 'repeatUntil') and not(local-name() = 'pick') and not(local-name() = 'onMessage') and not(local-name() = 'correlations') and not(local-name() = 'correlation') and not(local-name() = 'fromParts') and not(local-name() = 'fromPart') and not(local-name() = 'toParts') and not(local-name() = 'toPart') and not(local-name() = 'onAlarm') and not(local-name() = 'for') and not(local-name() = 'until') and not(local-name() = 'flow') and not(local-name() = 'links') and not(local-name() = 'link') and not(local-name() = 'targets') and not(local-name() = 'joinCondition') and not(local-name() = 'target') and not(local-name() = 'sources') and not(local-name() = 'source') and not(local-name() = 'transitionCondition') and not(local-name() = 'forEach') and not(local-name() = 'startCounterValue') and not(local-name() = 'finalCounterValue') and not(local-name() = 'completionCondition') and not(local-name() = 'branches') and not(local-name() = 'receive') and not(local-name() = 'assign') and not(local-name() = 'copy') and not(local-name() = 'from') and not(local-name() = 'to') and not(local-name() = 'empty') and not(local-name() = 'reply') and not(local-name() = 'scope') and not(local-name() = 'messageExchanges') and not(local-name() = 'messageExchange') and not(local-name() = 'eventHandlers') and not(local-name() = 'faultHandlers') and not(local-name() = 'compensationHandler') and not(local-name() = 'terminationHandlers') and not(local-name() = 'compensate') and not(local-name() = 'compensateScope') and not(local-name() = 'catch') and not(local-name() = 'catchAll')  and not(local-name() = 'rethrow') and not(local-name() = 'repeatEvery') and not(local-name() = 'throw') and not(local-name() = 'invoke') and not(local-name() = 'wait') and not(local-name() = 'exit') and not(local-name() = 'query') and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')]\\
+\myrowcolour
+Degree & 8\\
+\midrule
+ID & bpp-r30\\
+\myrowcolour
+Description &A process definition should not rely on the semantics of exitOnStandardFault\\
+Target & //*[@exitOnStandardFault='yes']\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r31-1\\
+\myrowcolour
+Description &A process definition must not rely on the correct triggering of xsltInvalidSource fault\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltInvalidSource')]\\
+\myrowcolour
+Degree & 8\\
+\midrule
+ID & bpp-r31-3\\
+\myrowcolour
+Description &A process definition must not rely on the correct triggering of subLanguageExecutionFault\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'subLanguageExecutionFault')]\\
+\myrowcolour
+Degree & 9\\
+\midrule
+ID & bpp-r31-4\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of xsltStyleSheetNotFound\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'xsltStyleSheetNotFound')]\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r31-5\\
+\myrowcolour
+Description &A process definition must not rely on the correct triggering of unsupportedReference fault\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'unsupportedReference')]\\
+\myrowcolour
+Degree & 8\\
+\midrule
+ID & bpp-r31-6\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of selectionFailure\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'selectionFailure')]\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r31-7\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of ambiguousReceive\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'ambiguousReceive')]\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r31-8\\
+\myrowcolour
+Description &A process definition must not rely on the correct triggering of conflictingReceive\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingReceive')]\\
+\myrowcolour
+Degree & 9\\
+\midrule
+ID & bpp-r31-9\\
+\myrowcolour
+Description &A process definition must not rely on the correct triggering of conflictingRequest\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'conflictingRequest')]\\
+\myrowcolour
+Degree & 9\\
+\midrule
+ID & bpp-r31-10\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of correlationViolation\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'correlationViolation')]\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r31-11\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of uninitializedVariable\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'uninitializedVariable')]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r31-12\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of invalidExpressionValue\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidExpressionValue')]\\
+\myrowcolour
+Degree & 3\\
+\midrule
+ID & bpp-r31-13\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of missingReply\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingReply')]\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r31-14\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of missingRequest\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'missingRequest')]\\
+\myrowcolour
+Degree & 7\\
+\midrule
+ID & bpp-r31-15\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of joinFailure\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'joinFailure')]\\
+\myrowcolour
+Degree & 4\\
+\midrule
+ID & bpp-r31-16\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of invalidVariables\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'invalidVariables')]\\
+\myrowcolour
+Degree & 5\\
+\midrule
+ID & bpp-r31-17\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of completionConditionFailure\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'completionConditionFailure')]\\
+\myrowcolour
+Degree & 6\\
+\midrule
+ID & bpp-r31-18\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of suppressJoinFailure\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName,'suppressJoinFailure')]\\
+\myrowcolour
+Degree & 2\\
+\midrule
+ID & bpp-r31-19\\
+\myrowcolour
+Description &A process definition should not rely on the correct triggering of mismatchedAssignmentFailure\\
+Target & //*[local-name() = 'faultHandlers']/*[local-name() = 'catch' and contains(@faultName, 'mismatchedAssignmentFailure')]\\
+\myrowcolour
+Degree & 6\\
+\end{longtable}
+\end{tiny}
+\end{center}
