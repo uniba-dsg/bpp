@@ -22,9 +22,15 @@ public class WSIProfileDocSerializer {
 	private ObjectFactory profileFactory = new ObjectFactory();
 
 	private org.ws_i._2002._08._12.profilemarkup_2_0.ObjectFactory markupFactory = new org.ws_i._2002._08._12.profilemarkup_2_0.ObjectFactory();
-
+	
+	private String targetPath;
+	
 	public static void main(String[] args) {
-		new WSIProfileDocSerializer().serializeAssertions();
+		new WSIProfileDocSerializer("BpelPortabilityProfile-1.0.xml").serializeAssertions();
+	}
+
+	public WSIProfileDocSerializer(String targetPath){
+		this.targetPath = targetPath;
 	}
 
 	public void serializeAssertions() {
@@ -38,7 +44,7 @@ public class WSIProfileDocSerializer {
 		}
 
 		Profile profile = createProfile(wsiAssertions);
-		serializeProfile("BpelPortabilityProfile-1.0.xml", profile);
+		serializeProfile(targetPath, profile);
 	}
 
 	private Profile createProfile(
