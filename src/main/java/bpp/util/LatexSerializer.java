@@ -78,7 +78,7 @@ public class LatexSerializer {
 	private void writeLongTableHeader() {
 		println("\\begin{center}");
 		println("\\begin{" + fontSize + "}");
-		println("\\begin{longtable}{p{0.1\\textwidth}|p{0.84\\textwidth}}");
+		println("\\begin{longtable}{p{0.09\\textwidth}|p{0.85\\textwidth}}");
 		println("\\caption{Portability Test Assertions}\\\\");
 		println("\\label{tab:testAssertions}\\\\");
 		println("\\textbf{Property} & \\textbf{Test Assertion}");
