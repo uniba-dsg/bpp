@@ -55,8 +55,9 @@ public class FileAnalyzer {
 
 	private void createXPathEvaluator()
 			throws XPathFactoryConfigurationException {
-		XPathFactory xpathFactory = XPathFactory
-				.newInstance(NamespaceConstant.OBJECT_MODEL_SAXON);
+//		XPathFactory xpathFactory = XPathFactory
+//				.newInstance(NamespaceConstant.OBJECT_MODEL_SAXON);
+		XPathFactory xpathFactory = new net.sf.saxon.xpath.XPathFactoryImpl();
 		xpath = (XPathEvaluator) xpathFactory.newXPath();
 		xpath.getConfiguration().setLineNumbering(true);
 		xpath.setNamespaceContext(new BpelNamespaceContext());
