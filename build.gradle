@@ -61,6 +61,11 @@ jar {
    exclude('bpp/executables/FileAnalyzerTests*')
    exclude('bpp/testrunner/TestRunner*')
    manifest { attributes 'Main-Class': mainClassName }
+   from ( configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } ) {
+   	    exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+   }
 }
 
 apply plugin: 'jacoco'
