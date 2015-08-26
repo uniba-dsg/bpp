@@ -1,7 +1,54 @@
-apply plugin: "java"
-apply plugin: "idea"
-apply plugin: "eclipse"
-apply plugin: "application"
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
+    }
+}
+
+
+plugins {
+	id "java"
+	id "idea"
+	id "eclipse"
+	id "application"
+	id "jacoco"
+	id "maven"
+	id "maven-publish"
+	id "com.github.kt3k.coveralls" version "2.4.0"
+    id "com.jfrog.bintray" version "1.3.1"
+}
+
+publishing {
+	publications {
+		BintrayPublication(MavenPublication) {
+			from components.java
+			groupId 'uniba-dsg'
+            		artifactId 'bpp'
+            		version '1.0.0'
+		}
+	}
+}
+
+bintray {   
+    user = 'lenhard'
+    key = 'bintray_api_key'
+	publications = ['BintrayPublication']
+    pkg {
+        repo = 'bpp'
+        name = 'bpp'
+        userOrg = 'uniba-dsg'
+        licenses = ['LGPL-3.0']
+        vcsUrl = 'https://github.com/uniba-dsg/bpp.git'
+		version {
+            name = '1.0.0-Final'
+            desc = 'BPEL Portability Profile 1.0.0 final'
+            vcsTag = 'v1.0.0'
+        }
+    }
+}
 
 mainClassName = "bpp.BPP"
 
@@ -66,19 +113,6 @@ jar {
         exclude "META-INF/*.DSA"
         exclude "META-INF/*.RSA"
    }
-}
-
-apply plugin: 'jacoco'
-apply plugin: 'com.github.kt3k.coveralls'
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
-    }
 }
 
 jacocoTestReport {
