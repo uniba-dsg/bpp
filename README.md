@@ -7,6 +7,14 @@ A tool for detecting portability issues in BPEL code
 [![Dependency Status](https://www.versioneye.com/user/projects/53b3bd860d5bb83d73000003/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53b3bd860d5bb83d73000003)
 [![Coverage Status](https://coveralls.io/repos/uniba-dsg/bpp/badge.svg?branch=master)](https://coveralls.io/r/uniba-dsg/bpp?branch=master)
 
+bpp is now available on jCenter. To use it in your gradle build, simply set jcenter as your repository and include the following:
+```bash
+dependencies {
+	// other dependencies
+	compile 'uniba-dsg:bpp:1.0.0'
+}
+````
+
 ## Software Requirements
 bpp is tested for support on JDK 1.8.X
 - `JAVA_HOME` should point to the jdk directory
