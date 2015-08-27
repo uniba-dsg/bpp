@@ -97,6 +97,11 @@ task latex (type: JavaExec, dependsOn: build){
     main = "bpp.util.LatexSerializer"
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
 jar {
    exclude('testfiles')
    exclude('mappings')
