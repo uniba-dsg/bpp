@@ -29,8 +29,12 @@ public class LatexSerializerTests {
 				.get("src/test/java/bpp/util/expected.tex"));
 		List<String> actual = Files.readAllLines(Paths.get(tmpFilePath));
 
-		assertEquals(expected, actual);
-	}
+		assertEquals(expected.size(), actual.size());
+
+		// compare each line to get a more meaningful output on failure
+		for (int index = 0; index < expected.size(); index++) {
+			assertEquals(expected.get(index), actual.get(index));
+		}	}
 
 	@After
 	public void tearDown() throws IOException {

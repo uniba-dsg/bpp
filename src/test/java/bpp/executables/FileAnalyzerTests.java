@@ -43,7 +43,7 @@ public class FileAnalyzerTests {
 				"src/main/resources/language-features/basic-activities/Validate.bpel",
 				false);
 		List<Warning> warnings = sut.analyze().getViolations();
-		assertEquals(2, warnings.size());
+		assertEquals(1, warnings.size());
 	}
 
 	private void assertDoubleEquals(double expected, double actual) {

@@ -86,6 +86,8 @@ class ExtensionAssertions {
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Literal.bpel");
 		assertion
+		.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Validate.bpel");
+		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-PartnerLink.bpel");
 		assertion
 				.addNonContainedFileLocations("src/main/resources/language-features/basic-activities/Assign-Property.bpel");
@@ -118,7 +120,7 @@ class ExtensionAssertions {
 						+ "and not(local-name() = 'repeatEvery') and not(local-name() = 'throw') and not(local-name() = 'invoke') "
 						+ "and not(local-name() = 'wait') and not(local-name() = 'exit') and not(local-name() = 'query') "
 						+ "and not(local-name() = 'literal') and not(local-name() = 'service-ref') and not(local-name() = 'EndpointReference') "
-						+ "and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent')]");
+						+ "and not(local-name() = 'exit') and not(local-name() = 'Address') and not(local-name() = 'onEvent') and not(local-name() = 'validate')]");
 		assertion
 				.setDiagnosticMessage("The process definition contains non-BPEL elements");
 		assertion.setDegree(8);
